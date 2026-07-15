@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-brand-surface text-brand-bg antialiased;
+    font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif;
+  }
+
+  h1 {
+    font-size: 3.5rem; /* 56px */
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 2.5rem; /* 40px */
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  p {
+    font-size: 1rem; /* 16px */
+    line-height: 1.5;
+  }
+
+  .caption {
+    font-size: 0.75rem; /* 12px */
+    line-height: 1.6;
+  }
+}
