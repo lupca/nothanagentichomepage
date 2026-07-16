@@ -7,20 +7,20 @@ export const HowItWorks: React.FC<HowItWorksProps> = () => {
   const steps = [
     {
       step: '01',
-      title: 'Kết nối (Connect)',
-      description: 'Liên kết dữ liệu bán hàng đa kênh từ các sàn thương mại điện tử Shopee, TikTok Shop, Lazada và các nhà vận chuyển chỉ với vài thao tác cơ bản.',
+      title: 'Kết nối',
+      description: 'Đăng nhập các tài khoản Shopee, TikTok Shop, Lazada của bạn. Dữ liệu tự động đổ về.',
       icon: Link,
     },
     {
       step: '02',
-      title: 'Phân tích (Analyze)',
-      description: 'Hệ thống AI tự động xử lý số liệu, dự báo xu hướng nhu cầu mua sắm và phát hiện các rủi ro vận hành dòng tiền sắp xảy ra.',
+      title: 'Xem báo cáo',
+      description: 'Hệ thống tổng hợp và phân tích, hiển thị những gì cần chú ý: sắp hết hàng, dòng tiền, quảng cáo lỗ.',
       icon: Brain,
     },
     {
       step: '03',
-      title: 'Phê duyệt (Approve)',
-      description: 'AI đề xuất hành động tối ưu. Bạn có quyền phê duyệt ngay lập tức hoặc thiết lập cơ chế tự động hóa có kiểm soát linh hoạt.',
+      title: 'Duyệt & thực hiện',
+      description: 'Khi có đề xuất, bạn xem và quyết định có làm hay không. Hệ thống không tự ý thực hiện.',
       icon: CheckSquare,
     },
   ];
@@ -33,11 +33,11 @@ export const HowItWorks: React.FC<HowItWorksProps> = () => {
     >
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="text-center space-y-4 max-w-2xl mx-auto">
-          <h2 className="text-h2 font-bold text-brand-bg">
+          <h2 className="text-2xl md:text-h2 font-bold text-brand-bg">
             Quy Trình 3 Bước Đơn Giản
           </h2>
           <p className="text-body text-brand-secondary">
-            Tận dụng sức mạnh Agentic AI để tự động hóa quy trình quản lý bán hàng của bạn một cách an toàn và tối ưu nhất.
+            Kết nối dữ liệu, để AI phân tích, bạn duyệt và quyết định. Đơn giản vậy thôi.
           </p>
         </div>
 
@@ -51,7 +51,7 @@ export const HowItWorks: React.FC<HowItWorksProps> = () => {
               >
                 <div>
                   <div className="flex justify-between items-center mb-6">
-                    <span className="text-h2 font-extrabold text-brand-accent/20 group-hover:text-brand-accent/40 transition-colors">
+                    <span className="text-3xl md:text-h2 font-extrabold text-brand-accent/20 group-hover:text-brand-accent/40 transition-colors">
                       {item.step}
                     </span>
                     <div className="p-3 bg-brand-surface rounded-xl text-brand-bg">

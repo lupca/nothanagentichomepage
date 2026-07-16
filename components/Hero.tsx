@@ -22,16 +22,16 @@ export const Hero: React.FC<HeroProps> = () => {
         <div className="lg:col-span-7 space-y-6 text-left">
           <div className="inline-block">
             <span className="bg-brand-accent/20 text-brand-accent font-semibold text-caption tracking-wider uppercase px-3 py-1.5 rounded-full">
-              Nền tảng Agentic AI tiên phong tại Việt Nam
+              Công cụ quản lý bán hàng đa sàn
             </span>
           </div>
 
-          <h1 className="text-h1 font-bold leading-tight text-white">
+          <h1 className="text-[1.875rem] md:text-h1 font-bold leading-tight text-white">
             Tự động hóa toàn diện chuỗi cung ứng & Marketing
           </h1>
 
           <p className="text-body text-oatmeal-white/80 max-w-xl leading-relaxed">
-            Vận hành bán hàng đa kênh thông minh. Đưa ra quyết định tối ưu hóa tồn kho, dòng tiền và chiến dịch tiếp thị tự động mà không tốn công sức.
+            Quản lý tồn kho, đơn hàng và quảng cáo trên nhiều sàn TMĐT từ một nơi. Hệ thống tự cảnh báo khi có vấn đề, bạn chỉ cần duyệt và quyết định.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-2">
@@ -54,16 +54,19 @@ export const Hero: React.FC<HeroProps> = () => {
             </a>
           </div>
 
-          {/* Grayscale Client Logos */}
+          {/* Platform integrations */}
           <div className="pt-8 space-y-3 border-t border-white/10">
             <p className="text-caption text-oatmeal-white/60 uppercase tracking-wider font-semibold">
-              Tin dùng bởi các doanh nghiệp hàng đầu
+              Tích hợp sẵn với
             </p>
-            <div className="flex flex-wrap gap-8 items-center opacity-50 grayscale hover:opacity-75 transition-opacity">
-              <span className="text-body font-bold text-white tracking-widest">VIET-LOGIS</span>
-              <span className="text-body font-bold text-white tracking-widest">S-MART</span>
-              <span className="text-body font-bold text-white tracking-widest">TECH-DIST</span>
-              <span className="text-body font-bold text-white tracking-widest">VINA-FLOW</span>
+            <div className="flex flex-wrap gap-6 items-center text-caption text-oatmeal-white/50">
+              <span>Shopee</span>
+              <span>•</span>
+              <span>TikTok Shop</span>
+              <span>•</span>
+              <span>Lazada</span>
+              <span>•</span>
+              <span>GHTK</span>
             </div>
           </div>
         </div>

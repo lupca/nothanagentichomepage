@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Warehouse, Megaphone, TrendingUp } from 'lucide-react';
+import { Settings2, Warehouse, Megaphone, TrendingUp } from 'lucide-react';
 import HumanOverridePanel from './HumanOverridePanel';
 
 interface QueuedDecision {
@@ -25,14 +25,14 @@ export const AIDecisionWidget: React.FC<AIDecisionWidgetProps> = () => {
       <div className="max-w-5xl mx-auto space-y-10">
         <div className="text-center space-y-4">
           <span className="inline-flex items-center gap-2 text-caption font-bold uppercase tracking-wider text-brand-accent">
-            <Sparkles className="w-4 h-4" />
-            Agentic AI Decision Support
+            <Settings2 className="w-4 h-4" />
+            Trung tâm điều khiển
           </span>
-          <h2 className="text-h2 font-bold text-brand-bg">
+          <h2 className="text-2xl md:text-h2 font-bold text-brand-bg">
             AI Đề Xuất — Con Người Quyết Định
           </h2>
           <p className="text-body text-brand-secondary max-w-2xl mx-auto leading-relaxed">
-            Mọi hành động tự động hóa quan trọng đều đi qua bước kiểm duyệt của bạn trước khi thực thi, kèm điểm tin cậy minh bạch từ mô hình AI.
+            Hệ thống đề xuất, bạn duyệt trước khi thực hiện. Không tự ý làm gì cả.
           </p>
         </div>
 

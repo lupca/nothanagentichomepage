@@ -28,58 +28,58 @@ export const UseCases: React.FC<UseCasesProps> = () => {
     {
       id: 'owner',
       role: 'Chủ doanh nghiệp',
-      topic: 'Dòng tiền (Cashflow)',
-      title: 'Kiểm soát & Tối ưu dòng tiền real-time',
-      desc: 'AI phân tích dữ liệu bán hàng đa kênh, dự báo dòng tiền về trong 30 ngày tới và đưa ra các cảnh báo thiếu hụt vốn lưu động, giúp bạn đưa ra các quyết định tái đầu tư chính xác.',
+      topic: 'Theo dõi dòng tiền',
+      title: 'Biết tiền về khi nào, thiếu lúc nào',
+      desc: 'Gộp dữ liệu từ các sàn, hệ thống tự tính dòng tiền dự kiến và cảnh báo khi có nguy cơ thiếu vốn. Không cần ngồi cộng Excel nữa.',
       metrics: [
-        'Dự báo dòng tiền chính xác 95%',
-        'Cắt giảm chi phí vận hành đến 30%',
-        'Phát hiện rủi ro công nợ tự động',
+        'Dự báo dòng tiền 30 ngày tới',
+        'Cảnh báo khi sắp âm vốn',
+        'Tổng hợp từ nhiều nguồn tự động',
       ],
       color: 'brand-accent',
-      mockupTitle: 'Báo cáo Tài chính Đa Kênh',
-      mockupValue: '-30%',
-      mockupMetricLabel: 'Chi phí vận hành thủ công',
-      mockupAlert: 'Cảnh báo: Dòng tiền âm dự kiến (Tuần 3)',
-      mockupAlertLabel: 'Rủi ro cao',
+      mockupTitle: 'Báo cáo dòng tiền',
+      mockupValue: '30 ngày',
+      mockupMetricLabel: 'Dự báo trước',
+      mockupAlert: 'Cảnh báo: Dự kiến thiếu vốn tuần 3',
+      mockupAlertLabel: 'Cần xem',
       mockupAlertLevel: 'error',
     },
     {
       id: 'warehouse',
       role: 'Quản lý kho',
-      topic: 'Dự báo tồn kho (Auto-forecast)',
-      title: 'Tự động dự báo nhu cầu & Đồng bộ tồn kho',
-      desc: 'Không lo hết hàng (out-of-stock) hay đọng vốn. Hệ thống tự động phân tích tốc độ bán hàng, mùa vụ để đề xuất kế hoạch nhập hàng tối ưu từ nhà cung cấp.',
+      topic: 'Đồng bộ tồn kho',
+      title: 'Hết lo sai lệch số giữa các sàn',
+      desc: 'Số trên Shopee, TikTok Shop, Lazada tự đồng bộ về một chỗ. Hệ thống cảnh báo khi sắp hết hàng hoặc tồn quá nhiều.',
       metrics: [
-        'Giảm tỷ lệ đứt gãy nguồn hàng xuống dưới 1%',
-        'Giảm 35% chi phí lưu kho dư thừa',
-        'Tự động đồng bộ số liệu trên 3+ sàn thương mại điện tử',
+        'Đồng bộ tồn kho nhiều sàn',
+        'Cảnh báo sắp hết hàng',
+        'Gợi ý điều chuyển kho',
       ],
       color: 'emerald-success',
-      mockupTitle: 'Đồng Bộ Kho Tự Động',
-      mockupValue: '99.8%',
-      mockupMetricLabel: 'Tỉ lệ sẵn sàng hàng hóa',
-      mockupAlert: 'Khuyến nghị: Chuyển 150sp từ Kho A sang Kho B',
-      mockupAlertLabel: 'Khuyên dùng',
+      mockupTitle: 'Tồn kho đa kênh',
+      mockupValue: 'Realtime',
+      mockupMetricLabel: 'Đồng bộ liên tục',
+      mockupAlert: 'Gợi ý: Chuyển hàng từ Kho A sang Kho B',
+      mockupAlertLabel: 'Xem thử',
       mockupAlertLevel: 'success',
     },
     {
       id: 'marketing',
-      role: 'Đội ngũ Marketing',
-      topic: 'Chiến dịch đa kênh (Cross-campaigns)',
-      title: 'Tối ưu hóa ngân sách quảng cáo thông minh',
-      desc: 'Tự động phân bổ ngân sách dựa trên hiệu quả doanh thu thời gian thực giữa Shopee, TikTok Shop. AI đề xuất thay đổi nội dung, thông điệp chiến dịch quảng cáo hoạt động kém.',
+      role: 'Đội Marketing',
+      topic: 'Quảng cáo đa sàn',
+      title: 'Biết chiến dịch nào đang lỗ',
+      desc: 'Gom số liệu quảng cáo từ các sàn, so sánh hiệu quả và cảnh báo khi có chiến dịch đang chạy lỗ để tắt kịp thời.',
       metrics: [
-        'Tăng ROI quảng cáo trung bình 45%',
-        'Tự động phân bổ ngân sách quảng cáo đa sàn',
-        'Phát hiện và tắt chiến dịch lỗi trong 15 phút',
+        'So sánh ROI giữa các sàn',
+        'Cảnh báo chiến dịch lỗ',
+        'Gợi ý phân bổ ngân sách',
       ],
       color: 'sand-gold',
-      mockupTitle: 'Tối Ưu Chiến Dịch ROI',
-      mockupValue: '+45%',
-      mockupMetricLabel: 'Lợi tức chi tiêu quảng cáo (ROAS)',
-      mockupAlert: 'Cảnh báo: ROI chiến dịch giảm nhanh',
-      mockupAlertLabel: 'Chú ý',
+      mockupTitle: 'Hiệu quả quảng cáo',
+      mockupValue: 'So sánh',
+      mockupMetricLabel: 'ROI các sàn',
+      mockupAlert: 'Cảnh báo: Chiến dịch X đang lỗ',
+      mockupAlertLabel: 'Xem ngay',
       mockupAlertLevel: 'warning',
     },
   ];
@@ -112,11 +112,11 @@ export const UseCases: React.FC<UseCasesProps> = () => {
     >
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="text-center space-y-4 max-w-2xl mx-auto">
-          <h2 className="text-h2 font-bold text-brand-bg">
+          <h2 className="text-2xl md:text-h2 font-bold text-brand-bg">
             Giải Pháp Đo Ni Đóng Giày Cho Từng Vai Trò
           </h2>
           <p className="text-body text-brand-secondary leading-relaxed">
-            Mọi thành viên trong doanh nghiệp đều có thể phối hợp nhịp nhàng và tối đa hóa hiệu suất nhờ trợ lý AI.
+            Mỗi người một việc, AI hỗ trợ đúng chỗ cần.
           </p>
         </div>
 
@@ -159,7 +159,7 @@ export const UseCases: React.FC<UseCasesProps> = () => {
                 <span className="text-caption font-bold text-brand-accent uppercase tracking-wider block mb-2">
                   {currentData.role}
                 </span>
-                <h3 className="text-h2 font-bold text-brand-bg mb-4 leading-snug">
+                <h3 className="text-xl md:text-2xl font-bold text-brand-bg mb-4 leading-snug">
                   {currentData.title}
                 </h3>
                 <p className="text-body text-brand-secondary leading-relaxed">
@@ -204,7 +204,7 @@ export const UseCases: React.FC<UseCasesProps> = () => {
               {/* Displaying Outcome Metrics */}
               <div className="bg-brand-bg text-white p-4 rounded-lg mt-8 space-y-2">
                 <div className="text-caption text-brand-surface/60 font-semibold uppercase">HIỆU QUẢ CAM KẾT</div>
-                <div className="text-h2 font-extrabold text-brand-accent">
+                <div className="text-3xl md:text-h2 font-extrabold text-brand-accent">
                   {currentData.mockupValue}
                 </div>
                 <div className="text-caption text-brand-surface/80">

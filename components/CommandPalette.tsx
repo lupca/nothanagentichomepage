@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Search, TrendingUp, Warehouse, Megaphone, Calendar, Sparkles } from 'lucide-react';
+import { Search, TrendingUp, Warehouse, Megaphone, Calendar, Settings2 } from 'lucide-react';
 
 interface CommandItem {
   id: string;
@@ -35,9 +35,9 @@ const COMMANDS: CommandItem[] = [
   },
   {
     id: 'ai-decisions',
-    label: 'Mở Trung tâm điều hành quyết định AI',
-    hint: 'AI Decision Support',
-    icon: Sparkles,
+    label: 'Mở Trung tâm điều khiển',
+    hint: 'Duyệt đề xuất từ hệ thống',
+    icon: Settings2,
     href: '#ai-decisions',
   },
   {

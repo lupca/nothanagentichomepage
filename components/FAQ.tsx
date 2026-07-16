@@ -15,16 +15,16 @@ export const FAQ: React.FC<FAQProps> = () => {
 
   const faqs: FAQItem[] = [
     {
-      question: 'Hệ thống tích hợp được với những kênh bán hàng và vận chuyển nào?',
-      answer: 'NoThanagentic tích hợp sẵn sàng kết nối API 2 chiều với các sàn TMĐT lớn (Shopee, TikTok Shop, Lazada), đơn vị vận chuyển hàng đầu tại Việt Nam (Giao Hàng Tiết Kiệm - GHTK) và cổng thanh toán phổ biến như MoMo. Toàn bộ thông tin đơn hàng, tồn kho và trạng thái vận chuyển sẽ đồng bộ theo thời gian thực.',
+      question: 'Kết nối được với sàn nào?',
+      answer: 'Hiện tại hỗ trợ Shopee, TikTok Shop, Lazada. Vận chuyển có GHTK, thanh toán có MoMo. Đang mở rộng thêm các kênh khác theo nhu cầu khách hàng.',
     },
     {
-      question: 'Dữ liệu kinh doanh của doanh nghiệp có được bảo mật không?',
-      answer: 'Chúng tôi cam kết bảo mật thông tin tuyệt đối. Hệ thống vận hành tuân thủ nghiêm ngặt tiêu chuẩn bảo mật dữ liệu quốc tế ISO/IEC 27001, mã hóa dữ liệu truyền tải SSL/TLS và mã hóa lưu trữ AES-256. Quyền truy cập dữ liệu được phân quyền chi tiết (RBAC) chặt chẽ theo vai trò của từng nhân sự.',
+      question: 'Dữ liệu có an toàn không?',
+      answer: 'Hệ thống đạt chuẩn ISO 27001, mã hóa SSL khi truyền và AES-256 khi lưu. Mỗi người dùng có quyền truy cập riêng theo vai trò trong công ty.',
     },
     {
-      question: 'Thời gian triển khai hệ thống mất bao lâu để bắt đầu hoạt động?',
-      answer: 'Thời gian triển khai cực kỳ nhanh chóng. Nhờ kiến trúc API dựng sẵn, bạn chỉ mất từ 3 đến 5 ngày làm việc để hoàn tất việc kết nối dữ liệu các gian hàng, cấu hình quy trình AI Decision Support và bắt đầu đưa hệ thống vào vận hành thực tế.',
+      question: 'Mất bao lâu để bắt đầu dùng?',
+      answer: 'Thường 3-5 ngày làm việc để kết nối dữ liệu và cấu hình. Nhanh hay chậm tùy số lượng sàn và độ phức tạp của shop.',
     },
   ];
 
@@ -40,11 +40,11 @@ export const FAQ: React.FC<FAQProps> = () => {
     >
       <div className="max-w-3xl mx-auto space-y-12">
         <div className="text-center space-y-4">
-          <h2 className="text-h2 font-bold text-brand-bg">
-            Giải Đáp Thắc Mắc
+          <h2 className="text-2xl md:text-h2 font-bold text-brand-bg">
+            Câu hỏi thường gặp
           </h2>
           <p className="text-body text-brand-secondary leading-relaxed">
-            Tìm câu trả lời nhanh chóng cho các câu hỏi thường gặp về hệ thống quản lý Agentic AI.
+            Một số thắc mắc mà khách hàng hay hỏi.
           </p>
         </div>
 

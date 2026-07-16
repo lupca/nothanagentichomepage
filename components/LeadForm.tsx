@@ -60,11 +60,11 @@ export const LeadForm: React.FC<LeadFormProps> = () => {
       <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
         {/* Left Column: Heading Copy */}
         <div className="lg:col-span-6 space-y-6 text-left">
-          <h2 className="text-h2 font-bold text-white leading-tight">
-            Sẵn Sàng Tối Ưu Hóa Vận Hành Doanh Nghiệp?
+          <h2 className="text-2xl md:text-h2 font-bold text-white leading-tight">
+            Muốn thử xem phù hợp không?
           </h2>
           <p className="text-body text-oatmeal-white/80 leading-relaxed">
-            Hãy để lại thông tin liên hệ. Đội ngũ chuyên gia của NoThanagentic sẽ liên hệ và thiết kế bản vẽ mô phỏng quy trình tự động hóa AI cho doanh nghiệp của bạn trong vòng 24 giờ.
+            Để lại thông tin, team mình sẽ liên hệ demo trực tiếp trên dữ liệu shop của bạn. Không phí, không cam kết.
           </p>
         </div>
 
