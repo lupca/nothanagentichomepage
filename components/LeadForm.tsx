@@ -85,7 +85,7 @@ export const LeadForm: React.FC<LeadFormProps> = () => {
               <button
                 type="button"
                 onClick={() => setIsSubmitted(false)}
-                className="text-caption font-bold text-brand-accent hover:underline pt-2 block mx-auto min-h-[44px]"
+                className="text-caption font-bold text-brand-secondary hover:text-brand-bg hover:underline pt-2 block mx-auto min-h-[44px]"
               >
                 Gửi lại yêu cầu khác
               </button>

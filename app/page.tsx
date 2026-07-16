@@ -19,7 +19,7 @@ const jsonLd = {
       '@id': 'https://nothanagentic.vn/#organization',
       name: 'NoThanagentic',
       url: 'https://nothanagentic.vn',
-      logo: 'https://nothanagentic.vn/icon.svg',
+      logo: 'https://nothanagentic.vn/logo.jpeg',
       description:
         'Nền tảng Agentic AI tiên phong tại Việt Nam cho vận hành bán hàng đa kênh: tự động hóa tồn kho, dòng tiền và marketing.',
       address: {

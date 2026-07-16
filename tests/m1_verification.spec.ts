@@ -179,9 +179,9 @@ test.describe('Milestone 1 Core Components Verification', () => {
         selector: '#lead-capture label[for="email"]',
       },
       {
-        name: 'Success Reset button (Safety Orange text on white container bg)',
+        name: 'Success Reset button (Slate Gray text on white container bg)',
         selector: 'button:has-text("Gửi lại yêu cầu khác")',
-        expectViolation: true,
+        expectViolation: false,
       }
     ];
 
