@@ -28,7 +28,7 @@ export const Logo: React.FC<LogoProps> = ({ variant = 'color', className = '' })
           isNegative ? 'text-white' : 'text-brand-bg'
         }`}
       >
-        NoThan<span className={isNegative ? 'text-white/95' : 'text-brand-accent'}>agentic</span>
+        NỎ THẦN<span className={isNegative ? 'text-white/95' : 'text-brand-accent'}> AGENTIC</span>
       </span>
     </div>
   );
