@@ -24,7 +24,6 @@ interface Content {
   eyebrow: string;
   heading: string;
   intro: string[];
-  officeNote: string;
   jobsEyebrow: string;
   jobsHeading: string;
   benefitsLabel: string;
@@ -39,15 +38,13 @@ const content: Record<'vi' | 'en', Content> = {
   vi: {
     metaTitle: 'Tuyển dụng — Nỏ Thần Agentic',
     metaDescription:
-      'Nỏ Thần Agentic đang tìm kỹ sư Computer Vision/AI, kỹ sư Backend & tích hợp thiết bị, và chuyên viên giải pháp/triển khai cho VOMA.VN và SOAI.VN. Đội ngũ nhỏ, giai đoạn đầu, quyền hạn thực và tiếp cận trực tiếp hệ thống production.',
+      'Nỏ Thần Agentic đang tìm kỹ sư Computer Vision/AI, kỹ sư Backend & tích hợp thiết bị, và chuyên viên giải pháp/triển khai cho VOMA.VN và SOAI.VN. Tiếp cận trực tiếp hệ thống production và khách hàng thật.',
     eyebrow: 'Tuyển dụng',
-    heading: 'Làm cùng một đội ngũ nhỏ, đang xây thật',
+    heading: 'Làm cùng đội ngũ đang xây hệ thống thật',
     intro: [
-      'Chúng tôi là một nhóm nhỏ, đang ở giai đoạn đầu: một người phụ trách chung và vài kỹ sư phụ trách trực tiếp từng dịch vụ (VOMA.VN, SOAI.VN). Không có phòng nhân sự, không có nhiều tầng quản lý, không có đội ngũ "chuyên gia" đông đảo — chỉ có người làm thật và hệ thống đang chạy thật.',
-      'Ở quy mô này, người vào sau tiếp cận trực tiếp kiến trúc hệ thống production, làm việc trực tiếp với khách hàng thật ngay từ đầu, và có ảnh hưởng rõ ràng lên hướng đi của sản phẩm.',
+      'Mỗi kỹ sư tại Nỏ Thần Agentic phụ trách trực tiếp một dịch vụ (VOMA.VN, SOAI.VN), làm việc thẳng trên kiến trúc hệ thống production và với khách hàng thật.',
+      'Người vào sau tiếp cận trực tiếp hệ thống đang chạy, làm việc trực tiếp với khách hàng ngay từ đầu, và có ảnh hưởng rõ ràng lên hướng đi của sản phẩm.',
     ],
-    officeNote:
-      'Văn phòng làm việc tập trung (tầng 1, dự kiến hoàn thiện giữa hoặc cuối tháng 9) dùng cho họp kỹ thuật và nghiên cứu phần cứng; phần lớn công việc hiện tại được sắp xếp theo tiến độ từng dự án, không theo giờ hành chính cố định.',
     jobsEyebrow: 'Vị trí đang tuyển',
     jobsHeading: '3 vị trí, gắn với lộ trình thật của VOMA và SOAI',
     benefitsLabel: 'Những gì bạn sẽ có',
@@ -72,7 +69,7 @@ const content: Record<'vi' | 'en', Content> = {
           'Lộ trình tăng vai trò và cổ phần/quản trị khi SOAI mở rộng quy mô',
         ],
         arrangement:
-          'Part-time: hỗ trợ chi phí duy trì 3–5 triệu VNĐ/tháng (chính thức từ tháng 9). Full-time: hợp đồng lao động và đóng BHXH đầy đủ theo quy định. Đánh giá lại năng lực và thu nhập mỗi 3 tháng dựa trên đóng góp thực tế.',
+          'Part-time hoặc full-time, tuỳ vai trò và tiến độ dự án. Đãi ngộ trao đổi trực tiếp khi phỏng vấn.',
         employmentType: ['PART_TIME', 'FULL_TIME'],
       },
       {
@@ -90,7 +87,7 @@ const content: Record<'vi' | 'en', Content> = {
           'Lộ trình tăng vai trò và cổ phần/quản trị khi dịch vụ mở rộng quy mô',
         ],
         arrangement:
-          'Part-time: hỗ trợ chi phí duy trì 3–5 triệu VNĐ/tháng (chính thức từ tháng 9). Full-time: hợp đồng lao động và đóng BHXH đầy đủ theo quy định. Đánh giá lại năng lực và thu nhập mỗi 3 tháng dựa trên đóng góp thực tế.',
+          'Part-time hoặc full-time, tuỳ vai trò và tiến độ dự án. Đãi ngộ trao đổi trực tiếp khi phỏng vấn.',
         employmentType: ['PART_TIME', 'FULL_TIME'],
       },
       {
@@ -108,7 +105,7 @@ const content: Record<'vi' | 'en', Content> = {
           'Lộ trình thăng tiến, tăng thu nhập và nhận cổ phần/vai trò quản trị khi dịch vụ mở rộng quy mô',
         ],
         arrangement:
-          'Part-time: hỗ trợ chi phí duy trì 3–5 triệu VNĐ/tháng (chính thức từ tháng 9). Full-time: hợp đồng lao động và đóng BHXH đầy đủ theo quy định. Đánh giá lại năng lực và thu nhập mỗi 3 tháng dựa trên đóng góp thực tế và doanh thu dịch vụ.',
+          'Part-time hoặc full-time, tuỳ vai trò và tiến độ dự án. Đãi ngộ trao đổi trực tiếp khi phỏng vấn.',
         employmentType: ['PART_TIME', 'FULL_TIME'],
       },
     ],
@@ -116,15 +113,13 @@ const content: Record<'vi' | 'en', Content> = {
   en: {
     metaTitle: 'Careers — Nỏ Thần Agentic',
     metaDescription:
-      'Nỏ Thần Agentic is hiring a Computer Vision/AI engineer, a Backend & device integration engineer, and a Solutions/Deployment specialist for VOMA.VN and SOAI.VN. Small, early-stage team, real ownership, direct access to production systems.',
+      'Nỏ Thần Agentic is hiring a Computer Vision/AI engineer, a Backend & device integration engineer, and a Solutions/Deployment specialist for VOMA.VN and SOAI.VN. Direct access to production systems and real customers.',
     eyebrow: 'Careers',
-    heading: 'Join a small team that is actually building',
+    heading: 'Join a team that is actually building',
     intro: [
-      'We are a small, early-stage team: one lead running the overall direction, and a handful of engineers each directly responsible for one service (VOMA.VN, SOAI.VN). No HR department, no layers of management, no large bench of "experts" — just people doing the work and systems that are actually running.',
-      'At this size, anyone who joins gets direct access to the production system architecture, works with real customers from day one, and has a real say in product direction.',
+      'Each engineer at Nỏ Thần Agentic owns one service directly (VOMA.VN, SOAI.VN), working straight on the production architecture and with real customers.',
+      'Anyone who joins gets direct access to the production system architecture, works with real customers from day one, and has a real say in product direction.',
     ],
-    officeNote:
-      'A dedicated ground-floor office (expected ready mid-to-late September) will be used for technical meetings and hardware research; most work today is scheduled around project deadlines, not fixed office hours.',
     jobsEyebrow: 'Open positions',
     jobsHeading: '3 roles, tied to the real VOMA and SOAI roadmap',
     benefitsLabel: 'What you get',
@@ -149,7 +144,7 @@ const content: Record<'vi' | 'en', Content> = {
           'A path to a larger role and equity/leadership as SOAI scales',
         ],
         arrangement:
-          'Part-time: a 3–5 million VND/month maintenance stipend (official from September). Full-time: a formal labor contract with full social insurance (BHXH) per regulations. Compensation is reviewed every 3 months based on actual contribution.',
+          'Part-time or full-time, depending on the role and project pace. Compensation is discussed directly during the interview.',
         employmentType: ['PART_TIME', 'FULL_TIME'],
       },
       {
@@ -167,7 +162,7 @@ const content: Record<'vi' | 'en', Content> = {
           'A path to a larger role and equity/leadership as the services scale',
         ],
         arrangement:
-          'Part-time: a 3–5 million VND/month maintenance stipend (official from September). Full-time: a formal labor contract with full social insurance (BHXH) per regulations. Compensation is reviewed every 3 months based on actual contribution.',
+          'Part-time or full-time, depending on the role and project pace. Compensation is discussed directly during the interview.',
         employmentType: ['PART_TIME', 'FULL_TIME'],
       },
       {
@@ -185,7 +180,7 @@ const content: Record<'vi' | 'en', Content> = {
           'A path to promotion, higher compensation, and equity/leadership as the services scale',
         ],
         arrangement:
-          'Part-time: a 3–5 million VND/month maintenance stipend (official from September). Full-time: a formal labor contract with full social insurance (BHXH) per regulations. Compensation is reviewed every 3 months based on contribution and service revenue.',
+          'Part-time or full-time, depending on the role and project pace. Compensation is discussed directly during the interview.',
         employmentType: ['PART_TIME', 'FULL_TIME'],
       },
     ],
@@ -261,9 +256,6 @@ export default async function Page({
                 </p>
               ))}
             </div>
-            <p className="text-caption font-mono text-navy-400 max-w-2xl leading-relaxed">
-              {t.officeNote}
-            </p>
           </div>
         </section>
 

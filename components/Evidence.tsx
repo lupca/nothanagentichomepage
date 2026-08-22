@@ -10,9 +10,9 @@ interface Module {
 
 const content = {
   vi: {
-    tag: 'Bằng chứng kiểm định độc lập',
+    tag: 'Bằng chứng kỹ thuật',
     heading: 'POC SOAI — 6 module đã nghiệm thu',
-    sub: '126/126 kịch bản test tự động, kiểm định độc lập qua 8 test suite (unit, integration, E2E, và stress test với ảnh/video hỏng).',
+    sub: 'Từng module dưới đây đã qua nghiệm thu, kèm năng lực cụ thể và nền tảng kỹ thuật đã dùng.',
     colModule: 'Module',
     colCapability: 'Năng lực',
     colStack: 'Nền tảng kỹ thuật',
@@ -26,9 +26,9 @@ const content = {
     ] as Module[],
   },
   en: {
-    tag: 'Independently audited evidence',
+    tag: 'Technical evidence',
     heading: 'SOAI POC — 6 modules accepted',
-    sub: '126/126 automated test scenarios, independently audited across 8 test suites (unit, integration, E2E, and stress tests with corrupted images/video).',
+    sub: 'Each module below has been accepted, with its concrete capability and the technical stack behind it.',
     colModule: 'Module',
     colCapability: 'Capability',
     colStack: 'Technical stack',

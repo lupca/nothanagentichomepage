@@ -15,7 +15,7 @@ const content = {
   vi: {
     tag: 'Kiến trúc mở',
     heading: 'Ma trận tích hợp thiết bị',
-    sub: 'Lớp trừu tượng DeviceProvider tách nguồn hình ảnh khỏi lõi phân tích AnalysisEngine. Thêm một dòng thiết bị mới nghĩa là viết một plugin mới cho lớp này.',
+    sub: 'Trạng thái tích hợp theo từng dòng thiết bị và giao thức đang hỗ trợ.',
     colDevice: 'Dòng thiết bị',
     colInterfaces: 'Giao diện tích hợp',
     colStatus: 'Trạng thái',
@@ -33,7 +33,7 @@ const content = {
   en: {
     tag: 'Open architecture',
     heading: 'Device integration matrix',
-    sub: 'A DeviceProvider abstraction separates the image source from the analysis core, AnalysisEngine. Supporting a new device line means writing a new plugin for that layer.',
+    sub: 'Integration status by device line and supported protocol.',
     colDevice: 'Device line',
     colInterfaces: 'Integration interface',
     colStatus: 'Status',

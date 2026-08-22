@@ -53,7 +53,7 @@ const content: Record<'vi' | 'en' | 'sv', Content> = {
     teamEyebrow: 'Đội ngũ',
     teamTitle: 'Ai đang trực tiếp làm việc',
     teamNote:
-      'Chúng tôi là một đội ngũ nhỏ, phân công rõ vai trò theo từng dịch vụ. Đội ngũ đang mở rộng cùng tốc độ phát triển của SOAI.VN và VOMA.VN.',
+      'Phân công rõ vai trò theo từng dịch vụ. Đội ngũ đang mở rộng cùng tốc độ phát triển của SOAI.VN và VOMA.VN.',
     team: [
       { role: 'Người phụ trách chung (Lead/Founder)', desc: 'Điều hành tổng thể, định hướng kinh doanh, chi phí và thủ tục pháp lý.' },
       { role: 'Tùng', desc: 'Phụ trách kỹ thuật và giải pháp tổng thể cho toàn bộ các dịch vụ.' },
@@ -76,7 +76,7 @@ const content: Record<'vi' | 'en' | 'sv', Content> = {
       'Bảo trì cam kết theo hợp đồng. Ghi rõ thời hạn và mức phản hồi trong hợp đồng, không để "theo thoả thuận".',
       'Minh bạch khi thẩm định. Cung cấp báo cáo tài chính, danh sách nhân sự và tài liệu kiến trúc cho đối tác trong quá trình đánh giá.',
       'Không khoá bằng phần cứng. Chúng tôi cung cấp thiết bị nhưng không khoá phần mềm vào thiết bị của mình — chuẩn mở là mặc định.',
-      'Minh bạch về giai đoạn phát triển. Chúng tôi là một công ty trẻ, và nói rõ điều đó — kèm những gì điều đó nghĩa là cho đối tác: quyết định nhanh, tiếp cận trực tiếp đội kỹ thuật, sẵn sàng làm POC cùng hãng.',
+      'Quyết định nhanh. Không qua nhiều tầng phê duyệt — đối tác tiếp cận trực tiếp đội kỹ thuật và có thể bắt đầu một POC ngay khi hai bên thống nhất phạm vi.',
     ],
     legalEyebrow: 'Pháp lý',
     legalTitle: 'Thông tin pháp lý',
@@ -103,7 +103,7 @@ const content: Record<'vi' | 'en' | 'sv', Content> = {
     teamEyebrow: 'Team',
     teamTitle: 'Who is actually doing the work',
     teamNote:
-      'We are a small team with clear ownership per service. The team is growing alongside SOAI.VN and VOMA.VN.',
+      'Clear ownership per service. The team is growing alongside SOAI.VN and VOMA.VN.',
     team: [
       { role: 'Lead / Founder', desc: 'Overall management: business direction, cost control, and legal matters.' },
       { role: 'Tung', desc: 'Technical lead — owns the overall technical solution across all services.' },
@@ -126,7 +126,7 @@ const content: Record<'vi' | 'en' | 'sv', Content> = {
       'Contracted maintenance. Response times and coverage windows are written into the contract, not left to "as agreed."',
       'Transparency during due diligence. We share financial statements, team rosters, and architecture documentation with partners during evaluation.',
       'No hardware lock-in. We supply devices, but we do not lock software to our own hardware — open standards are the default.',
-      'Honesty about our stage. We are a young company, and we say so plainly — along with what that means for a partner: fast decisions, direct access to the engineering team, and readiness to run a POC together.',
+      'Fast decisions. No layers of approval to work through — partners get direct access to the engineering team and can start a POC as soon as scope is agreed.',
     ],
     legalEyebrow: 'Legal',
     legalTitle: 'Legal information',
@@ -153,7 +153,7 @@ const content: Record<'vi' | 'en' | 'sv', Content> = {
     teamEyebrow: 'Team',
     teamTitle: 'Vilka som faktiskt utför arbetet',
     teamNote:
-      'Vi är ett litet team med tydligt ägarskap per tjänst. Teamet växer i takt med SOAI.VN och VOMA.VN.',
+      'Tydligt ägarskap per tjänst. Teamet växer i takt med SOAI.VN och VOMA.VN.',
     team: [
       { role: 'Ansvarig ledare / grundare', desc: 'Övergripande ledning: affärsinriktning, kostnadskontroll och juridiska frågor.' },
       { role: 'Tung', desc: 'Teknisk ledare — ansvarar för den övergripande tekniska lösningen för samtliga tjänster.' },
@@ -176,7 +176,7 @@ const content: Record<'vi' | 'en' | 'sv', Content> = {
       'Avtalad support. Svarstider och supportfönster skrivs in i avtalet, inte lämnas som "enligt överenskommelse".',
       'Transparens vid due diligence. Vi delar finansiella rapporter, personallistor och arkitekturdokumentation med partner under utvärderingen.',
       'Ingen hårdvarulåsning. Vi levererar utrustning, men låser inte mjukvaran till vår egen hårdvara — öppna standarder är default.',
-      'Ärlighet om vårt utvecklingsskede. Vi är ett ungt företag, och vi säger det öppet — tillsammans med vad det innebär för en partner: snabba beslut, direkt tillgång till teknikteamet och beredskap att köra en POC tillsammans.',
+      'Snabba beslut. Inga onödiga godkännandenivåer — partner får direkt tillgång till teknikteamet och kan starta en POC så snart omfattningen är fastställd.',
     ],
     legalEyebrow: 'Juridik',
     legalTitle: 'Juridisk information',

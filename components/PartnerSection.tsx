@@ -10,7 +10,7 @@ const content = {
     points: [
       { title: 'Phần mềm làm thiết bị của bạn đáng giá hơn.', body: 'Mỗi bài toán nghiệp vụ chúng tôi giải trên camera của hãng là một lý do để khách hàng chọn thiết bị đó thay vì thiết bị rẻ hơn.' },
       { title: 'Mô hình thu phí định kỳ kèm thiết bị.', body: 'Phần mềm được cung cấp theo hình thức thuê bao định kỳ, đi kèm thiết bị đồng bộ. Đội kỹ thuật tiếp tục bảo trì trong suốt thời gian hợp đồng còn hiệu lực.' },
-      { title: 'Đội kỹ thuật nội bộ.', body: 'Kiến trúc plugin (AnalysisEngine/DeviceProvider), mô hình AI (YOLOv8, SAHI, VLM) và tích hợp thiết bị (VAPIX, ONVIF, ISAPI) đều do đội kỹ thuật nội bộ của công ty thực hiện.' },
+      { title: 'Đội kỹ thuật nội bộ.', body: 'Mô hình AI (YOLOv8, SAHI, VLM) và tích hợp thiết bị (VAPIX, ONVIF, ISAPI) đều do đội kỹ thuật nội bộ của công ty thực hiện.' },
     ],
     cta: 'Trao đổi về hợp tác',
     ctaLink: 'doi-tac',
@@ -21,7 +21,7 @@ const content = {
     points: [
       { title: 'Software makes your hardware worth more.', body: 'Every business problem we solve on your cameras is another reason a customer chooses them over a cheaper alternative.' },
       { title: 'Recurring subscription bundled with hardware.', body: 'Software is delivered as a recurring subscription paired with matched equipment. Our team continues maintenance for the life of the contract.' },
-      { title: 'In-house engineering team.', body: 'The plugin architecture (AnalysisEngine/DeviceProvider), the AI models (YOLOv8, SAHI, VLM), and the device integrations (VAPIX, ONVIF, ISAPI) are all built by our in-house team.' },
+      { title: 'In-house engineering team.', body: 'The AI models (YOLOv8, SAHI, VLM) and the device integrations (VAPIX, ONVIF, ISAPI) are all built by our in-house team.' },
     ],
     cta: 'Start a partnership conversation',
     ctaLink: 'doi-tac',
@@ -32,7 +32,7 @@ const content = {
     points: [
       { title: 'Mjukvara gör er hårdvara mer värd.', body: 'Varje affärsproblem vi löser på era kameror är ännu ett skäl för en kund att välja dem framför ett billigare alternativ.' },
       { title: 'Återkommande prenumeration paketerad med hårdvara.', body: 'Mjukvaran levereras som en återkommande prenumeration tillsammans med matchad utrustning. Vårt team fortsätter underhållet under hela avtalstiden.' },
-      { title: 'Internt tekniskt team.', body: 'Pluginarkitekturen (AnalysisEngine/DeviceProvider), AI-modellerna (YOLOv8, SAHI, VLM) och enhetsintegrationerna (VAPIX, ONVIF, ISAPI) byggs alla av vårt interna team.' },
+      { title: 'Internt tekniskt team.', body: 'AI-modellerna (YOLOv8, SAHI, VLM) och enhetsintegrationerna (VAPIX, ONVIF, ISAPI) byggs alla av vårt interna team.' },
     ],
     cta: 'Starta ett partnersamtal',
     ctaLink: 'doi-tac',

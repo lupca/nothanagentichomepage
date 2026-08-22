@@ -6,7 +6,7 @@ import HeroVideo from './HeroVideo';
 const content = {
   vi: {
     eyebrow: 'Giải pháp phần cứng + phần mềm · Lõi Agentic AI',
-    h1: 'AI chạy trên thiết bị thật, trong nhà máy thật.',
+    h1: 'Tích hợp camera IP qua ONVIF và RTSP, xử lý dữ liệu ngay tại nhà máy.',
     sub: 'Nỏ Thần Agentic thiết kế và triển khai phần cứng và phần mềm cho giám sát sản xuất, an toàn lao động và kiểm soát hàng hoá. Agentic AI xử lý dữ liệu tại lõi hệ thống; thông tin đăng nhập thiết bị mã hoá bằng Fernet khi lưu.',
     ctaPrimary: 'Hợp tác cùng chúng tôi',
     ctaSecondary: 'Tải hồ sơ năng lực',
@@ -16,7 +16,7 @@ const content = {
   },
   en: {
     eyebrow: 'Hardware + software solutions · Agentic AI at the core',
-    h1: 'AI that runs on real devices, on real factory floors.',
+    h1: 'Connects to IP cameras over ONVIF and RTSP and processes all data on-site at your factory.',
     sub: 'Nỏ Thần Agentic designs and delivers hardware and software for production monitoring, workplace safety, and goods control. Agentic AI runs at the core of the system, and device credentials are encrypted with Fernet at rest.',
     ctaPrimary: 'Partner with us',
     ctaSecondary: 'Download capability profile',
@@ -26,7 +26,7 @@ const content = {
   },
   sv: {
     eyebrow: 'Hårdvaru- och mjukvarulösningar · Agentic AI i kärnan',
-    h1: 'AI som körs på riktiga enheter, på riktiga fabriksgolv.',
+    h1: 'Ansluter till IP-kameror via ONVIF och RTSP och bearbetar all data på plats i fabriken.',
     sub: 'Nỏ Thần Agentic designar och levererar hårdvara och mjukvara för produktionsövervakning, arbetsmiljösäkerhet och godskontroll. Agentic AI körs i systemets kärna, och enhetsuppgifter krypteras med Fernet i vila.',
     ctaPrimary: 'Bli partner med oss',
     ctaSecondary: 'Ladda ner kompetensprofil',
@@ -61,7 +61,9 @@ export const Hero: React.FC<HeroProps> = async () => {
             </span>
           </div>
 
-          <h1 className="font-display text-[1.875rem] md:text-h1 font-bold leading-tight text-white">
+          <h1
+            className="font-display text-[1.75rem] sm:text-[2.1rem] lg:text-[2.5rem] font-bold leading-[1.2] text-white [text-wrap:balance]"
+          >
             {t.h1}
           </h1>
 

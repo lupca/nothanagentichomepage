@@ -89,7 +89,7 @@ const content: Record<'vi' | 'en' | 'sv', Copy> = {
     s5Title: 'Xử lý sự cố ra sao?',
     s5Body: [
       'Hệ thống dùng một hệ phân cấp ngoại lệ tuỳ biến, SOAIException, và không có đường fallback âm thầm. Mọi sự cố (lỗi DB, file hỏng, mã QR mờ, mất kết nối camera) đều quăng ra lỗi rõ ràng thay vì bị bắt và bỏ qua. Mỗi lỗi trả về một HTTP response tuân thủ chuẩn RFC, kèm mã lỗi và ghi log chi tiết ở phía server.',
-      'Một exception bị nuốt âm thầm có thể che giấu điều một đội bảo mật cần thấy: một truy cập bất thường, một lỗi toàn vẹn dữ liệu, hay dấu hiệu sớm của xâm nhập. Cơ chế này được kiểm chứng qua 27 bài stress test với video mờ, file hỏng và mất kết nối mạng, trong bộ 126/126 kịch bản test đã pass.',
+      'Một exception bị nuốt âm thầm có thể che giấu điều một đội bảo mật cần thấy: một truy cập bất thường, một lỗi toàn vẹn dữ liệu, hay dấu hiệu sớm của xâm nhập. Cơ chế này được kiểm chứng qua 27 bài stress test với video mờ, file hỏng và mất kết nối mạng.',
     ],
     s6Eyebrow: '',
     s6Title: '',
@@ -153,7 +153,7 @@ const content: Record<'vi' | 'en' | 'sv', Copy> = {
     s5Title: 'How are faults handled?',
     s5Body: [
       'The system runs on a custom exception hierarchy, SOAIException, with no silent fallback path. Every fault (a DB error, a corrupted file, a blurry QR code, a dropped camera connection) surfaces as an explicit error instead of being caught and ignored. Each error returns an RFC-compliant HTTP response with a clear error code, and is logged in detail server-side.',
-      'A silently swallowed exception can hide exactly what a security team needs to see: an abnormal access pattern, a data-integrity fault, or an early sign of a breach. This mechanism was verified in 27 stress tests with blurred video, corrupted files, and dropped connections, part of the 126/126 test scenarios passed.',
+      'A silently swallowed exception can hide exactly what a security team needs to see: an abnormal access pattern, a data-integrity fault, or an early sign of a breach. This mechanism was verified in 27 stress tests with blurred video, corrupted files, and dropped connections.',
     ],
     s6Eyebrow: '',
     s6Title: '',
@@ -217,7 +217,7 @@ const content: Record<'vi' | 'en' | 'sv', Copy> = {
     s5Title: 'Hur hanteras fel?',
     s5Body: [
       'Systemet bygger på en egen undantagshierarki, SOAIException, utan tyst fallback. Varje fel (databasfel, trasig fil, otydlig QR-kod, förlorad kameraanslutning) exponeras som ett tydligt fel i stället för att fångas och ignoreras. Varje fel returnerar ett RFC-kompatibelt HTTP-svar med felkod och loggas i detalj på servern.',
-      'Ett tyst nedsvalt undantag kan dölja precis det ett säkerhetsteam behöver se: ett avvikande åtkomstmönster, ett dataintegritetsfel, eller ett tidigt tecken på intrång. Mekanismen är verifierad i 27 stresstester med suddig video, trasiga filer och förlorade anslutningar, en del av de 126 av 126 testscenarier som godkändes.',
+      'Ett tyst nedsvalt undantag kan dölja precis det ett säkerhetsteam behöver se: ett avvikande åtkomstmönster, ett dataintegritetsfel, eller ett tidigt tecken på intrång. Mekanismen är verifierad i 27 stresstester med suddig video, trasiga filer och förlorade anslutningar.',
     ],
     s6Eyebrow: '',
     s6Title: '',

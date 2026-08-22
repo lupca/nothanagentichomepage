@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 
 export interface RevealProps {
@@ -11,6 +11,22 @@ export interface RevealProps {
   /** Element/component to render as. Defaults to 'div'. */
   as?: 'div' | 'li' | 'tr' | 'span';
 }
+
+/**
+ * Signals descendants of a `Reveal` when it has entered the viewport (or,
+ * under reduced motion, immediately). Descendants that need to trigger their
+ * own "enter" behaviour (e.g. `StatCounter`'s count-up) should consume this
+ * instead of running a second `useInView`/IntersectionObserver on the same
+ * element tree - two independent observers watching overlapping elements is
+ * what caused the stats-strip race condition this context replaces. `Reveal`
+ * is the single source of truth for "in view", driven by the same observer
+ * that powers its own `whileInView` animation.
+ *
+ * Defaults to `false` so a consumer used outside any `Reveal` never assumes
+ * it's already visible; such consumers should have their own fallback for
+ * convergence (see `StatCounter`).
+ */
+export const RevealContext = React.createContext<boolean>(false);
 
 /**
  * Reveal-on-scroll wrapper: fades and slides content up by 16px once, the
@@ -34,6 +50,10 @@ export interface RevealProps {
 export const Reveal: React.FC<RevealProps> = ({ children, delay = 0, className, as = 'div' }) => {
   const shouldReduceMotion = useReducedMotion();
   const MotionComponent = (motion as any)[as] ?? motion.div;
+  // Under reduced motion there's no scroll trigger at all - content resolves
+  // to its resting state on mount, so descendants should treat it as
+  // revealed immediately too.
+  const [revealed, setRevealed] = useState(shouldReduceMotion ?? false);
 
   if (shouldReduceMotion) {
     return (
@@ -44,7 +64,7 @@ export const Reveal: React.FC<RevealProps> = ({ children, delay = 0, className, 
         transition={{ duration: 0 }}
         className={className}
       >
-        {children}
+        <RevealContext.Provider value={true}>{children}</RevealContext.Provider>
       </MotionComponent>
     );
   }
@@ -54,11 +74,12 @@ export const Reveal: React.FC<RevealProps> = ({ children, delay = 0, className, 
       data-reveal
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
+      onViewportEnter={() => setRevealed(true)}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.45, ease: 'easeOut', delay }}
       className={className}
     >
-      {children}
+      <RevealContext.Provider value={revealed}>{children}</RevealContext.Provider>
     </MotionComponent>
   );
 };

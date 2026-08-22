@@ -71,7 +71,7 @@ const content = {
   vi: {
     metaTitle: 'SOAI.VN — Giám sát sản xuất và an toàn lao động bằng AI Vision',
     metaDescription:
-      'Nền tảng thị giác máy tính cho kiểm soát hàng hoá, an toàn lao động và giám sát vận hành. 6 module đã nghiệm thu POC với 126/126 kịch bản test tự động.',
+      'Nền tảng thị giác máy tính cho kiểm soát hàng hoá, an toàn lao động và giám sát vận hành. Sáu module đã nghiệm thu POC.',
     eyebrow: 'SOAI.VN — AI Vision',
     h1: 'Giám sát sản xuất, an toàn lao động và kiểm soát hàng hoá bằng thị giác máy tính',
     intro:
@@ -115,9 +115,9 @@ const content = {
         status: 'poc' as Status,
       },
     ] satisfies ProblemGroup[],
-    modulesEyebrow: 'Bằng chứng kiểm thử',
+    modulesEyebrow: 'Module hệ thống',
     modulesTitle: 'POC SOAI — 6 module đã nghiệm thu',
-    modulesNote: '126/126 kịch bản test tự động, kiểm định độc lập qua 8 test suite (unit, integration, E2E, và stress test với ảnh/video hỏng).',
+    modulesNote: 'Mỗi module dưới đây đã được kiểm thử và nghiệm thu trong POC, với stack kỹ thuật tương ứng.',
     modules: [
       {
         name: 'Phân tích video đóng gói',
@@ -204,7 +204,7 @@ const content = {
     phases: [
       {
         title: 'Giai đoạn 1 — Xây dựng hệ thống giám sát hàng hoá',
-        body: 'Hệ thống giám sát tại chỗ và khâu đóng hàng online: 6 module ở trên, đã nghiệm thu POC với 126/126 kịch bản test.',
+        body: 'Hệ thống giám sát tại chỗ và khâu đóng hàng online: sáu module ở trên, đã nghiệm thu POC.',
         status: 'poc' as Status,
       },
       {
@@ -234,7 +234,7 @@ const content = {
   en: {
     metaTitle: 'SOAI.VN — AI Vision for Production Monitoring and Workplace Safety',
     metaDescription:
-      'A computer-vision platform for goods control, workplace safety, and operations monitoring. Six modules verified in POC with 126/126 automated test scenarios passed.',
+      'A computer-vision platform for goods control, workplace safety, and operations monitoring. Six modules verified in POC.',
     eyebrow: 'SOAI.VN — AI Vision',
     h1: 'Computer vision for production monitoring, workplace safety, and goods control',
     intro:
@@ -278,9 +278,9 @@ const content = {
         status: 'poc' as Status,
       },
     ] satisfies ProblemGroup[],
-    modulesEyebrow: 'Test evidence',
+    modulesEyebrow: 'System modules',
     modulesTitle: 'SOAI POC — six modules verified',
-    modulesNote: '126/126 automated test scenarios passed, independently verified across 8 test suites (unit, integration, E2E, and stress tests with corrupted images/video).',
+    modulesNote: 'Each module below has been tested and verified in POC, with the matching technical stack.',
     modules: [
       {
         name: 'Packing video analysis',
@@ -367,7 +367,7 @@ const content = {
     phases: [
       {
         title: 'Phase 1 — Build the goods monitoring system',
-        body: 'On-site monitoring and online packing analysis: the six modules above, verified in POC with 126/126 test scenarios passed.',
+        body: 'On-site monitoring and online packing analysis: the six modules above, verified in POC.',
         status: 'poc' as Status,
       },
       {

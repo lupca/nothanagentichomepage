@@ -6,26 +6,26 @@ import { StatCounter } from './StatCounter';
 const content = {
   vi: {
     stats: [
-      { value: '6', label: 'module thị giác máy tính đã nghiệm thu' },
-      { value: '126/126', label: 'test tự động pass, kiểm định độc lập' },
-      { value: '2', label: 'nền tảng sản phẩm, 1 đã bảo hộ nhãn hiệu' },
-      { value: '< 3s', label: 'SLA suy luận cho đếm SKU trên ảnh' },
+      { value: '6', label: 'module sản xuất đã bàn giao và nghiệm thu' },
+      { value: '< 3s', label: 'thời gian đếm SKU trên mỗi ảnh' },
+      { value: '2', label: 'khách hàng đang vận hành theo hợp đồng' },
+      { value: '98%', label: 'uptime tối thiểu cam kết mỗi tháng' },
     ],
   },
   en: {
     stats: [
-      { value: '6', label: 'computer-vision modules accepted' },
-      { value: '126/126', label: 'automated tests passed, independently audited' },
-      { value: '2', label: 'product platforms, 1 trademark-registered' },
-      { value: '< 3s', label: 'inference SLA for SKU counting' },
+      { value: '6', label: 'production modules delivered and accepted' },
+      { value: '< 3s', label: 'SKU counting time per image' },
+      { value: '2', label: 'customers on paid contracts' },
+      { value: '98%', label: 'minimum monthly uptime, contractual' },
     ],
   },
   sv: {
     stats: [
-      { value: '6', label: 'godkända datorseendemoduler' },
-      { value: '126/126', label: 'automatiska tester godkända, oberoende granskade' },
-      { value: '2', label: 'produktplattformar, 1 varumärkesregistrerad' },
-      { value: '< 3s', label: 'SLA för inferens vid SKU-räkning' },
+      { value: '6', label: 'produktionsmoduler levererade och godkända' },
+      { value: '< 3s', label: 'SKU-räkningstid per bild' },
+      { value: '2', label: 'kunder med betalande avtal' },
+      { value: '98%', label: 'lägsta månatliga drifttid, avtalsenlig' },
     ],
   },
 };

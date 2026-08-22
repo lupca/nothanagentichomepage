@@ -5,18 +5,18 @@ import { Reveal } from './Reveal';
 const content = {
   vi: {
     quote: 'Nỏ Thần Agentic là công ty kỹ thuật, thành lập tại Hà Nội ngày 23/07/2026.',
-    p1: 'Đội kỹ thuật chọn thiết bị, viết phần mềm phân tích, và triển khai tại nhà máy khách hàng. Kiến trúc plugin tách nguồn hình ảnh (DeviceProvider) khỏi lõi phân tích (AnalysisEngine); thêm một dòng camera mới là viết một plugin, không sửa lõi hệ thống.',
-    p2: 'Công ty có hai thành viên góp vốn và một đội kỹ thuật nội bộ. Sản phẩm SOAI đã qua nghiệm thu POC với 126/126 kịch bản test tự động pass trên 8 test suite, kiểm định độc lập.',
+    p1: 'Đội kỹ thuật chọn thiết bị, viết phần mềm phân tích, và triển khai trực tiếp tại nhà máy khách hàng.',
+    p2: 'Toàn bộ phát triển — từ mô hình AI đến tích hợp thiết bị — do đội kỹ thuật nội bộ thực hiện.',
   },
   en: {
     quote: 'Nỏ Thần Agentic is an engineering company, founded in Hanoi on 23 July 2026.',
-    p1: 'The team selects hardware, writes the analysis software, and deploys it on customer factory floors. A plugin architecture separates the image source (DeviceProvider) from the analysis core (AnalysisEngine); adding a new camera line means writing a plugin, not changing the core.',
-    p2: 'The company has two founding members and an in-house engineering team. The SOAI platform completed its POC with 126 of 126 automated test scenarios passed across 8 test suites, verified by an independent audit.',
+    p1: 'The team selects hardware, writes the analysis software, and deploys it directly on customer factory floors.',
+    p2: 'All development — from the AI models to device integration — is done by our in-house engineering team.',
   },
   sv: {
     quote: 'Nỏ Thần Agentic är ett tekniskt företag, grundat i Hanoi den 23 juli 2026.',
-    p1: 'Teamet väljer hårdvara, skriver analysmjukvaran och installerar den hos kundens fabriker. En pluginarkitektur separerar bildkällan (DeviceProvider) från analyskärnan (AnalysisEngine); att lägga till en ny kameramodell innebär att skriva en plugin, inte att ändra kärnan.',
-    p2: 'Företaget har två grundare och ett internt tekniskt team. SOAI-plattformen genomförde sin POC med 126 av 126 automatiska testscenarier godkända över 8 testsviter, verifierat av en oberoende granskning.',
+    p1: 'Teamet väljer hårdvara, skriver analysmjukvaran och installerar den direkt hos kundens fabriker.',
+    p2: 'All utveckling — från AI-modellerna till enhetsintegration — görs av vårt interna tekniska team.',
   },
 };
 
