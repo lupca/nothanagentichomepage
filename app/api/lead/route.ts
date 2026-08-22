@@ -103,15 +103,33 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     submittedAt,
   };
 
-  const backupWritten = await appendLeadToFile(record);
+  const durable = isStorageDurable();
+
+  // On a non-durable filesystem (e.g. Vercel's default), don't even attempt
+  // the write — it would either throw or land somewhere that disappears
+  // between invocations, so there's nothing to gain from trying.
+  const backupWritten = durable ? await appendLeadToFile(record) : false;
 
   const resendApiKey = process.env.RESEND_API_KEY;
 
   if (!resendApiKey) {
-    console.warn(
-      '[lead] RESEND_API_KEY is not configured — email delivery is disabled, this lead exists only on local disk.'
+    if (durable) {
+      console.warn(
+        '[lead] RESEND_API_KEY is not configured — email delivery is disabled, this lead exists only on local disk.'
+      );
+      return NextResponse.json({ ok: true });
+    }
+
+    console.error(
+      '[lead] NO DELIVERY CHANNEL CONFIGURED: RESEND_API_KEY is unset and the filesystem is not durable ' +
+        '(VERCEL is set, LEAD_STORAGE_DURABLE is not "true"). This submission could not be stored anywhere ' +
+        'and is being rejected rather than silently dropped. Set RESEND_API_KEY, or set ' +
+        'LEAD_STORAGE_DURABLE=true if this deployment truly has a persistent disk.'
     );
-    return NextResponse.json({ ok: true });
+    return NextResponse.json(
+      { ok: false, error: 'Submission could not be delivered — no delivery channel is configured' },
+      { status: 500 }
+    );
   }
 
   try {
@@ -126,6 +144,23 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
   }
 
   return NextResponse.json({ ok: true });
+}
+
+// Whether a local file write can be treated as durable storage. Vercel's
+// filesystem is read-only outside /tmp, and /tmp does not persist between
+// invocations, so a file append there is not a real backup — it either
+// throws or silently vanishes. Presence of VERCEL (which Vercel sets
+// automatically) is treated as "not durable" unless explicitly overridden
+// via LEAD_STORAGE_DURABLE=true for self-hosted/VPS deployments that do
+// have a persistent disk.
+function isStorageDurable(): boolean {
+  if (process.env.LEAD_STORAGE_DURABLE === 'true') {
+    return true;
+  }
+  if (process.env.VERCEL) {
+    return false;
+  }
+  return true;
 }
 
 async function appendLeadToFile(record: Record<string, unknown>): Promise<boolean> {

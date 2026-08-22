@@ -188,7 +188,7 @@ const content = {
       successTitle: 'Đã gửi thành công!',
       successBody: 'Cảm ơn, đội ngũ sẽ phản hồi trong thời gian sớm nhất.',
       resetLabel: 'Gửi một yêu cầu khác',
-      submitErrorLabel: 'Đã có lỗi khi gửi thông tin. Vui lòng thử lại.',
+      submitErrorLabel: 'Đã có lỗi khi gửi thông tin. Vui lòng thử lại, hoặc liên hệ trực tiếp qua email support@nothanagentic.vn hoặc số điện thoại 0983650552.',
       errors: {
         errCompany: 'Tên hãng/tổ chức phải có ít nhất 2 ký tự',
         errEmailRequired: 'Vui lòng nhập email công việc',
@@ -320,7 +320,7 @@ const content = {
       successTitle: 'Sent successfully!',
       successBody: 'Thank you — our team will get back to you as soon as possible.',
       resetLabel: 'Send another inquiry',
-      submitErrorLabel: 'Something went wrong sending your request. Please try again.',
+      submitErrorLabel: 'Something went wrong sending your request. Please try again, or reach us directly at support@nothanagentic.vn or +84 983 650 552.',
       errors: {
         errCompany: 'Company/organization name must be at least 2 characters',
         errEmailRequired: 'Please enter your work email',
@@ -452,7 +452,7 @@ const content = {
       successTitle: 'Skickat!',
       successBody: 'Tack — vårt team återkommer så snart som möjligt.',
       resetLabel: 'Skicka en till förfrågan',
-      submitErrorLabel: 'Något gick fel när förfrågan skickades. Försök igen.',
+      submitErrorLabel: 'Något gick fel när förfrågan skickades. Försök igen, eller kontakta oss direkt på support@nothanagentic.vn eller +84 983 650 552.',
       errors: {
         errCompany: 'Företags-/organisationsnamnet måste vara minst 2 tecken',
         errEmailRequired: 'Ange en arbetsmejladress',

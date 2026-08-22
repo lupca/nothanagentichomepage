@@ -31,7 +31,7 @@ const content = {
       phoneRequired: 'Vui lòng nhập số điện thoại',
       phoneInvalid: 'Số điện thoại Việt Nam không hợp lệ (ví dụ: 0987654321)',
     },
-    submitError: 'Đã có lỗi khi gửi thông tin. Vui lòng thử lại.',
+    submitError: 'Đã có lỗi khi gửi thông tin. Vui lòng thử lại, hoặc liên hệ trực tiếp qua email support@nothanagentic.vn hoặc số điện thoại 0983650552.',
   },
   en: {
     heading: 'Talk to our engineers or get the capability profile',
@@ -54,7 +54,7 @@ const content = {
       phoneRequired: 'Please enter a phone number',
       phoneInvalid: 'Not a valid Vietnamese phone number (e.g. 0987654321)',
     },
-    submitError: 'Something went wrong sending your request. Please try again.',
+    submitError: 'Something went wrong sending your request. Please try again, or reach us directly at support@nothanagentic.vn or +84 983 650 552.',
   },
 };
 
