@@ -1,15 +1,52 @@
 'use client';
 
 import React, { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { Logo } from './Logo';
+import { locales } from '@/i18n/routing';
+
+const LocaleSwitcher: React.FC<{ className?: string }> = ({ className = '' }) => {
+  const pathname = usePathname() || '/vi';
+  const segments = pathname.split('/');
+
+  const hrefFor = (locale: string) => {
+    const next = [...segments];
+    next[1] = locale;
+    return next.join('/') || '/';
+  };
+
+  const currentLocale = segments[1];
+
+  return (
+    <div className={`flex items-center gap-2 text-caption font-bold uppercase ${className}`}>
+      {locales.map((locale, idx) => (
+        <React.Fragment key={locale}>
+          {idx > 0 && <span className="text-white/30">/</span>}
+          <a
+            href={hrefFor(locale)}
+            aria-current={currentLocale === locale ? 'true' : undefined}
+            className={
+              currentLocale === locale
+                ? 'text-white'
+                : 'text-white/50 hover:text-white transition-colors'
+            }
+          >
+            {locale}
+          </a>
+        </React.Fragment>
+      ))}
+    </div>
+  );
+};
 
 const NAV_LINKS = [
-  { label: 'Cách hoạt động', href: '#how-it-works' },
-  { label: 'Use case', href: '#use-cases' },
-  { label: 'Trung tâm AI', href: '#ai-decisions' },
-  { label: 'Khách hàng', href: '#testimonials' },
-  { label: 'Câu hỏi', href: '#faq' },
+  { label: 'Năng lực', href: '#nang-luc' },
+  { label: 'Công nghệ', href: '#he-thong' },
+  { label: 'Bằng chứng', href: '#bang-chung' },
+  { label: 'Bảo mật', href: '#bao-mat' },
+  { label: 'Đối tác', href: '#doi-tac' },
+  { label: 'Công ty', href: '#cong-ty' },
 ];
 
 export interface HeaderProps {}
@@ -19,7 +56,7 @@ export const Header: React.FC<HeaderProps> = () => {
 
   return (
     <header
-      className="sticky top-0 z-30 bg-brand-bg/90 backdrop-blur-md border-b border-white/10"
+      className="sticky top-0 z-30 bg-ink/90 backdrop-blur-md border-b border-white/10"
       aria-label="Điều hướng chính"
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-6 px-6 md:px-12 lg:px-24 py-3">
@@ -39,12 +76,13 @@ export const Header: React.FC<HeaderProps> = () => {
           ))}
         </nav>
 
-        <div className="hidden lg:block shrink-0">
+        <div className="hidden lg:flex items-center gap-6 shrink-0">
+          <LocaleSwitcher />
           <a
             href="#lead-capture"
-            className="bg-brand-accent hover:bg-brand-accent/90 text-brand-bg font-extrabold px-5 py-2.5 rounded-lg transition-all min-h-[44px] flex items-center justify-center"
+            className="bg-orange hover:bg-orange/90 text-ink font-extrabold px-5 py-2.5 rounded-lg transition-all min-h-[44px] flex items-center justify-center"
           >
-            Dùng thử miễn phí
+            Hợp tác cùng chúng tôi
           </a>
         </div>
 
@@ -64,7 +102,7 @@ export const Header: React.FC<HeaderProps> = () => {
         <nav
           id="mobile-nav"
           aria-label="Danh mục điều hướng di động"
-          className="lg:hidden border-t border-white/10 px-6 py-4 space-y-1 bg-brand-bg"
+          className="lg:hidden border-t border-white/10 px-6 py-4 space-y-1 bg-ink"
         >
           {NAV_LINKS.map((link) => (
             <a
@@ -79,10 +117,11 @@ export const Header: React.FC<HeaderProps> = () => {
           <a
             href="#lead-capture"
             onClick={() => setMenuOpen(false)}
-            className="block bg-brand-accent text-brand-bg font-extrabold px-5 py-3 rounded-lg text-center mt-3 min-h-[44px] flex items-center justify-center"
+            className="block bg-orange text-ink font-extrabold px-5 py-3 rounded-lg text-center mt-3 min-h-[44px] flex items-center justify-center"
           >
-            Dùng thử miễn phí
+            Hợp tác cùng chúng tôi
           </a>
+          <LocaleSwitcher className="pt-3" />
         </nav>
       )}
     </header>

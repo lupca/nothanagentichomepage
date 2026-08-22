@@ -1,0 +1,14 @@
+{
+  "common": {
+    "siteName": "No Than Agentic",
+    "nav": {
+      "home": "Hem",
+      "solutions": "Lösningar",
+      "technology": "Teknik",
+      "security": "Säkerhet",
+      "partners": "Partners",
+      "company": "Företag",
+      "news": "Nyheter"
+    }
+  }
+}

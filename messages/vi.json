@@ -1,0 +1,14 @@
+{
+  "common": {
+    "siteName": "Nỏ Thần Agentic",
+    "nav": {
+      "home": "Trang chủ",
+      "solutions": "Giải pháp",
+      "technology": "Công nghệ",
+      "security": "Bảo mật",
+      "partners": "Đối tác",
+      "company": "Công ty",
+      "news": "Tin tức"
+    }
+  }
+}

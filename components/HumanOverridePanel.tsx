@@ -24,7 +24,7 @@ export interface HumanOverridePanelProps {
 }
 
 export const HumanOverridePanel: React.FC<HumanOverridePanelProps> = ({
-  itemLabel = 'Chuyển 150 sản phẩm từ Kho A sang Kho B',
+  itemLabel = 'Phát hiện: công nhân không đội mũ bảo hộ · Line 2',
 }) => {
   const [toast, setToast] = useState<PendingToast | null>(null);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -63,18 +63,18 @@ export const HumanOverridePanel: React.FC<HumanOverridePanelProps> = ({
   return (
     <div
       data-testid="human-override-panel"
-      className="rounded-xl border border-brand-secondary/15 bg-white p-4 space-y-3"
+      className="rounded-xl border border-navy-400/15 bg-white p-4 space-y-3"
     >
-      <p className="text-caption font-bold text-brand-secondary uppercase tracking-wider">
+      <p className="text-caption font-bold text-navy-400 uppercase tracking-wider">
         Hành động kiểm duyệt
       </p>
-      <p className="text-body text-brand-bg leading-snug">{itemLabel}</p>
+      <p className="text-body text-ink leading-snug">{itemLabel}</p>
 
       <div className="flex flex-wrap gap-3 pt-1">
         <button
           type="button"
           onClick={() => triggerAction('approve')}
-          className="flex items-center gap-2 min-h-[44px] px-4 rounded-lg bg-brand-success text-white font-bold text-body hover:bg-brand-success/90 transition-colors"
+          className="flex items-center gap-2 min-h-[44px] px-4 rounded-lg bg-state-ok text-white font-bold text-body hover:bg-state-ok/90 transition-colors"
         >
           <Check className="w-4 h-4" />
           Phê duyệt
@@ -82,7 +82,7 @@ export const HumanOverridePanel: React.FC<HumanOverridePanelProps> = ({
         <button
           type="button"
           onClick={() => triggerAction('reject')}
-          className="flex items-center gap-2 min-h-[44px] px-4 rounded-lg bg-brand-error text-white font-bold text-body hover:bg-brand-error/90 transition-colors"
+          className="flex items-center gap-2 min-h-[44px] px-4 rounded-lg bg-state-stop text-white font-bold text-body hover:bg-state-stop/90 transition-colors"
         >
           <X className="w-4 h-4" />
           Từ chối
@@ -90,7 +90,7 @@ export const HumanOverridePanel: React.FC<HumanOverridePanelProps> = ({
         <button
           type="button"
           onClick={() => triggerAction('override')}
-          className="flex items-center gap-2 min-h-[44px] px-4 rounded-lg border border-brand-secondary/30 text-brand-bg font-bold text-body hover:bg-brand-surface transition-colors"
+          className="flex items-center gap-2 min-h-[44px] px-4 rounded-lg border border-navy-400/30 text-ink font-bold text-body hover:bg-paper transition-colors"
         >
           <RotateCcw className="w-4 h-4" />
           Ghi đè
@@ -101,7 +101,7 @@ export const HumanOverridePanel: React.FC<HumanOverridePanelProps> = ({
         <div
           role="status"
           aria-live="polite"
-          className="fixed bottom-6 left-1/2 -translate-x-1/2 sm:left-auto sm:right-6 sm:translate-x-0 z-50 flex items-center gap-4 bg-brand-bg text-white px-5 py-4 rounded-xl shadow-2xl border border-white/10 min-w-[300px]"
+          className="fixed bottom-6 left-1/2 -translate-x-1/2 sm:left-auto sm:right-6 sm:translate-x-0 z-50 flex items-center gap-4 bg-ink text-white px-5 py-4 rounded-xl shadow-2xl border border-white/10 min-w-[300px]"
         >
           <span className="text-body font-semibold flex-1">
             {toast.label} · Hoàn tất sau {toast.secondsLeft}s

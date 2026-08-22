@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-brand-surface text-brand-bg antialiased;
+    @apply bg-paper text-ink antialiased;
     font-family: var(--font-plus-jakarta-sans), 'Plus Jakarta Sans', sans-serif;
   }
 

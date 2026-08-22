@@ -1,0 +1,14 @@
+{
+  "common": {
+    "siteName": "No Than Agentic",
+    "nav": {
+      "home": "Home",
+      "solutions": "Solutions",
+      "technology": "Technology",
+      "security": "Security",
+      "partners": "Partners",
+      "company": "Company",
+      "news": "News"
+    }
+  }
+}

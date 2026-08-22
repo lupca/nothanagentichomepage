@@ -15,16 +15,16 @@ export const FAQ: React.FC<FAQProps> = () => {
 
   const faqs: FAQItem[] = [
     {
-      question: 'Kết nối được với sàn nào?',
-      answer: 'Hiện tại hỗ trợ Shopee, TikTok Shop, Lazada. Vận chuyển có GHTK, thanh toán có MoMo. Đang mở rộng thêm các kênh khác theo nhu cầu khách hàng.',
+      question: 'Dữ liệu hình ảnh của nhà máy có rời khỏi cơ sở của chúng tôi không?',
+      answer: 'Không, nếu bạn không muốn. Hệ thống triển khai được hoàn toàn trong mạng nội bộ, suy luận tại biên ngay tại nhà máy. Thông tin đăng nhập thiết bị mã hoá khi lưu, mọi API tải tệp đều chặn path traversal.',
     },
     {
-      question: 'Dữ liệu có an toàn không?',
-      answer: 'Hệ thống đạt chuẩn ISO 27001, mã hóa SSL khi truyền và AES-256 khi lưu. Mỗi người dùng có quyền truy cập riêng theo vai trò trong công ty.',
+      question: 'Tích hợp với camera hãng nào?',
+      answer: 'Mọi camera IP theo chuẩn ONVIF/RTSP đang chạy sản xuất. Axis và Hikvision đang ở giai đoạn POC. Xem ma trận tích hợp thiết bị đầy đủ ở mục Ma trận tích hợp thiết bị trên trang này.',
     },
     {
-      question: 'Mất bao lâu để bắt đầu dùng?',
-      answer: 'Thường 3-5 ngày làm việc để kết nối dữ liệu và cấu hình. Nhanh hay chậm tùy số lượng sàn và độ phức tạp của shop.',
+      question: 'Mất bao lâu để triển khai một bài toán mới?',
+      answer: 'Với kiểm tra đúng/sai định nghĩa bằng lời và vài ảnh mẫu, một nghiệp vụ mới có thể chạy trong ngày, không cần huấn luyện lại mô hình. Với tích hợp thiết bị mới, thời gian phụ thuộc giao thức của thiết bị — trao đổi trực tiếp để có mốc cụ thể.',
     },
   ];
 
@@ -33,32 +33,28 @@ export const FAQ: React.FC<FAQProps> = () => {
   };
 
   return (
-    <section 
+    <section
       className="bg-white py-20 px-6 md:px-12 lg:px-24"
       id="faq"
       aria-label="Câu hỏi thường gặp"
     >
       <div className="max-w-3xl mx-auto space-y-12">
         <div className="text-center space-y-4">
-          <h2 className="text-2xl md:text-h2 font-bold text-brand-bg">
+          <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">
             Câu hỏi thường gặp
           </h2>
-          <p className="text-body text-brand-secondary leading-relaxed">
-            Một số thắc mắc mà khách hàng hay hỏi.
-          </p>
         </div>
 
-        {/* Accordion Component */}
         <div className="space-y-4">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
-              <div 
+              <div
                 key={idx}
                 className={`border rounded-xl overflow-hidden transition-colors ${
-                  isOpen 
-                    ? 'border-brand-accent bg-brand-surface/30' 
-                    : 'border-brand-secondary/20 bg-brand-surface/10 hover:bg-brand-surface/30'
+                  isOpen
+                    ? 'border-orange bg-paper/30'
+                    : 'border-navy-400/20 bg-paper/10 hover:bg-paper/30'
                 }`}
               >
                 <h3>
@@ -67,16 +63,16 @@ export const FAQ: React.FC<FAQProps> = () => {
                     onClick={() => handleToggle(idx)}
                     aria-expanded={isOpen}
                     aria-controls={`faq-content-${idx}`}
-                    className="w-full flex justify-between items-center p-6 text-left font-bold text-body text-brand-bg transition-colors min-h-[64px]"
+                    className="w-full flex justify-between items-center p-6 text-left font-bold text-body text-ink transition-colors min-h-[64px]"
                   >
                     <span className="flex items-center gap-3">
-                      <HelpCircle className={`w-5 h-5 shrink-0 ${isOpen ? 'text-brand-accent' : 'text-brand-secondary/60'}`} />
+                      <HelpCircle className={`w-5 h-5 shrink-0 ${isOpen ? 'text-orange' : 'text-navy-400/60'}`} />
                       {faq.question}
                     </span>
-                    <ChevronDown 
-                      className={`w-5 h-5 text-brand-secondary flex-shrink-0 transition-transform duration-300 ${
-                        isOpen ? 'rotate-180 text-brand-accent' : ''
-                      }`} 
+                    <ChevronDown
+                      className={`w-5 h-5 text-navy-400 flex-shrink-0 transition-transform duration-300 ${
+                        isOpen ? 'rotate-180 text-orange' : ''
+                      }`}
                     />
                   </button>
                 </h3>
@@ -86,10 +82,10 @@ export const FAQ: React.FC<FAQProps> = () => {
                   role="region"
                   aria-labelledby={`faq-header-${idx}`}
                   className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    isOpen ? 'max-h-[300px] border-t border-brand-secondary/10' : 'max-h-0'
+                    isOpen ? 'max-h-[300px] border-t border-navy-400/10' : 'max-h-0'
                   }`}
                 >
-                  <div className="p-6 text-body text-brand-secondary bg-white leading-relaxed">
+                  <div className="p-6 text-body text-navy-400 bg-white leading-relaxed">
                     {faq.answer}
                   </div>
                 </div>
@@ -98,9 +94,9 @@ export const FAQ: React.FC<FAQProps> = () => {
           })}
         </div>
 
-        <div className="mt-12 p-4 bg-brand-surface border border-brand-secondary/10 rounded-xl flex items-center gap-3 justify-center text-caption text-brand-secondary">
-          <ShieldCheck className="w-5 h-5 text-brand-success shrink-0" />
-          <span className="leading-relaxed">Hệ thống đạt chứng nhận tiêu chuẩn an ninh thông tin quốc tế ISO/IEC 27001 và mã hóa dữ liệu đầu-cuối.</span>
+        <div className="mt-12 p-4 bg-paper border border-navy-400/10 rounded-xl flex items-center gap-3 justify-center text-caption text-navy-400">
+          <ShieldCheck className="w-5 h-5 text-state-ok shrink-0" />
+          <span className="leading-relaxed">Mã hoá tại chỗ (Fernet) và kiểm soát truy cập theo vai trò trên toàn bộ hệ thống.</span>
         </div>
       </div>
     </section>

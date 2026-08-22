@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { Search, TrendingUp, Warehouse, Megaphone, Calendar, Settings2 } from 'lucide-react';
+import { Search, ScanEye, Cable, ShieldCheck, Calendar, Settings2 } from 'lucide-react';
 
 interface CommandItem {
   id: string;
@@ -13,37 +13,37 @@ interface CommandItem {
 
 const COMMANDS: CommandItem[] = [
   {
-    id: 'cashflow',
-    label: 'Xem báo cáo Dòng tiền doanh nghiệp',
-    hint: 'Dành cho chủ doanh nghiệp',
-    icon: TrendingUp,
-    href: '#use-cases',
+    id: 'nang-luc',
+    label: 'Xem Ba trụ năng lực',
+    hint: 'Agentic AI · Tích hợp phần cứng · Bảo mật',
+    icon: ScanEye,
+    href: '#nang-luc',
   },
   {
-    id: 'inventory',
-    label: 'Dự báo tồn Kho tự động',
-    hint: 'Dành cho quản lý kho vận',
-    icon: Warehouse,
-    href: '#use-cases',
+    id: 'he-thong',
+    label: 'Xem Ma trận tích hợp thiết bị',
+    hint: 'Camera, giao thức, trạng thái',
+    icon: Cable,
+    href: '#he-thong',
   },
   {
-    id: 'marketing',
-    label: 'Quản lý Chiến dịch Marketing đa kênh',
-    hint: 'Dành cho đội ngũ marketing',
-    icon: Megaphone,
-    href: '#use-cases',
+    id: 'bao-mat',
+    label: 'Xem nguyên tắc bảo mật & engineering',
+    hint: 'Mã hoá, chống path traversal, on-prem',
+    icon: ShieldCheck,
+    href: '#bao-mat',
   },
   {
     id: 'ai-decisions',
-    label: 'Mở Trung tâm điều khiển',
+    label: 'Mở minh hoạ AI đề xuất — người duyệt',
     hint: 'Duyệt đề xuất từ hệ thống',
     icon: Settings2,
     href: '#ai-decisions',
   },
   {
     id: 'demo',
-    label: 'Đặt lịch Demo tư vấn',
-    hint: 'Nói chuyện với chuyên gia',
+    label: 'Trao đổi hợp tác / kỹ thuật',
+    hint: 'Nói chuyện với đội kỹ thuật',
     icon: Calendar,
     href: '#lead-capture',
   },
@@ -103,7 +103,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = () => {
 
   return (
     <div
-      className="fixed inset-0 z-[100] bg-brand-bg/70 backdrop-blur-sm flex items-start justify-center pt-24 px-4"
+      className="fixed inset-0 z-[100] bg-ink/70 backdrop-blur-sm flex items-start justify-center pt-24 px-4"
       onClick={close}
     >
       <div
@@ -113,24 +113,24 @@ export const CommandPalette: React.FC<CommandPaletteProps> = () => {
         onClick={(e) => e.stopPropagation()}
         className="w-full max-w-xl bg-white rounded-2xl shadow-2xl border border-black/5 overflow-hidden"
       >
-        <div className="flex items-center gap-3 px-5 py-4 border-b border-brand-secondary/10">
-          <Search className="w-5 h-5 text-brand-secondary shrink-0" />
+        <div className="flex items-center gap-3 px-5 py-4 border-b border-navy-400/10">
+          <Search className="w-5 h-5 text-navy-400 shrink-0" />
           <input
             ref={inputRef}
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Tìm kiếm tác vụ, ví dụ: Dòng tiền, Kho hàng..."
-            className="w-full text-body text-brand-bg placeholder:text-brand-secondary/50 focus:outline-none"
+            className="w-full text-body text-ink placeholder:text-navy-400/50 focus:outline-none"
           />
-          <kbd className="hidden sm:inline-block text-caption font-bold text-brand-secondary/60 border border-brand-secondary/20 rounded px-1.5 py-0.5">
+          <kbd className="hidden sm:inline-block text-caption font-bold text-navy-400/60 border border-navy-400/20 rounded px-1.5 py-0.5">
             Esc
           </kbd>
         </div>
 
         <ul role="listbox" aria-label="Kết quả lệnh" className="max-h-80 overflow-y-auto py-2">
           {results.length === 0 ? (
-            <li className="px-5 py-6 text-body text-brand-secondary text-center">
+            <li className="px-5 py-6 text-body text-navy-400 text-center">
               Không tìm thấy kết quả phù hợp.
             </li>
           ) : (
@@ -139,14 +139,14 @@ export const CommandPalette: React.FC<CommandPaletteProps> = () => {
                 <button
                   type="button"
                   onClick={() => handleSelect(item)}
-                  className="w-full flex items-center gap-3 px-5 py-3 min-h-[48px] text-left hover:bg-brand-surface transition-colors"
+                  className="w-full flex items-center gap-3 px-5 py-3 min-h-[48px] text-left hover:bg-paper transition-colors"
                 >
-                  <item.icon className="w-4 h-4 text-brand-accent shrink-0" />
+                  <item.icon className="w-4 h-4 text-orange shrink-0" />
                   <span className="flex-1 min-w-0">
-                    <span className="block text-body font-semibold text-brand-bg truncate">
+                    <span className="block text-body font-semibold text-ink truncate">
                       {item.label}
                     </span>
-                    <span className="block text-caption text-brand-secondary truncate">
+                    <span className="block text-caption text-navy-400 truncate">
                       {item.hint}
                     </span>
                   </span>
