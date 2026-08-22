@@ -1,7 +1,7 @@
 import React from 'react';
-import Image from 'next/image';
 import { getLocale } from 'next-intl/server';
 import { ArrowRight, FileDown } from 'lucide-react';
+import HeroVideo from './HeroVideo';
 
 const content = {
   vi: {
@@ -11,8 +11,8 @@ const content = {
     ctaPrimary: 'Hợp tác cùng chúng tôi',
     ctaSecondary: 'Tải hồ sơ năng lực',
     diagramLabel: 'Bảng điều khiển SOAI',
-    dashboardAlt: 'Ảnh chụp màn hình Bảng điều khiển vận hành SOAI, hiển thị tình trạng thiết bị, độ chính xác đếm SKU và nhật ký hoạt động AI gần đây',
-    dashboardCaption: 'Ảnh chụp hệ thống SOAI với dữ liệu minh hoạ.',
+    dashboardAlt: 'Video quay màn hình hệ thống SOAI, đi qua Bảng điều khiển vận hành, Quản lý thiết bị, Đếm SKU và Phân tích đóng gói',
+    dashboardCaption: 'Video thao tác trên hệ thống SOAI với dữ liệu minh hoạ.',
   },
   en: {
     eyebrow: 'Hardware + software solutions · Agentic AI at the core',
@@ -21,8 +21,8 @@ const content = {
     ctaPrimary: 'Partner with us',
     ctaSecondary: 'Download capability profile',
     diagramLabel: 'The SOAI dashboard',
-    dashboardAlt: 'Screenshot of the SOAI operations telemetry dashboard, showing device fleet status, SKU count accuracy, and a recent AI operations log',
-    dashboardCaption: 'SOAI system screenshot with demonstration data.',
+    dashboardAlt: 'Screen recording walking through the SOAI system: the operations dashboard, device management, SKU counting, and packing analysis',
+    dashboardCaption: 'Walkthrough video of the SOAI system with demonstration data.',
   },
   sv: {
     eyebrow: 'Hårdvaru- och mjukvarulösningar · Agentic AI i kärnan',
@@ -31,8 +31,8 @@ const content = {
     ctaPrimary: 'Bli partner med oss',
     ctaSecondary: 'Ladda ner kompetensprofil',
     diagramLabel: 'SOAI-instrumentpanelen',
-    dashboardAlt: 'Skärmbild av SOAI:s driftöversikt, som visar enhetsstatus, SKU-räkningens noggrannhet och en logg över senaste AI-åtgärder',
-    dashboardCaption: 'Skärmbild av SOAI-systemet med demonstrationsdata.',
+    dashboardAlt: 'Skärminspelning som visar SOAI-systemet: driftöversikten, enhetshantering, SKU-räkning och förpackningsanalys',
+    dashboardCaption: 'Genomgångsvideo av SOAI-systemet med demonstrationsdata.',
   },
 };
 
@@ -54,7 +54,7 @@ export const Hero: React.FC<HeroProps> = async () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(232,84,30,0.12),transparent_40%)]" />
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-        <div className="lg:col-span-7 space-y-6 text-left">
+        <div className="lg:col-span-6 space-y-6 text-left">
           <div className="inline-block">
             <span className="font-mono bg-orange/15 text-orange font-semibold text-caption tracking-wider uppercase px-3 py-1.5 rounded-full">
               {t.eyebrow}
@@ -91,41 +91,23 @@ export const Hero: React.FC<HeroProps> = async () => {
         </div>
 
         {/*
-          Right column: real SOAI dashboard screenshot. The floating chat widget is
+          Right column: silent walkthrough video of the SOAI system, shown
+          uncropped at its native 16:10 aspect ratio. The floating chat widget is
           fixed to the bottom-right of the viewport on every page, so on short mobile
           screens it can land on top of whatever content is at the bottom of the
-          initial (unscrolled) view. The extra top margin below pushes this screenshot
+          initial (unscrolled) view. The extra top margin below pushes this visual
           block down far enough that the widget's circle sits over empty hero
-          background instead of the image — the image itself remains fully visible
+          background instead of the video — the video itself remains fully visible
           once the visitor scrolls a little further.
         */}
-        <div className="lg:col-span-5 flex justify-center mt-20 sm:mt-0">
-          <div className="relative w-full max-w-[480px] bg-paper/5 rounded-2xl border border-white/10 p-4 shadow-2xl backdrop-blur-sm">
+        <div className="lg:col-span-6 flex justify-center mt-28 sm:mt-0">
+          <div className="relative w-full max-w-[720px] bg-paper/5 rounded-2xl border border-white/10 p-4 shadow-2xl backdrop-blur-sm">
             <p className="text-caption font-mono uppercase tracking-wider text-white/60 mb-3">
               {t.diagramLabel}
             </p>
 
-            {/*
-              Tighter crop: full-resolution dashboard.png is 3200x2000, but this column
-              is only ~480px wide, so showing the whole frame shrinks every number and
-              label past legibility. Instead we crop to the header + KPI-card band (the
-              part of the dashboard that actually carries meaning at this size) using a
-              fixed-aspect, overflow-hidden viewport plus an oversized/offset inner
-              image. Percentages (not pixel coordinates) are used so the crop stays
-              anchored to the same region even if the regenerated screenshot's content
-              shifts slightly.
-            */}
-            <div className="relative w-full aspect-[39/20] rounded-xl border border-white/10 shadow-2xl overflow-hidden bg-ink-800">
-              <div className="absolute" style={{ width: '222%', height: '270%', left: '-122%', top: '-27%' }}>
-                <Image
-                  src="/media/soai/dashboard.png"
-                  alt={t.dashboardAlt}
-                  fill
-                  sizes="(min-width: 1024px) 1067px, 222vw"
-                  className="object-cover"
-                  priority
-                />
-              </div>
+            <div className="relative w-full aspect-[16/10] rounded-xl border border-white/10 shadow-2xl overflow-hidden bg-ink-800">
+              <HeroVideo alt={t.dashboardAlt} />
             </div>
             <p className="mt-2 text-caption font-mono text-white/60">{t.dashboardCaption}</p>
           </div>
