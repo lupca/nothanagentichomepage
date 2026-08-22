@@ -109,19 +109,19 @@ export const Header: React.FC<HeaderProps> = () => {
           <Logo variant="negative" />
         </a>
 
-        <nav aria-label="Primary" className="hidden lg:flex items-center gap-5 xl:gap-7">
+        <nav aria-label="Primary" className="hidden xl:flex items-center gap-5 xl:gap-7">
           {t.navLinks.map((link) => (
             <a
               key={link.href}
               href={hrefFor(link.href)}
-              className="text-body font-semibold text-white/80 hover:text-white transition-colors min-h-[44px] flex items-center"
+              className="text-body font-semibold text-white/80 hover:text-white transition-colors min-h-[44px] flex items-center whitespace-nowrap"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-4 xl:gap-6 shrink-0">
+        <div className="hidden xl:flex items-center gap-4 xl:gap-6 shrink-0">
           <LocaleSwitcher />
           <a
             href={`/${locale}#lead-capture`}
@@ -137,7 +137,7 @@ export const Header: React.FC<HeaderProps> = () => {
           aria-expanded={menuOpen}
           aria-controls="mobile-nav"
           aria-label={menuOpen ? t.menuOpen : t.menuClosed}
-          className="lg:hidden w-11 h-11 flex items-center justify-center text-white shrink-0"
+          className="xl:hidden w-11 h-11 flex items-center justify-center text-white shrink-0"
         >
           {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -147,7 +147,7 @@ export const Header: React.FC<HeaderProps> = () => {
         <nav
           id="mobile-nav"
           aria-label="Mobile navigation"
-          className="lg:hidden border-t border-white/10 px-6 py-4 space-y-1 bg-ink"
+          className="xl:hidden border-t border-white/10 px-6 py-4 space-y-1 bg-ink"
         >
           {t.navLinks.map((link) => (
             <a

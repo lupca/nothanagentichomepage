@@ -90,25 +90,44 @@ export const Hero: React.FC<HeroProps> = async () => {
           </div>
         </div>
 
-        {/* Right column: real SOAI dashboard screenshot */}
-        <div className="lg:col-span-5 flex justify-center">
+        {/*
+          Right column: real SOAI dashboard screenshot. The floating chat widget is
+          fixed to the bottom-right of the viewport on every page, so on short mobile
+          screens it can land on top of whatever content is at the bottom of the
+          initial (unscrolled) view. The extra top margin below pushes this screenshot
+          block down far enough that the widget's circle sits over empty hero
+          background instead of the image — the image itself remains fully visible
+          once the visitor scrolls a little further.
+        */}
+        <div className="lg:col-span-5 flex justify-center mt-20 sm:mt-0">
           <div className="relative w-full max-w-[480px] bg-paper/5 rounded-2xl border border-white/10 p-4 shadow-2xl backdrop-blur-sm">
-            <p className="text-caption font-mono uppercase tracking-wider text-white/40 mb-3">
+            <p className="text-caption font-mono uppercase tracking-wider text-white/60 mb-3">
               {t.diagramLabel}
             </p>
 
-            <div className="rounded-xl border border-white/10 shadow-2xl overflow-hidden bg-ink-800">
-              <Image
-                src="/media/soai/dashboard.png"
-                alt={t.dashboardAlt}
-                width={3200}
-                height={2000}
-                sizes="(min-width: 1024px) 480px, 100vw"
-                className="w-full h-auto max-w-full block"
-                priority
-              />
+            {/*
+              Tighter crop: full-resolution dashboard.png is 3200x2000, but this column
+              is only ~480px wide, so showing the whole frame shrinks every number and
+              label past legibility. Instead we crop to the header + KPI-card band (the
+              part of the dashboard that actually carries meaning at this size) using a
+              fixed-aspect, overflow-hidden viewport plus an oversized/offset inner
+              image. Percentages (not pixel coordinates) are used so the crop stays
+              anchored to the same region even if the regenerated screenshot's content
+              shifts slightly.
+            */}
+            <div className="relative w-full aspect-[39/20] rounded-xl border border-white/10 shadow-2xl overflow-hidden bg-ink-800">
+              <div className="absolute" style={{ width: '222%', height: '270%', left: '-122%', top: '-27%' }}>
+                <Image
+                  src="/media/soai/dashboard.png"
+                  alt={t.dashboardAlt}
+                  fill
+                  sizes="(min-width: 1024px) 1067px, 222vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
             </div>
-            <p className="mt-2 text-caption font-mono text-white/40">{t.dashboardCaption}</p>
+            <p className="mt-2 text-caption font-mono text-white/60">{t.dashboardCaption}</p>
           </div>
         </div>
       </div>

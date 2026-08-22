@@ -419,6 +419,17 @@ export default async function SoaiPage({
   const locale = (rawLocale === 'vi' ? 'vi' : 'en') as 'vi' | 'en';
   const t = pick(rawLocale);
 
+  // Pull specific screenshots out of the flat list so each one can sit next to the
+  // argument it proves, instead of dumping all six into one gallery grid.
+  const findShot = (filename: string) => t.screenshots.find((s) => s.src.endsWith(filename));
+  const packingShot = findShot('packing.png');
+  const skuCountingDetailShot = findShot('sku-counting-detail.png');
+  const devicesShot = findShot('devices.png');
+  const placedFilenames = ['packing.png', 'sku-counting-detail.png', 'devices.png'];
+  const remainingShots = t.screenshots.filter(
+    (s) => !placedFilenames.some((name) => s.src.endsWith(name))
+  );
+
   return (
     <>
       <Header />
@@ -480,6 +491,37 @@ export default async function SoaiPage({
                         <p className="text-body text-navy-400 leading-relaxed">{p.dataFlow}</p>
                       </div>
                     </div>
+
+                    {idx === 0 && packingShot && skuCountingDetailShot && (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <figure className="space-y-1.5">
+                          <div className="border border-line rounded-lg overflow-hidden shadow-sm bg-white">
+                            <Image
+                              src={packingShot.src}
+                              alt={packingShot.alt}
+                              width={packingShot.width}
+                              height={packingShot.height}
+                              sizes="(min-width: 768px) 25vw, 100vw"
+                              className="w-full h-auto max-w-full block"
+                            />
+                          </div>
+                          <figcaption className="text-caption font-mono text-navy-400">{packingShot.caption}</figcaption>
+                        </figure>
+                        <figure className="space-y-1.5">
+                          <div className="border border-line rounded-lg overflow-hidden shadow-sm bg-white">
+                            <Image
+                              src={skuCountingDetailShot.src}
+                              alt={skuCountingDetailShot.alt}
+                              width={skuCountingDetailShot.width}
+                              height={skuCountingDetailShot.height}
+                              sizes="(min-width: 768px) 25vw, 100vw"
+                              className="w-full h-auto max-w-full block"
+                            />
+                          </div>
+                          <figcaption className="text-caption font-mono text-navy-400">{skuCountingDetailShot.caption}</figcaption>
+                        </figure>
+                      </div>
+                    )}
                   </div>
                 );
               })}
@@ -495,31 +537,49 @@ export default async function SoaiPage({
               <p className="text-body text-navy-400 leading-relaxed">{t.modulesNote}</p>
             </div>
 
-            <div className="overflow-x-auto border border-line bg-white">
-              <table className="w-full min-w-[640px] text-body">
-                <thead>
-                  <tr>
-                    <th className="text-left font-mono text-caption uppercase tracking-wider text-navy-400 font-medium px-4 py-3 border-b border-line bg-paper">
-                      {t.moduleCol}
-                    </th>
-                    <th className="text-left font-mono text-caption uppercase tracking-wider text-navy-400 font-medium px-4 py-3 border-b border-line bg-paper">
-                      {t.capabilityCol}
-                    </th>
-                    <th className="text-left font-mono text-caption uppercase tracking-wider text-navy-400 font-medium px-4 py-3 border-b border-line bg-paper whitespace-nowrap">
-                      {t.stackCol}
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {t.modules.map((m, idx) => (
-                    <tr key={idx} className="border-b border-line last:border-b-0">
-                      <td className="px-4 py-3.5 font-semibold text-ink align-top whitespace-nowrap">{m.name}</td>
-                      <td className="px-4 py-3.5 text-navy-400 align-top">{m.capability}</td>
-                      <td className="px-4 py-3.5 font-mono text-caption text-navy-400 align-top whitespace-nowrap">{m.stack}</td>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+              <div className="lg:col-span-2 overflow-x-auto border border-line bg-white">
+                <table className="w-full min-w-[640px] text-body">
+                  <thead>
+                    <tr>
+                      <th className="text-left font-mono text-caption uppercase tracking-wider text-navy-400 font-medium px-4 py-3 border-b border-line bg-paper">
+                        {t.moduleCol}
+                      </th>
+                      <th className="text-left font-mono text-caption uppercase tracking-wider text-navy-400 font-medium px-4 py-3 border-b border-line bg-paper">
+                        {t.capabilityCol}
+                      </th>
+                      <th className="text-left font-mono text-caption uppercase tracking-wider text-navy-400 font-medium px-4 py-3 border-b border-line bg-paper whitespace-nowrap">
+                        {t.stackCol}
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {t.modules.map((m, idx) => (
+                      <tr key={idx} className="border-b border-line last:border-b-0">
+                        <td className="px-4 py-3.5 font-semibold text-ink align-top whitespace-nowrap">{m.name}</td>
+                        <td className="px-4 py-3.5 text-navy-400 align-top">{m.capability}</td>
+                        <td className="px-4 py-3.5 font-mono text-caption text-navy-400 align-top whitespace-nowrap">{m.stack}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              {devicesShot && (
+                <figure className="space-y-1.5">
+                  <div className="border border-line rounded-lg overflow-hidden shadow-sm bg-white">
+                    <Image
+                      src={devicesShot.src}
+                      alt={devicesShot.alt}
+                      width={devicesShot.width}
+                      height={devicesShot.height}
+                      sizes="(min-width: 1024px) 33vw, 100vw"
+                      className="w-full h-auto max-w-full block"
+                    />
+                  </div>
+                  <figcaption className="text-caption font-mono text-navy-400">{devicesShot.caption}</figcaption>
+                </figure>
+              )}
             </div>
           </div>
         </section>
@@ -532,7 +592,7 @@ export default async function SoaiPage({
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
-              {t.screenshots.map((s, idx) => (
+              {remainingShots.map((s, idx) => (
                 <figure key={idx} className="space-y-2">
                   <div className="border border-line rounded-lg overflow-hidden shadow-sm bg-paper">
                     <Image
@@ -558,6 +618,7 @@ export default async function SoaiPage({
                   playsInline
                   controls
                   preload="metadata"
+                  poster="/media/soai/walkthrough-poster.jpg"
                   className="w-full h-auto max-w-full block"
                 >
                   <source src="/media/soai/walkthrough-v3.webm" type="video/webm" />
