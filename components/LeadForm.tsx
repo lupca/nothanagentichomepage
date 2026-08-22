@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
+import { useLocale } from 'next-intl';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -8,24 +9,75 @@ import { Mail, Building, Phone, CheckCircle2, Loader2 } from 'lucide-react';
 
 const phoneRegex = /^(0|\+84)(3|5|7|8|9)[0-9]{8}$/;
 
-const leadSchema = z.object({
-  email: z.string()
-    .min(1, 'Vui lòng nhập email công việc')
-    .email('Định dạng email công việc không hợp lệ'),
-  company: z.string()
-    .min(2, 'Tên công ty phải có ít nhất 2 ký tự')
-    .trim(),
-  phone: z.string()
-    .min(1, 'Vui lòng nhập số điện thoại')
-    .regex(phoneRegex, 'Số điện thoại Việt Nam không hợp lệ (ví dụ: 0987654321)'),
-});
+const content = {
+  vi: {
+    heading: 'Trao đổi kỹ thuật hoặc nhận hồ sơ năng lực',
+    sub: 'Để lại thông tin công việc, đội kỹ thuật sẽ liên hệ trực tiếp — cho cả đối tác thiết bị và doanh nghiệp có bài toán cụ thể.',
+    emailLabel: 'Email công việc *',
+    emailPlaceholder: 'name@company.com',
+    companyLabel: 'Tên doanh nghiệp / công ty *',
+    companyPlaceholder: 'Công ty TNHH Giải pháp...',
+    phoneLabel: 'Số điện thoại liên hệ *',
+    phonePlaceholder: '0987654321',
+    submit: 'Gửi yêu cầu trao đổi',
+    submitting: 'Đang gửi thông tin...',
+    successTitle: 'Đăng Ký Thành Công!',
+    successBody: 'Cảm ơn bạn đã quan tâm. Chúng tôi đã nhận được thông tin liên hệ và sẽ phản hồi qua email công việc trong thời gian sớm nhất.',
+    resend: 'Gửi lại yêu cầu khác',
+    errors: {
+      emailRequired: 'Vui lòng nhập email công việc',
+      emailInvalid: 'Định dạng email công việc không hợp lệ',
+      companyMin: 'Tên công ty phải có ít nhất 2 ký tự',
+      phoneRequired: 'Vui lòng nhập số điện thoại',
+      phoneInvalid: 'Số điện thoại Việt Nam không hợp lệ (ví dụ: 0987654321)',
+    },
+  },
+  en: {
+    heading: 'Talk to our engineers or get the capability profile',
+    sub: 'Leave your work details and our engineering team will reach out directly — for hardware partners and businesses with a concrete problem alike.',
+    emailLabel: 'Work email *',
+    emailPlaceholder: 'name@company.com',
+    companyLabel: 'Company name *',
+    companyPlaceholder: 'Your company Ltd...',
+    phoneLabel: 'Contact phone number *',
+    phonePlaceholder: '0987654321',
+    submit: 'Send request',
+    submitting: 'Sending...',
+    successTitle: 'Request sent!',
+    successBody: 'Thanks for reaching out. We’ve received your details and will reply to your work email as soon as possible.',
+    resend: 'Send another request',
+    errors: {
+      emailRequired: 'Please enter your work email',
+      emailInvalid: 'Not a valid email address',
+      companyMin: 'Company name must be at least 2 characters',
+      phoneRequired: 'Please enter a phone number',
+      phoneInvalid: 'Not a valid Vietnamese phone number (e.g. 0987654321)',
+    },
+  },
+};
 
-export type LeadFormData = z.infer<typeof leadSchema>;
+function pick(locale: string) {
+  return content[locale as 'vi' | 'en'] ?? content.en;
+}
 
 export interface LeadFormProps {}
 
 export const LeadForm: React.FC<LeadFormProps> = () => {
+  const locale = useLocale();
+  const t = pick(locale);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+
+  const leadSchema = useMemo(
+    () =>
+      z.object({
+        email: z.string().min(1, t.errors.emailRequired).email(t.errors.emailInvalid),
+        company: z.string().min(2, t.errors.companyMin).trim(),
+        phone: z.string().min(1, t.errors.phoneRequired).regex(phoneRegex, t.errors.phoneInvalid),
+      }),
+    [t]
+  );
+
+  type LeadFormData = z.infer<typeof leadSchema>;
 
   const {
     register,
@@ -34,15 +86,10 @@ export const LeadForm: React.FC<LeadFormProps> = () => {
     reset,
   } = useForm<LeadFormData>({
     resolver: zodResolver(leadSchema),
-    defaultValues: {
-      email: '',
-      company: '',
-      phone: '',
-    }
+    defaultValues: { email: '', company: '', phone: '' },
   });
 
   const onSubmit = async (data: LeadFormData) => {
-    // Simulate API post submission
     await new Promise((resolve) => setTimeout(resolve, 1000));
     console.log('Lead captured successfully:', data);
     setIsSubmitted(true);
@@ -50,65 +97,48 @@ export const LeadForm: React.FC<LeadFormProps> = () => {
   };
 
   return (
-    <section 
+    <section
       className="bg-ink text-white py-20 px-6 md:px-12 lg:px-24 relative overflow-hidden"
       id="lead-capture"
-      aria-label="Liên hệ hợp tác"
+      aria-label="Contact"
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(232,84,30,0.1),transparent_50%)]" />
 
       <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-        {/* Left Column: Heading Copy */}
         <div className="lg:col-span-6 space-y-6 text-left">
           <h2 className="font-display text-2xl md:text-h2 font-bold text-white leading-tight">
-            Trao đổi kỹ thuật hoặc nhận hồ sơ năng lực
+            {t.heading}
           </h2>
-          <p className="text-body text-paper/80 leading-relaxed">
-            Để lại thông tin công việc, đội kỹ thuật sẽ liên hệ trực tiếp — cho cả đối tác thiết bị và doanh nghiệp có bài toán cụ thể.
-          </p>
+          <p className="text-body text-paper/80 leading-relaxed">{t.sub}</p>
         </div>
 
-        {/* Right Column: Dynamic Form / Success State */}
         <div className="lg:col-span-6 bg-white text-ink p-8 rounded-3xl shadow-2xl border border-white/10 w-full text-left">
           {isSubmitted ? (
-            <div 
-              className="text-center py-8 space-y-4"
-              role="alert"
-            >
+            <div className="text-center py-8 space-y-4" role="alert">
               <div className="inline-flex p-3 bg-state-ok/10 text-state-ok rounded-full">
                 <CheckCircle2 className="w-12 h-12" />
               </div>
-              <h3 className="text-h3 font-bold text-ink">Đăng Ký Thành Công!</h3>
-              <p className="text-body text-navy-400">
-                Cảm ơn bạn đã quan tâm. Chúng tôi đã nhận được thông tin liên hệ và sẽ phản hồi qua email công việc trong thời gian sớm nhất.
-              </p>
+              <h3 className="text-h3 font-bold text-ink">{t.successTitle}</h3>
+              <p className="text-body text-navy-400">{t.successBody}</p>
               <button
                 type="button"
                 onClick={() => setIsSubmitted(false)}
                 className="text-caption font-bold text-navy-400 hover:text-ink hover:underline pt-2 block mx-auto min-h-[44px]"
               >
-                Gửi lại yêu cầu khác
+                {t.resend}
               </button>
             </div>
           ) : (
-            <form 
-              onSubmit={handleSubmit(onSubmit)} 
-              noValidate 
-              className="space-y-5"
-            >
-              {/* Work Email input */}
+            <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
               <div className="space-y-1.5">
-                <label 
-                  htmlFor="email" 
-                  className="block text-caption font-bold text-ink uppercase flex items-center gap-2"
-                >
+                <label htmlFor="email" className="block text-caption font-bold text-ink uppercase flex items-center gap-2">
                   <Mail className="w-4 h-4 text-navy-400" />
-                  Email công việc *
+                  {t.emailLabel}
                 </label>
                 <input
                   type="email"
                   id="email"
-                  placeholder="name@company.com"
+                  placeholder={t.emailPlaceholder}
                   {...register('email')}
                   className={`w-full px-4 py-3 rounded-lg border bg-paper text-ink focus:outline-none focus:ring-2 focus:ring-orange/50 text-body transition-shadow ${
                     errors.email ? 'border-state-stop focus:ring-state-stop/50' : 'border-navy-400/20'
@@ -122,19 +152,15 @@ export const LeadForm: React.FC<LeadFormProps> = () => {
                 )}
               </div>
 
-              {/* Company Name input */}
               <div className="space-y-1.5">
-                <label 
-                  htmlFor="company" 
-                  className="block text-caption font-bold text-ink uppercase flex items-center gap-2"
-                >
+                <label htmlFor="company" className="block text-caption font-bold text-ink uppercase flex items-center gap-2">
                   <Building className="w-4 h-4 text-navy-400" />
-                  Tên doanh nghiệp / công ty *
+                  {t.companyLabel}
                 </label>
                 <input
                   type="text"
                   id="company"
-                  placeholder="Công ty TNHH Giải pháp..."
+                  placeholder={t.companyPlaceholder}
                   {...register('company')}
                   className={`w-full px-4 py-3 rounded-lg border bg-paper text-ink focus:outline-none focus:ring-2 focus:ring-orange/50 text-body transition-shadow ${
                     errors.company ? 'border-state-stop focus:ring-state-stop/50' : 'border-navy-400/20'
@@ -148,19 +174,15 @@ export const LeadForm: React.FC<LeadFormProps> = () => {
                 )}
               </div>
 
-              {/* Phone input */}
               <div className="space-y-1.5">
-                <label 
-                  htmlFor="phone" 
-                  className="block text-caption font-bold text-ink uppercase flex items-center gap-2"
-                >
+                <label htmlFor="phone" className="block text-caption font-bold text-ink uppercase flex items-center gap-2">
                   <Phone className="w-4 h-4 text-navy-400" />
-                  Số điện thoại liên hệ *
+                  {t.phoneLabel}
                 </label>
                 <input
                   type="tel"
                   id="phone"
-                  placeholder="0987654321"
+                  placeholder={t.phonePlaceholder}
                   {...register('phone')}
                   className={`w-full px-4 py-3 rounded-lg border bg-paper text-ink focus:outline-none focus:ring-2 focus:ring-orange/50 text-body transition-shadow ${
                     errors.phone ? 'border-state-stop focus:ring-state-stop/50' : 'border-navy-400/20'
@@ -174,7 +196,6 @@ export const LeadForm: React.FC<LeadFormProps> = () => {
                 )}
               </div>
 
-              {/* Submit button - Safety Orange bg, Dark text for contrast compliance */}
               <button
                 type="submit"
                 disabled={isSubmitting}
@@ -183,10 +204,10 @@ export const LeadForm: React.FC<LeadFormProps> = () => {
                 {isSubmitting ? (
                   <>
                     <Loader2 className="w-5 h-5 animate-spin mr-2" />
-                    Đang gửi thông tin...
+                    {t.submitting}
                   </>
                 ) : (
-                  'Gửi yêu cầu trao đổi'
+                  t.submit
                 )}
               </button>
             </form>

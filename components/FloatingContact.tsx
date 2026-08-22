@@ -1,11 +1,24 @@
 'use client';
 
 import React from 'react';
+import { useLocale } from 'next-intl';
 import { MessageCircle } from 'lucide-react';
+
+const content = {
+  vi: { channelsLabel: 'Kênh hỗ trợ trực tuyến', support: 'Luôn có chuyên gia trực chat hỗ trợ 365 ngày' },
+  en: { channelsLabel: 'Talk to us online', support: 'A specialist is available in chat 365 days a year' },
+  sv: { channelsLabel: 'Kontaktkanaler online', support: 'En specialist finns i chatten 365 dagar om året' },
+};
+
+function pick(locale: string) {
+  return content[locale as 'vi' | 'en' | 'sv'] ?? content.en;
+}
 
 export interface FloatingContactProps {}
 
 export const FloatingContact: React.FC<FloatingContactProps> = () => {
+  const locale = useLocale();
+  const t = pick(locale);
   return (
     <div
       data-testid="floating-contact"
@@ -21,7 +34,7 @@ export const FloatingContact: React.FC<FloatingContactProps> = () => {
           transition-all duration-200 origin-bottom-right"
       >
         <p className="text-caption font-bold text-navy-400 uppercase tracking-wide">
-          Kênh hỗ trợ trực tuyến
+          {t.channelsLabel}
         </p>
         <a
           href="https://zalo.me/nothanagentic"
@@ -50,9 +63,9 @@ export const FloatingContact: React.FC<FloatingContactProps> = () => {
       {/* Always-visible trigger: icon-only on mobile to avoid covering content, full pill from sm breakpoint up */}
       <div className="flex items-center gap-3 bg-ink text-white rounded-full shadow-2xl border border-white/10 pl-0 sm:pl-4 pr-0 sm:pr-2 py-0 sm:py-2 cursor-default">
         <span className="hidden sm:inline text-caption font-semibold max-w-[160px] leading-snug">
-          Luôn có chuyên gia trực chat hỗ trợ 365 ngày
+          {t.support}
         </span>
-        <span className="sr-only sm:hidden">Luôn có chuyên gia trực chat hỗ trợ 365 ngày</span>
+        <span className="sr-only sm:hidden">{t.support}</span>
         <span className="w-11 h-11 rounded-full bg-orange flex items-center justify-center shrink-0 animate-pulse">
           <MessageCircle className="w-5 h-5 text-white" />
         </span>

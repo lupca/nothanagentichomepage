@@ -23,7 +23,7 @@ const jsonLd = {
   name: 'Nỏ Thần Agentic',
   alternateName: 'No Than Agentic',
   url: 'https://nothanagentic.vn',
-  logo: 'https://nothanagentic.vn/icon.jpg',
+  logo: 'https://nothanagentic.vn/icon.png',
   description:
     'Nỏ Thần Agentic xây và triển khai giải pháp trọn gói phần cứng và phần mềm cho giám sát sản xuất, an toàn lao động và kiểm soát hàng hoá tại doanh nghiệp Việt Nam, với Agentic AI làm lõi.',
   address: {
