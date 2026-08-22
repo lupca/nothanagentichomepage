@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { ShoppingBag, BadgeCheck, ArrowUpRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -28,6 +29,14 @@ function StatusTag({ status, locale }: { status: Status; locale: 'vi' | 'en' }) 
   );
 }
 
+interface Screenshot {
+  src: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
+}
+
 const content = {
   vi: {
     metaTitle: 'VOMA.VN — Nền tảng bán hàng đa kênh và quản trị toàn diện',
@@ -37,6 +46,24 @@ const content = {
     h1: 'Nền tảng bán hàng đa kênh và quản trị toàn diện',
     intro:
       'VOMA là nền tảng phần mềm quản trị bán hàng đa kênh: hoá đơn điện tử, bán hàng online (các sàn như TikTok, Shopee) và offline, kế toán, và quản lý kho bãi trong một hệ thống. VOMA được một đội kỹ thuật riêng trong Nỏ Thần Agentic phụ trách và phát triển trực tiếp.',
+    screenshotsEyebrow: 'Giao diện thật',
+    screenshotsTitle: 'Ảnh chụp trực tiếp từ nền tảng VOMA',
+    screenshots: [
+      {
+        src: '/media/voma/channel.png',
+        alt: 'Màn hình Kênh bán hàng của VOMA, hiển thị trạng thái kết nối và uỷ quyền với Shopee Vietnam, TikTok Shop và Lazada Vietnam',
+        caption: 'Ảnh chụp hệ thống VOMA với dữ liệu minh hoạ.',
+        width: 1829,
+        height: 923,
+      },
+      {
+        src: '/media/voma/order.png',
+        alt: 'Màn hình Quản lý đơn hàng của VOMA, liệt kê đơn hàng theo kênh bán, trạng thái và tổng tiền',
+        caption: 'Ảnh chụp hệ thống VOMA với dữ liệu minh hoạ.',
+        width: 1847,
+        height: 920,
+      },
+    ] satisfies Screenshot[],
     trademarkEyebrow: 'Tài sản pháp lý',
     trademarkTitle: 'Đã đăng ký bảo hộ nhãn hiệu độc quyền tại Việt Nam',
     trademarkBody:
@@ -61,6 +88,24 @@ const content = {
     h1: 'A multi-channel commerce and management platform',
     intro:
       'VOMA is a commerce management platform covering e-invoicing, online selling (marketplaces like TikTok and Shopee) and offline selling, accounting, and warehouse management in one system. It is owned and developed by a dedicated team within Nỏ Thần Agentic.',
+    screenshotsEyebrow: 'Real UI',
+    screenshotsTitle: 'Screenshots straight from the VOMA platform',
+    screenshots: [
+      {
+        src: '/media/voma/channel.png',
+        alt: 'VOMA sales channels screen, showing connection and authorization status with Shopee Vietnam, TikTok Shop, and Lazada Vietnam',
+        caption: 'VOMA system screenshot with demonstration data.',
+        width: 1829,
+        height: 923,
+      },
+      {
+        src: '/media/voma/order.png',
+        alt: 'VOMA order management screen, listing orders by sales channel, status, and total amount',
+        caption: 'VOMA system screenshot with demonstration data.',
+        width: 1847,
+        height: 920,
+      },
+    ] satisfies Screenshot[],
     trademarkEyebrow: 'Legal asset',
     trademarkTitle: 'Registered trademark protection in Vietnam',
     trademarkBody:
@@ -113,6 +158,33 @@ export default async function VomaPage({
             </span>
             <h1 className="font-display text-h1 font-extrabold text-white">{t.h1}</h1>
             <p className="text-body text-white/80 leading-relaxed max-w-2xl">{t.intro}</p>
+          </div>
+        </section>
+
+        <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.screenshotsTitle}>
+          <div className="max-w-5xl mx-auto space-y-8">
+            <div className="max-w-2xl space-y-4">
+              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.screenshotsEyebrow}</span>
+              <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.screenshotsTitle}</h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+              {t.screenshots.map((s, idx) => (
+                <figure key={idx} className="space-y-2">
+                  <div className="border border-line rounded-lg overflow-hidden shadow-sm bg-paper">
+                    <Image
+                      src={s.src}
+                      alt={s.alt}
+                      width={s.width}
+                      height={s.height}
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      className="w-full h-auto max-w-full block"
+                    />
+                  </div>
+                  <figcaption className="text-caption font-mono text-navy-400">{s.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
         </section>
 

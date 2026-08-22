@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   ScanEye,
   PackageSearch,
@@ -50,6 +51,14 @@ interface Module {
   name: string;
   capability: string;
   stack: string;
+}
+
+interface Screenshot {
+  src: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
 }
 
 interface Phase {
@@ -141,6 +150,55 @@ const content = {
         stack: 'FFmpeg',
       },
     ] satisfies Module[],
+    screenshotsEyebrow: 'Giao diện thật, không phải mockup',
+    screenshotsTitle: 'Ảnh chụp trực tiếp từ hệ thống SOAI',
+    demoDataCaption: 'Ảnh chụp hệ thống SOAI với dữ liệu minh hoạ.',
+    screenshots: [
+      {
+        src: '/media/soai/packing.png',
+        alt: 'Màn hình Phân tích video đóng gói SOAI, cho phép tải video trạm đóng gói lên và xem lịch sử các phiên đóng hàng theo mã đơn',
+        caption: 'Ảnh chụp hệ thống SOAI với dữ liệu minh hoạ.',
+        width: 3200,
+        height: 2000,
+      },
+      {
+        src: '/media/soai/sku-counting.png',
+        alt: 'Màn hình Đếm SKU trên ảnh SOAI, hiển thị độ chính xác trung bình 94%, độ trễ suy luận 48ms và khu vực tải ảnh kiểm kê lên',
+        caption: 'Ảnh chụp hệ thống SOAI với dữ liệu minh hoạ.',
+        width: 3200,
+        height: 2000,
+      },
+      {
+        src: '/media/soai/sku-counting-detail.png',
+        alt: 'Kết quả đếm SKU của SOAI đối chiếu ảnh gốc với ảnh đã gắn khung nhận diện YOLOv8 + SAHI, đếm được 41 vật thể',
+        caption: 'Ảnh chụp hệ thống SOAI với dữ liệu minh hoạ.',
+        width: 3200,
+        height: 2000,
+      },
+      {
+        src: '/media/soai/devices.png',
+        alt: 'Màn hình Quản lý thiết bị SOAI, liệt kê camera Axis và Hikvision đã đăng ký kèm trạng thái kết nối',
+        caption: 'Ảnh chụp hệ thống SOAI với dữ liệu minh hoạ.',
+        width: 3200,
+        height: 2000,
+      },
+      {
+        src: '/media/soai/liveview.png',
+        alt: 'Màn hình Live View & Snapshot SOAI, xem trực tiếp một camera và lịch chụp ảnh tự động định kỳ',
+        caption: 'Ảnh chụp hệ thống SOAI với dữ liệu minh hoạ.',
+        width: 3200,
+        height: 2000,
+      },
+      {
+        src: '/media/soai/export.png',
+        alt: 'Màn hình Ghi & trích xuất video SOAI, liệt kê các tác vụ xuất video FFmpeg theo khoảng thời gian và trạng thái xử lý',
+        caption: 'Ảnh chụp hệ thống SOAI với dữ liệu minh hoạ.',
+        width: 3200,
+        height: 2000,
+      },
+    ] satisfies Screenshot[],
+    videoTitle: 'Xem toàn bộ luồng thao tác',
+    videoCaption: 'Video minh hoạ thao tác trên hệ thống SOAI, sử dụng dữ liệu minh hoạ.',
     roadmapEyebrow: 'Lộ trình 3 giai đoạn',
     roadmapTitle: 'Từ giám sát hàng hoá đến camera hãng',
     phases: [
@@ -255,6 +313,55 @@ const content = {
         stack: 'FFmpeg',
       },
     ] satisfies Module[],
+    screenshotsEyebrow: 'Real UI, not a mockup',
+    screenshotsTitle: 'Screenshots straight from the SOAI system',
+    demoDataCaption: 'SOAI system screenshot with demonstration data.',
+    screenshots: [
+      {
+        src: '/media/soai/packing.png',
+        alt: 'SOAI packing video analysis screen, letting an operator upload packing-station footage and browse past packing sessions by order code',
+        caption: 'SOAI system screenshot with demonstration data.',
+        width: 3200,
+        height: 2000,
+      },
+      {
+        src: '/media/soai/sku-counting.png',
+        alt: 'SOAI SKU image counting screen, showing 94% average accuracy, 48ms inference latency, and the snapshot upload area',
+        caption: 'SOAI system screenshot with demonstration data.',
+        width: 3200,
+        height: 2000,
+      },
+      {
+        src: '/media/soai/sku-counting-detail.png',
+        alt: 'SOAI SKU counting result comparing the raw snapshot against the YOLOv8 + SAHI annotated output, counting 41 items',
+        caption: 'SOAI system screenshot with demonstration data.',
+        width: 3200,
+        height: 2000,
+      },
+      {
+        src: '/media/soai/devices.png',
+        alt: 'SOAI device management screen, listing registered Axis and Hikvision cameras with their connection status',
+        caption: 'SOAI system screenshot with demonstration data.',
+        width: 3200,
+        height: 2000,
+      },
+      {
+        src: '/media/soai/liveview.png',
+        alt: 'SOAI live view and snapshot screen, watching a single camera feed alongside the periodic capture schedule',
+        caption: 'SOAI system screenshot with demonstration data.',
+        width: 3200,
+        height: 2000,
+      },
+      {
+        src: '/media/soai/export.png',
+        alt: 'SOAI video recording and export screen, listing FFmpeg clip export jobs by time range and processing status',
+        caption: 'SOAI system screenshot with demonstration data.',
+        width: 3200,
+        height: 2000,
+      },
+    ] satisfies Screenshot[],
+    videoTitle: 'Watch the full workflow',
+    videoCaption: 'SOAI system walkthrough video, using demonstration data.',
     roadmapEyebrow: 'Three-phase roadmap',
     roadmapTitle: 'From goods monitoring to brand-name cameras',
     phases: [
@@ -413,6 +520,50 @@ export default async function SoaiPage({
                   ))}
                 </tbody>
               </table>
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.screenshotsTitle}>
+          <div className="max-w-7xl mx-auto space-y-8">
+            <div className="max-w-2xl space-y-4">
+              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.screenshotsEyebrow}</span>
+              <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.screenshotsTitle}</h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+              {t.screenshots.map((s, idx) => (
+                <figure key={idx} className="space-y-2">
+                  <div className="border border-line rounded-lg overflow-hidden shadow-sm bg-paper">
+                    <Image
+                      src={s.src}
+                      alt={s.alt}
+                      width={s.width}
+                      height={s.height}
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      className="w-full h-auto max-w-full block"
+                    />
+                  </div>
+                  <figcaption className="text-caption font-mono text-navy-400">{s.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+
+            <div className="space-y-3 pt-4">
+              <h3 className="text-h3 font-bold text-ink">{t.videoTitle}</h3>
+              <div className="border border-line rounded-lg overflow-hidden shadow-sm bg-ink">
+                <video
+                  muted
+                  loop
+                  playsInline
+                  controls
+                  preload="metadata"
+                  className="w-full h-auto max-w-full block"
+                >
+                  <source src="/media/soai/walkthrough-v3.webm" type="video/webm" />
+                </video>
+              </div>
+              <p className="text-caption font-mono text-navy-400">{t.videoCaption}</p>
             </div>
           </div>
         </section>

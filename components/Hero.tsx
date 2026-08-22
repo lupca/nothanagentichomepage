@@ -1,6 +1,7 @@
 import React from 'react';
+import Image from 'next/image';
 import { getLocale } from 'next-intl/server';
-import { ArrowRight, FileDown, Camera, Cpu, MonitorCheck } from 'lucide-react';
+import { ArrowRight, FileDown } from 'lucide-react';
 
 const content = {
   vi: {
@@ -9,11 +10,9 @@ const content = {
     sub: 'Nỏ Thần Agentic thiết kế và triển khai trọn gói phần cứng và phần mềm cho giám sát sản xuất, an toàn lao động và kiểm soát hàng hoá — với Agentic AI làm lõi và bảo mật là mặc định, không phải tuỳ chọn.',
     ctaPrimary: 'Hợp tác cùng chúng tôi',
     ctaSecondary: 'Tải hồ sơ năng lực',
-    diagramLabel: 'Đường đi của một cảnh báo',
-    step1Title: 'Camera IP tại dây chuyền',
-    step2Title: 'Suy luận AI tại biên',
-    step3Title: 'Người vận hành duyệt cảnh báo',
-    step3Meta: 'Độ tin cậy 92% · chờ duyệt',
+    diagramLabel: 'Bảng điều khiển SOAI',
+    dashboardAlt: 'Ảnh chụp màn hình Bảng điều khiển vận hành SOAI, hiển thị tình trạng thiết bị, độ chính xác đếm SKU và nhật ký hoạt động AI gần đây',
+    dashboardCaption: 'Ảnh chụp hệ thống SOAI với dữ liệu minh hoạ.',
   },
   en: {
     eyebrow: 'Hardware + software solutions · Agentic AI at the core',
@@ -21,11 +20,9 @@ const content = {
     sub: 'Nỏ Thần Agentic designs and delivers end-to-end hardware and software for production monitoring, workplace safety, and goods control — with agentic AI at the core and security as a default, not an option.',
     ctaPrimary: 'Partner with us',
     ctaSecondary: 'Download capability profile',
-    diagramLabel: 'How one alert travels',
-    step1Title: 'IP camera on the line',
-    step2Title: 'AI inference at the edge',
-    step3Title: 'Operator approves the alert',
-    step3Meta: '92% confidence · pending review',
+    diagramLabel: 'The SOAI dashboard',
+    dashboardAlt: 'Screenshot of the SOAI operations telemetry dashboard, showing device fleet status, SKU count accuracy, and a recent AI operations log',
+    dashboardCaption: 'SOAI system screenshot with demonstration data.',
   },
   sv: {
     eyebrow: 'Hårdvaru- och mjukvarulösningar · Agentic AI i kärnan',
@@ -33,11 +30,9 @@ const content = {
     sub: 'Nỏ Thần Agentic designar och levererar kompletta hårdvaru- och mjukvarulösningar för produktionsövervakning, arbetsmiljösäkerhet och godskontroll — med agentic AI i kärnan och säkerhet som standard, inte tillval.',
     ctaPrimary: 'Bli partner med oss',
     ctaSecondary: 'Ladda ner kompetensprofil',
-    diagramLabel: 'Så färdas ett larm',
-    step1Title: 'IP-kamera på produktionslinjen',
-    step2Title: 'AI-inferens vid kanten (edge)',
-    step3Title: 'Operatören godkänner larmet',
-    step3Meta: '92 % tillförlitlighet · väntar på godkännande',
+    diagramLabel: 'SOAI-instrumentpanelen',
+    dashboardAlt: 'Skärmbild av SOAI:s driftöversikt, som visar enhetsstatus, SKU-räkningens noggrannhet och en logg över senaste AI-åtgärder',
+    dashboardCaption: 'Skärmbild av SOAI-systemet med demonstrationsdata.',
   },
 };
 
@@ -95,42 +90,25 @@ export const Hero: React.FC<HeroProps> = async () => {
           </div>
         </div>
 
-        {/* Right column: device -> edge -> dashboard pipeline diagram */}
+        {/* Right column: real SOAI dashboard screenshot */}
         <div className="lg:col-span-5 flex justify-center">
-          <div className="relative w-full max-w-[480px] bg-paper/5 rounded-2xl border border-white/10 p-6 shadow-2xl backdrop-blur-sm">
-            <p className="text-caption font-mono uppercase tracking-wider text-white/40 mb-6">
+          <div className="relative w-full max-w-[480px] bg-paper/5 rounded-2xl border border-white/10 p-4 shadow-2xl backdrop-blur-sm">
+            <p className="text-caption font-mono uppercase tracking-wider text-white/40 mb-3">
               {t.diagramLabel}
             </p>
 
-            <div className="flex flex-col gap-0" aria-hidden="true">
-              <div className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/5 px-4 py-3.5">
-                <Camera className="w-5 h-5 text-orange shrink-0" />
-                <div>
-                  <p className="text-body font-semibold text-white">{t.step1Title}</p>
-                  <p className="text-caption text-white/50 font-mono">ONVIF · RTSP</p>
-                </div>
-              </div>
-              <div className="flex justify-start pl-[1.85rem]">
-                <div className="w-px h-6 bg-white/20" />
-              </div>
-              <div className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/5 px-4 py-3.5">
-                <Cpu className="w-5 h-5 text-orange shrink-0" />
-                <div>
-                  <p className="text-body font-semibold text-white">{t.step2Title}</p>
-                  <p className="text-caption text-white/50 font-mono">YOLOv8 · SAHI · VLM</p>
-                </div>
-              </div>
-              <div className="flex justify-start pl-[1.85rem]">
-                <div className="w-px h-6 bg-white/20" />
-              </div>
-              <div className="flex items-center gap-4 rounded-xl border border-orange/40 bg-orange/10 px-4 py-3.5">
-                <MonitorCheck className="w-5 h-5 text-orange shrink-0" />
-                <div>
-                  <p className="text-body font-semibold text-white">{t.step3Title}</p>
-                  <p className="text-caption text-white/60 font-mono">{t.step3Meta}</p>
-                </div>
-              </div>
+            <div className="rounded-xl border border-white/10 shadow-2xl overflow-hidden bg-ink-800">
+              <Image
+                src="/media/soai/dashboard.png"
+                alt={t.dashboardAlt}
+                width={3200}
+                height={2000}
+                sizes="(min-width: 1024px) 480px, 100vw"
+                className="w-full h-auto max-w-full block"
+                priority
+              />
             </div>
+            <p className="mt-2 text-caption font-mono text-white/40">{t.dashboardCaption}</p>
           </div>
         </div>
       </div>
