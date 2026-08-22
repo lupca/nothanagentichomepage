@@ -1,6 +1,7 @@
 import React from 'react';
 import { getLocale } from 'next-intl/server';
 import { ArrowRight } from 'lucide-react';
+import { Reveal } from './Reveal';
 
 const content = {
   vi: {
@@ -51,30 +52,34 @@ export const PartnerSection: React.FC<PartnerSectionProps> = async () => {
   return (
     <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line" id="doi-tac" aria-label="For hardware manufacturers">
       <div className="max-w-4xl mx-auto space-y-8">
-        <div className="space-y-4 max-w-2xl">
+        <Reveal className="space-y-4 max-w-2xl">
           <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.heading}</h2>
           <p className="text-body text-navy-400 leading-relaxed">{t.intro}</p>
-        </div>
+        </Reveal>
 
         <div className="space-y-6">
           {t.points.map((p, idx) => (
-            <div key={idx} className="flex gap-4">
-              <span className="font-mono text-caption text-orange-600 mt-1.5 shrink-0">0{idx + 1}</span>
-              <div>
-                <p className="text-body font-bold text-ink">{p.title}</p>
-                <p className="text-body text-navy-400 leading-relaxed mt-1">{p.body}</p>
+            <Reveal key={idx} delay={idx * 0.07}>
+              <div className="flex gap-4">
+                <span className="font-mono text-caption text-orange-600 mt-1.5 shrink-0">0{idx + 1}</span>
+                <div>
+                  <p className="text-body font-bold text-ink">{p.title}</p>
+                  <p className="text-body text-navy-400 leading-relaxed mt-1">{p.body}</p>
+                </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 
-        <a
-          href={`/${locale}/${t.ctaLink}`}
-          className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-ink font-extrabold px-7 py-3.5 rounded-lg transition-all min-h-[48px] group"
-        >
-          {t.cta}
-          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-        </a>
+        <Reveal delay={t.points.length * 0.07}>
+          <a
+            href={`/${locale}/${t.ctaLink}`}
+            className="inline-flex items-center gap-2 bg-orange hover:bg-orange/90 text-ink font-extrabold px-7 py-3.5 rounded-lg transition-all min-h-[48px] group"
+          >
+            {t.cta}
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </a>
+        </Reveal>
       </div>
     </section>
   );

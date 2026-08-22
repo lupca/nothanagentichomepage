@@ -1,5 +1,7 @@
 import React from 'react';
 import { getLocale } from 'next-intl/server';
+import { Reveal } from './Reveal';
+import { StatCounter } from './StatCounter';
 
 const content = {
   vi: {
@@ -42,12 +44,12 @@ export const StatsStrip: React.FC<StatsStripProps> = async () => {
     <section className="bg-white border-b border-line" aria-label="Proof stats">
       <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-line">
         {t.stats.map((stat, idx) => (
-          <div key={idx} className="px-6 py-8 md:px-8">
+          <Reveal key={idx} delay={idx * 0.07} className="px-6 py-8 md:px-8">
             <p className="font-display text-3xl md:text-4xl font-bold text-ink tabular-nums">
-              {stat.value}
+              <StatCounter value={stat.value} />
             </p>
             <p className="text-caption text-navy-400 mt-2 leading-snug">{stat.label}</p>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

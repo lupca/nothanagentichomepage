@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import { ShoppingBag, BadgeCheck, ArrowUpRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CommandPalette from '@/components/CommandPalette';
 import FloatingContact from '@/components/FloatingContact';
+import { Reveal } from '@/components/Reveal';
+import { ImageLightbox } from '@/components/ImageLightbox';
 
 type Status = 'live' | 'poc' | 'roadmap';
 
@@ -127,6 +128,16 @@ function pick(locale: string) {
   return content[locale as 'vi' | 'en'] ?? content.en;
 }
 
+const LIGHTBOX_LABELS: Record<'vi' | 'en' | 'sv', { open: string; close: string }> = {
+  vi: { open: 'Xem ảnh phóng to', close: 'Đóng' },
+  en: { open: 'Enlarge image', close: 'Close' },
+  sv: { open: 'Förstora bild', close: 'Stäng' },
+};
+
+function pickLightboxLabels(locale: string) {
+  return LIGHTBOX_LABELS[locale as 'vi' | 'en' | 'sv'] ?? LIGHTBOX_LABELS.en;
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -145,6 +156,7 @@ export default async function VomaPage({
   const { locale: rawLocale } = await params;
   const locale = (rawLocale === 'vi' ? 'vi' : 'en') as 'vi' | 'en';
   const t = pick(rawLocale);
+  const lightboxLabels = pickLightboxLabels(rawLocale);
 
   return (
     <>
@@ -163,26 +175,28 @@ export default async function VomaPage({
 
         <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.screenshotsTitle}>
           <div className="max-w-5xl mx-auto space-y-8">
-            <div className="max-w-2xl space-y-4">
+            <Reveal className="max-w-2xl space-y-4">
               <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.screenshotsEyebrow}</span>
               <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.screenshotsTitle}</h2>
-            </div>
+            </Reveal>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
               {t.screenshots.map((s, idx) => (
-                <figure key={idx} className="space-y-2">
-                  <div className="border border-line rounded-lg overflow-hidden shadow-sm bg-paper">
-                    <Image
+                <Reveal key={idx} delay={idx * 0.07}>
+                  <figure className="space-y-2">
+                    <ImageLightbox
                       src={s.src}
                       alt={s.alt}
                       width={s.width}
                       height={s.height}
-                      sizes="(min-width: 768px) 50vw, 100vw"
-                      className="w-full h-auto max-w-full block"
+                      caption={s.caption}
+                      openLabel={lightboxLabels.open}
+                      closeLabel={lightboxLabels.close}
+                      className="shadow-sm"
                     />
-                  </div>
-                  <figcaption className="text-caption font-mono text-navy-400">{s.caption}</figcaption>
-                </figure>
+                    <figcaption className="text-caption font-mono text-navy-400">{s.caption}</figcaption>
+                  </figure>
+                </Reveal>
               ))}
             </div>
           </div>

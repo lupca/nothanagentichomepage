@@ -1,5 +1,6 @@
 import React from 'react';
 import { getLocale } from 'next-intl/server';
+import { Reveal } from './Reveal';
 
 const content = {
   vi: {
@@ -31,13 +32,13 @@ export const BrandStory: React.FC<BrandStoryProps> = async () => {
 
   return (
     <section className="bg-paper py-20 px-6 md:px-12 lg:px-24" aria-label="Brand story">
-      <div className="max-w-3xl mx-auto space-y-6 text-left">
+      <Reveal className="max-w-3xl mx-auto space-y-6 text-left">
         <p className="font-display text-2xl md:text-3xl font-bold text-ink leading-snug border-l-[3px] border-orange pl-6">
           {t.quote}
         </p>
         <p className="text-body text-navy-400 leading-relaxed">{t.p1}</p>
         <p className="text-body text-navy-400 leading-relaxed">{t.p2}</p>
-      </div>
+      </Reveal>
     </section>
   );
 };

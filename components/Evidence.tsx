@@ -1,5 +1,6 @@
 import React from 'react';
 import { getLocale } from 'next-intl/server';
+import { Reveal } from './Reveal';
 
 interface Module {
   name: string;
@@ -55,13 +56,13 @@ export const Evidence: React.FC<EvidenceProps> = async () => {
   return (
     <section className="bg-paper py-20 px-6 md:px-12 lg:px-24" id="bang-chung" aria-label="POC evidence">
       <div className="max-w-7xl mx-auto space-y-8">
-        <div className="max-w-2xl space-y-4">
+        <Reveal className="max-w-2xl space-y-4">
           <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.tag}</span>
           <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.heading}</h2>
           <p className="text-body text-navy-400 leading-relaxed">{t.sub}</p>
-        </div>
+        </Reveal>
 
-        <div className="overflow-x-auto border border-line bg-white">
+        <Reveal as="div" className="overflow-x-auto border border-line bg-white">
           <table className="w-full min-w-[640px] text-body">
             <thead>
               <tr>
@@ -80,7 +81,7 @@ export const Evidence: React.FC<EvidenceProps> = async () => {
               ))}
             </tbody>
           </table>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

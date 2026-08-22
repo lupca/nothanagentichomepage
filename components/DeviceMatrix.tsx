@@ -1,5 +1,6 @@
 import React from 'react';
 import { getLocale } from 'next-intl/server';
+import { Reveal } from './Reveal';
 
 type Status = 'live' | 'poc' | 'roadmap';
 
@@ -68,13 +69,13 @@ export const DeviceMatrix: React.FC<DeviceMatrixProps> = async () => {
   return (
     <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line" id="he-thong" aria-label="Device integration matrix">
       <div className="max-w-7xl mx-auto space-y-8">
-        <div className="max-w-2xl space-y-4">
+        <Reveal className="max-w-2xl space-y-4">
           <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.tag}</span>
           <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.heading}</h2>
           <p className="text-body text-navy-400 leading-relaxed">{t.sub}</p>
-        </div>
+        </Reveal>
 
-        <div className="overflow-x-auto border border-line">
+        <Reveal as="div" className="overflow-x-auto border border-line">
           <table className="w-full min-w-[640px] text-body">
             <thead>
               <tr className="bg-paper">
@@ -99,7 +100,7 @@ export const DeviceMatrix: React.FC<DeviceMatrixProps> = async () => {
               ))}
             </tbody>
           </table>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

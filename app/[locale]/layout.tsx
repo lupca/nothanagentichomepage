@@ -116,6 +116,13 @@ export default async function RootLayout({
       className={`${plusJakartaSans.variable} ${archivo.variable} ${ibmPlexMono.variable}`}
     >
       <body className="bg-paper text-ink antialiased">
+        {/* If JavaScript fails to load, framer-motion's inline `initial` style
+            (opacity:0) on [data-reveal] elements would otherwise never animate
+            in. This noscript rule forces them visible — !important in a
+            stylesheet wins over a plain inline style. */}
+        <noscript>
+          <style>{'[data-reveal]{opacity:1 !important;transform:none !important;}'}</style>
+        </noscript>
         <NextIntlClientProvider locale={locale as Locale} messages={messages}>
           {children}
         </NextIntlClientProvider>

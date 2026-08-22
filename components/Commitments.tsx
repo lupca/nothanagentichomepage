@@ -1,6 +1,7 @@
 import React from 'react';
 import { getLocale } from 'next-intl/server';
 import { Check } from 'lucide-react';
+import { Reveal } from './Reveal';
 
 const content = {
   vi: {
@@ -51,19 +52,19 @@ export const Commitments: React.FC<CommitmentsProps> = async () => {
   return (
     <section className="bg-paper py-20 px-6 md:px-12 lg:px-24" id="cong-ty" aria-label="Commitments">
       <div className="max-w-3xl mx-auto space-y-8">
-        <div className="max-w-2xl space-y-4">
+        <Reveal className="max-w-2xl space-y-4">
           <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.heading}</h2>
           <p className="text-body text-navy-400 leading-relaxed">{t.sub}</p>
-        </div>
+        </Reveal>
 
         <ul className="space-y-4">
           {t.items.map((c, idx) => (
-            <li key={idx} className="flex gap-3">
+            <Reveal key={idx} as="li" delay={idx * 0.06} className="flex gap-3">
               <div className="p-1 bg-state-ok/10 text-state-ok rounded-full shrink-0 mt-0.5">
                 <Check className="w-4 h-4" strokeWidth={3} />
               </div>
               <span className="text-body text-ink leading-relaxed">{c}</span>
-            </li>
+            </Reveal>
           ))}
         </ul>
       </div>

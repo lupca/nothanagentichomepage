@@ -2,6 +2,7 @@ import React from 'react';
 import { getLocale } from 'next-intl/server';
 import { BrainCircuit, Cable, ShieldCheck } from 'lucide-react';
 import { AIDecisionWidget } from './AIDecisionWidget';
+import { Reveal } from './Reveal';
 
 const content = {
   vi: {
@@ -75,34 +76,37 @@ export const Pillars: React.FC<PillarsProps> = async () => {
       aria-label="Three capability pillars"
     >
       <div className="max-w-7xl mx-auto space-y-14">
-        <div className="max-w-2xl space-y-4">
+        <Reveal className="max-w-2xl space-y-4">
           <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">
             {t.heading}
           </h2>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {t.pillars.map((pillar, idx) => {
             const Icon = icons[idx]!;
             return (
-              <div
-                key={idx}
-                className="p-8 bg-paper border border-line"
-                style={{
-                  clipPath: 'polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%)',
-                }}
-              >
-                <div className="p-3 bg-ink rounded-lg w-fit mb-5">
-                  <Icon className="w-6 h-6 text-orange" />
+              <Reveal key={idx} delay={idx * 0.07}>
+                <div
+                  className="p-8 bg-paper border border-line h-full"
+                  style={{
+                    clipPath: 'polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%)',
+                  }}
+                >
+                  <div className="p-3 bg-ink rounded-lg w-fit mb-5">
+                    <Icon className="w-6 h-6 text-orange" />
+                  </div>
+                  <h3 className="text-h3 font-bold text-ink mb-3">{pillar.title}</h3>
+                  <p className="text-body text-navy-400 leading-relaxed">{pillar.body}</p>
                 </div>
-                <h3 className="text-h3 font-bold text-ink mb-3">{pillar.title}</h3>
-                <p className="text-body text-navy-400 leading-relaxed">{pillar.body}</p>
-              </div>
+              </Reveal>
             );
           })}
         </div>
 
-        <AIDecisionWidget />
+        <Reveal>
+          <AIDecisionWidget />
+        </Reveal>
       </div>
     </section>
   );

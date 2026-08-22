@@ -1,6 +1,7 @@
 import React from 'react';
 import { getLocale } from 'next-intl/server';
 import { ArrowUpRight, ScanEye, ShoppingBag } from 'lucide-react';
+import { Reveal } from './Reveal';
 
 const content = {
   vi: {
@@ -48,35 +49,39 @@ export const Platforms: React.FC<PlatformsProps> = async () => {
   return (
     <section className="bg-paper py-20 px-6 md:px-12 lg:px-24" aria-label="Two product platforms">
       <div className="max-w-7xl mx-auto space-y-10">
-        <div className="max-w-2xl space-y-4">
+        <Reveal className="max-w-2xl space-y-4">
           <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.heading}</h2>
           <p className="text-body text-navy-400 leading-relaxed">{t.sub}</p>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-white border border-line p-8 space-y-4">
-            <div className="p-3 bg-ink rounded-lg w-fit">
-              <ScanEye className="w-6 h-6 text-orange" />
+          <Reveal>
+            <div className="bg-white border border-line p-8 space-y-4 h-full">
+              <div className="p-3 bg-ink rounded-lg w-fit">
+                <ScanEye className="w-6 h-6 text-orange" />
+              </div>
+              <h3 className="text-h3 font-bold text-ink">{t.soaiTitle}</h3>
+              <p className="text-body text-navy-400 leading-relaxed">{t.soaiBody}</p>
+              <a href={`/${locale}/giai-phap/soai`} className="inline-flex items-center gap-1.5 text-body font-semibold text-orange-600 hover:underline">
+                {t.soaiCta}
+                <ArrowUpRight className="w-4 h-4" />
+              </a>
             </div>
-            <h3 className="text-h3 font-bold text-ink">{t.soaiTitle}</h3>
-            <p className="text-body text-navy-400 leading-relaxed">{t.soaiBody}</p>
-            <a href={`/${locale}/giai-phap/soai`} className="inline-flex items-center gap-1.5 text-body font-semibold text-orange-600 hover:underline">
-              {t.soaiCta}
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
-          </div>
+          </Reveal>
 
-          <div className="bg-white border border-line p-8 space-y-4">
-            <div className="p-3 bg-ink rounded-lg w-fit">
-              <ShoppingBag className="w-6 h-6 text-orange" />
+          <Reveal delay={0.07}>
+            <div className="bg-white border border-line p-8 space-y-4 h-full">
+              <div className="p-3 bg-ink rounded-lg w-fit">
+                <ShoppingBag className="w-6 h-6 text-orange" />
+              </div>
+              <h3 className="text-h3 font-bold text-ink">{t.vomaTitle}</h3>
+              <p className="text-body text-navy-400 leading-relaxed">{t.vomaBody}</p>
+              <a href={`/${locale}/giai-phap/voma`} className="inline-flex items-center gap-1.5 text-body font-semibold text-orange-600 hover:underline">
+                {t.vomaCta}
+                <ArrowUpRight className="w-4 h-4" />
+              </a>
             </div>
-            <h3 className="text-h3 font-bold text-ink">{t.vomaTitle}</h3>
-            <p className="text-body text-navy-400 leading-relaxed">{t.vomaBody}</p>
-            <a href={`/${locale}/giai-phap/voma`} className="inline-flex items-center gap-1.5 text-body font-semibold text-orange-600 hover:underline">
-              {t.vomaCta}
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>
