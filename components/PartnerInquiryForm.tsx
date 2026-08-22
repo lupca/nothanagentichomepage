@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -35,6 +35,7 @@ export interface PartnerInquiryLabels {
   successTitle: string;
   successBody: string;
   resetLabel: string;
+  submitErrorLabel: string;
   errors: {
     errCompany: string;
     errEmailRequired: string;
@@ -50,6 +51,8 @@ export interface PartnerInquiryFormProps {
 
 export const PartnerInquiryForm: React.FC<PartnerInquiryFormProps> = ({ labels }) => {
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const honeypotRef = useRef<HTMLInputElement>(null);
 
   const {
     register,
@@ -68,11 +71,23 @@ export const PartnerInquiryForm: React.FC<PartnerInquiryFormProps> = ({ labels }
   });
 
   const onSubmit = async (data: PartnerInquiryData) => {
-    // Simulate API post submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    console.log('Partner inquiry captured successfully:', data);
-    setIsSubmitted(true);
-    reset();
+    setSubmitError(null);
+    try {
+      const response = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'partner', ...data, _hp: honeypotRef.current?.value ?? '' }),
+      });
+      const result: { ok: boolean } = await response.json();
+      if (!response.ok || !result.ok) {
+        setSubmitError(labels.submitErrorLabel);
+        return;
+      }
+      setIsSubmitted(true);
+      reset();
+    } catch {
+      setSubmitError(labels.submitErrorLabel);
+    }
   };
 
   const errKey = (key?: string) => (key ? labels.errors[key as keyof typeof labels.errors] : undefined);
@@ -96,6 +111,15 @@ export const PartnerInquiryForm: React.FC<PartnerInquiryFormProps> = ({ labels }
         </div>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
+          <input
+            ref={honeypotRef}
+            type="text"
+            name="_hp"
+            tabIndex={-1}
+            autoComplete="off"
+            aria-hidden="true"
+            style={{ position: 'absolute', left: '-9999px' }}
+          />
           {/* Company / organization name */}
           <div className="space-y-1.5">
             <label htmlFor="company" className="block text-caption font-bold text-ink uppercase flex items-center gap-2">
@@ -211,6 +235,12 @@ export const PartnerInquiryForm: React.FC<PartnerInquiryFormProps> = ({ labels }
               disabled={isSubmitting}
             />
           </div>
+
+          {submitError && (
+            <p className="text-caption font-bold text-state-stop" role="alert">
+              {submitError}
+            </p>
+          )}
 
           {/* Submit button */}
           <button

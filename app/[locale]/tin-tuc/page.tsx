@@ -65,7 +65,7 @@ const content: Record<'vi' | 'en', Copy> = {
         title: '126 kịch bản test, không có ngoại lệ bị nuốt: cách chúng tôi kiểm thử hệ thống giám sát',
         datePublished: '2026-06-03',
         excerpt:
-          'Với một hệ thống giám sát, phần mềm chạy "có vẻ ổn" trên ảnh hỏng còn nguy hiểm hơn phần mềm báo lỗi rõ ràng. Vì vậy một phần ba bộ test của chúng tôi cố tình đưa dữ liệu xấu vào hệ thống.',
+          'Với một hệ thống giám sát, phần mềm chạy "có vẻ ổn" trên ảnh hỏng còn nguy hiểm hơn phần mềm báo lỗi rõ ràng. Vì vậy khoảng một phần năm bộ test của chúng tôi cố tình đưa dữ liệu xấu vào hệ thống.',
         body: [
           'Bộ test của hệ thống SOAI được chia thành ba lớp. Lớp thứ nhất là 10 test suite unit và integration ở backend, bao phủ models, các `AnalysisEngine`, các worker xử lý bất đồng bộ (Celery) và các API. Lớp thứ hai là 99 kịch bản end-to-end, đi qua toàn bộ luồng dữ liệu thật: Upload → Process → Storage → Query — tức là kiểm tra không chỉ một hàm chạy đúng, mà cả một chuỗi bước từ lúc người dùng tải video lên đến lúc họ tra được kết quả.',
           'Lớp thứ ba là 27 bài test áp lực và đối kháng (stress & adversarial media test): đưa vào hệ thống video/ảnh mờ, file bị hỏng cấu trúc, mã QR không đọc được rõ, và kết nối mạng bị ngắt giữa lúc xử lý.',

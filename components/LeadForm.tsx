@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import { useLocale } from 'next-intl';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -31,6 +31,7 @@ const content = {
       phoneRequired: 'Vui lòng nhập số điện thoại',
       phoneInvalid: 'Số điện thoại Việt Nam không hợp lệ (ví dụ: 0987654321)',
     },
+    submitError: 'Đã có lỗi khi gửi thông tin. Vui lòng thử lại.',
   },
   en: {
     heading: 'Talk to our engineers or get the capability profile',
@@ -53,6 +54,7 @@ const content = {
       phoneRequired: 'Please enter a phone number',
       phoneInvalid: 'Not a valid Vietnamese phone number (e.g. 0987654321)',
     },
+    submitError: 'Something went wrong sending your request. Please try again.',
   },
 };
 
@@ -66,6 +68,8 @@ export const LeadForm: React.FC<LeadFormProps> = () => {
   const locale = useLocale();
   const t = pick(locale);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const honeypotRef = useRef<HTMLInputElement>(null);
 
   const leadSchema = useMemo(
     () =>
@@ -90,10 +94,23 @@ export const LeadForm: React.FC<LeadFormProps> = () => {
   });
 
   const onSubmit = async (data: LeadFormData) => {
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    console.log('Lead captured successfully:', data);
-    setIsSubmitted(true);
-    reset();
+    setSubmitError(null);
+    try {
+      const response = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: 'lead', ...data, _hp: honeypotRef.current?.value ?? '' }),
+      });
+      const result: { ok: boolean } = await response.json();
+      if (!response.ok || !result.ok) {
+        setSubmitError(t.submitError);
+        return;
+      }
+      setIsSubmitted(true);
+      reset();
+    } catch {
+      setSubmitError(t.submitError);
+    }
   };
 
   return (
@@ -130,6 +147,15 @@ export const LeadForm: React.FC<LeadFormProps> = () => {
             </div>
           ) : (
             <form onSubmit={handleSubmit(onSubmit)} noValidate className="space-y-5">
+              <input
+                ref={honeypotRef}
+                type="text"
+                name="_hp"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                style={{ position: 'absolute', left: '-9999px' }}
+              />
               <div className="space-y-1.5">
                 <label htmlFor="email" className="block text-caption font-bold text-ink uppercase flex items-center gap-2">
                   <Mail className="w-4 h-4 text-navy-400" />
@@ -195,6 +221,12 @@ export const LeadForm: React.FC<LeadFormProps> = () => {
                   </p>
                 )}
               </div>
+
+              {submitError && (
+                <p className="text-caption font-bold text-state-stop" role="alert">
+                  {submitError}
+                </p>
+              )}
 
               <button
                 type="submit"

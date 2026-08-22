@@ -1,6 +1,9 @@
 # internal agent orchestration scratch data
 /.agents
 
+# lead submissions (private customer data)
+/data
+
 # dependencies
 /node_modules
 /.pnp
@@ -28,6 +31,7 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
+.env
 .env*.local
 
 # vercel
@@ -37,3 +41,16 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .next.old
+
+# hop dong da ky (thong tin nhay cam, khong duoc public) - loai truong hop ten file nay cu the
+/docs/HopDongVOMA_TOPVN_signed.pdf
+# cac file PDF dang hop dong khac trong docs/ (chua chu ky, thong tin phap ly) - khong loai public/ vi 2 file profile nang luc phai duoc commit
+/docs/*hop*dong*.pdf
+/docs/*Hop*Dong*.pdf
+/docs/*contract*.pdf
+/docs/*Contract*.pdf
+
+# anh chup man hinh goc chua ma shop khach hang, ma don hang thuc, va bookmark ca nhan cua owner
+# chi ap dung cho anh o cap top-level cua images/, KHONG loai images/clean/ (ban da lam sach, an toan de public)
+/images/*.png
+!/images/clean/**
