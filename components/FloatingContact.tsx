@@ -5,9 +5,9 @@ import { useLocale } from 'next-intl';
 import { MessageCircle } from 'lucide-react';
 
 const content = {
-  vi: { channelsLabel: 'Kênh hỗ trợ trực tuyến', support: 'Luôn có chuyên gia trực chat hỗ trợ 365 ngày' },
-  en: { channelsLabel: 'Talk to us online', support: 'A specialist is available in chat 365 days a year' },
-  sv: { channelsLabel: 'Kontaktkanaler online', support: 'En specialist finns i chatten 365 dagar om året' },
+  vi: { channelsLabel: 'Kênh hỗ trợ trực tuyến', support: 'Hỗ trợ qua email và điện thoại, 9:00–17:00 thứ Hai đến thứ Sáu' },
+  en: { channelsLabel: 'Talk to us online', support: 'Support by email and phone, 9:00–17:00 Monday to Friday' },
+  sv: { channelsLabel: 'Kontaktkanaler online', support: 'Support via e-post och telefon, 9:00–17:00 måndag till fredag' },
 };
 
 function pick(locale: string) {

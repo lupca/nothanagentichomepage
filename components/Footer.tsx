@@ -137,11 +137,11 @@ export const Footer: React.FC<FooterProps> = async () => {
           </div>
           <div className="flex items-center gap-2.5">
             <Phone className="w-5 h-5 text-orange shrink-0" />
-            <span className="text-body text-paper/75">097 6007006</span>
+            <span className="text-body text-paper/75">0983 650 552</span>
           </div>
           <div className="flex items-start gap-2.5">
             <MapPin className="w-5 h-5 text-orange shrink-0 mt-0.5" />
-            <span className="text-body text-paper/75">Phố Lê Văn Hiến, Phường Đức Thắng, Quận Bắc Từ Liêm, Hà Nội</span>
+            <span className="text-body text-paper/75">Số 1, ngõ 141/3, phố Lê Văn Hiến, Phường Đông Ngạc, Thành phố Hà Nội</span>
           </div>
         </div>
 

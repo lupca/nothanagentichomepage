@@ -40,11 +40,11 @@ interface Screenshot {
 
 const content = {
   vi: {
-    metaTitle: 'VOMA.VN — Nền tảng bán hàng đa kênh và quản trị toàn diện',
+    metaTitle: 'VOMA.VN — Nền tảng bán hàng đa kênh và quản trị vận hành',
     metaDescription:
-      'VOMA là nền tảng bán hàng đa kênh và quản trị toàn diện, đã đăng ký bảo hộ nhãn hiệu độc quyền tại Việt Nam. Nỏ Thần Agentic phụ trách phần tích hợp phần cứng.',
+      'VOMA là nền tảng bán hàng đa kênh và quản trị vận hành, đã đăng ký bảo hộ nhãn hiệu độc quyền tại Việt Nam. Nỏ Thần Agentic phụ trách phần tích hợp phần cứng.',
     eyebrow: 'VOMA.VN — Thương mại đa kênh',
-    h1: 'Nền tảng bán hàng đa kênh và quản trị toàn diện',
+    h1: 'Nền tảng bán hàng đa kênh và quản trị vận hành',
     intro:
       'VOMA là nền tảng phần mềm quản trị bán hàng đa kênh: hoá đơn điện tử, bán hàng online (các sàn như TikTok, Shopee) và offline, kế toán, và quản lý kho bãi trong một hệ thống. VOMA được một đội kỹ thuật riêng trong Nỏ Thần Agentic phụ trách và phát triển trực tiếp.',
     screenshotsEyebrow: 'Giao diện thật',
@@ -68,15 +68,15 @@ const content = {
     trademarkEyebrow: 'Tài sản pháp lý',
     trademarkTitle: 'Đã đăng ký bảo hộ nhãn hiệu độc quyền tại Việt Nam',
     trademarkBody:
-      'VOMA đã đăng ký bảo hộ nhãn hiệu độc quyền tại Việt Nam — đây là tài sản pháp lý thực, không phải cam kết hay kế hoạch. Đây là nền tảng công ty đầu tư dài hạn, không phải sản phẩm thử nghiệm ngắn hạn.',
+      'VOMA đã đăng ký bảo hộ nhãn hiệu độc quyền tại Việt Nam. Một đội kỹ thuật riêng trong Nỏ Thần Agentic phát triển và duy trì nền tảng liên tục.',
     hardwareEyebrow: 'Nơi giao nhau với phần cứng NTA',
     hardwareTitle: 'Lộ trình tích hợp phần cứng',
     hardwareIntro:
       'Nỏ Thần Agentic là đơn vị phụ trách phần tích hợp phần cứng của VOMA trong lộ trình 3 giai đoạn của nền tảng:',
     hardwarePhase2Title: 'Giai đoạn 2',
-    hardwarePhase2Body: 'Tích hợp cổng thanh toán và phần cứng bán hàng: máy POS, máy quét mã vạch, thiết bị tạo mã QR.',
+    hardwarePhase2Body: 'Tích hợp cổng thanh toán và phần cứng bán hàng — máy POS, máy quét mã vạch, thiết bị tạo mã QR. Chưa triển khai.',
     hardwarePhase3Title: 'Giai đoạn 3',
-    hardwarePhase3Body: 'Ứng dụng thị giác máy tính vào giám sát vận hành bán hàng và quản lý nhập/xuất kho — dự kiến chạy thử nghiệm trước khi thương mại hoá.',
+    hardwarePhase3Body: 'Ứng dụng thị giác máy tính vào giám sát vận hành bán hàng và quản lý nhập/xuất kho. Chưa triển khai; cần chạy thử nghiệm trước khi thương mại hoá.',
     ctaTitle: 'Xem chi tiết sản phẩm tại voma.vn',
     ctaBody: 'Toàn bộ tính năng, bảng giá và tài liệu sản phẩm VOMA được công bố tại trang chính của nền tảng.',
     ctaButton: 'Truy cập voma.vn',
@@ -110,14 +110,14 @@ const content = {
     trademarkEyebrow: 'Legal asset',
     trademarkTitle: 'Registered trademark protection in Vietnam',
     trademarkBody:
-      'VOMA has registered trademark protection in Vietnam — a real legal asset, not a claim or a plan. This is a platform the company is committed to for the long run, not a short-lived experiment.',
+      'VOMA has registered trademark protection in Vietnam. A dedicated team within Nỏ Thần Agentic develops and maintains the platform on an ongoing basis.',
     hardwareEyebrow: 'Where it meets NTA hardware',
     hardwareTitle: 'Hardware integration roadmap',
     hardwareIntro: 'Nỏ Thần Agentic handles the hardware integration track of VOMA’s three-phase roadmap:',
     hardwarePhase2Title: 'Phase 2',
-    hardwarePhase2Body: 'Payment gateway and point-of-sale hardware: POS terminals, barcode scanners, QR code generation devices.',
+    hardwarePhase2Body: 'Payment gateway and point-of-sale hardware — POS terminals, barcode scanners, QR code generation devices. Not yet implemented.',
     hardwarePhase3Title: 'Phase 3',
-    hardwarePhase3Body: 'Computer vision applied to sales floor monitoring and warehouse in/out management — a trial run is planned before commercial rollout.',
+    hardwarePhase3Body: 'Computer vision applied to sales floor monitoring and warehouse in/out management. Not yet implemented; a trial run is planned before commercial rollout.',
     ctaTitle: 'See the full product at voma.vn',
     ctaBody: 'Full feature set, pricing, and product documentation for VOMA are published on the platform’s own site.',
     ctaButton: 'Visit voma.vn',

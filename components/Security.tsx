@@ -6,8 +6,8 @@ import { Reveal } from './Reveal';
 const content = {
   vi: {
     tag: 'Nguyên tắc engineering',
-    heading: 'Lỗi phải kêu.',
-    body: 'Hệ thống của chúng tôi không có đường fallback âm thầm và không nuốt exception. Video hỏng, mã QR mờ, mất kết nối camera, FFmpeg lỗi — mọi sự cố đều bật lên thành mã lỗi rõ ràng kèm log, thay vì trả về một kết quả trông có vẻ hợp lý. Trong giám sát sản xuất, một con số sai mà không ai biết là sai thì tệ hơn hẳn một lỗi hiện ra.',
+    heading: 'Xử lý lỗi và ghi log',
+    body: 'Hệ thống định nghĩa một hệ phân cấp ngoại lệ SOAIException và không nuốt exception ở bất kỳ tầng nào. Video hỏng, mã QR mờ, mất kết nối camera, hoặc lỗi FFmpeg đều trả về mã lỗi HTTP tuân theo chuẩn RFC, kèm một dòng log chi tiết ghi lại thời điểm và nguyên nhân.',
     cards: [
       { title: 'Mã hoá khi lưu', body: 'Thông tin đăng nhập thiết bị mã hoá bằng Fernet.' },
       { title: 'Chặn path traversal', body: 'Mọi API đọc/tải tệp đều kiểm tra đường dẫn trước khi trả file.' },
@@ -16,8 +16,8 @@ const content = {
   },
   en: {
     tag: 'Engineering principle',
-    heading: 'Failures must be loud.',
-    body: 'Our systems have no silent fallback path and swallow no exceptions. Corrupt video, a blurred QR code, a dropped camera connection, an FFmpeg failure — every fault surfaces as an explicit error with a log entry, rather than a plausible-looking result. In production monitoring, a wrong number nobody knows is wrong is far worse than a visible error.',
+    heading: 'Error handling and logging',
+    body: 'The system defines a SOAIException class hierarchy and does not swallow exceptions at any layer. Corrupt video, a blurred QR code, a dropped camera connection, or an FFmpeg failure each return an RFC-compliant HTTP error response, together with a detailed log entry.',
     cards: [
       { title: 'Encrypted at rest', body: 'Device credentials are encrypted using Fernet.' },
       { title: 'Path traversal blocked', body: 'Every file-read/download API validates the path before returning a file.' },
@@ -26,8 +26,8 @@ const content = {
   },
   sv: {
     tag: 'Teknisk princip',
-    heading: 'Fel måste synas.',
-    body: 'Våra system har ingen tyst reservlösning och sväljer inga undantag. Skadad video, en suddig QR-kod, en tappad kameraanslutning, ett FFmpeg-fel — varje störning blir ett tydligt felmeddelande med en loggpost, i stället för ett resultat som ser rimligt ut men inte är det. Vid produktionsövervakning är ett felaktigt tal som ingen vet är felaktigt betydligt värre än ett synligt fel.',
+    heading: 'Felhantering och loggning',
+    body: 'Systemet definierar en klasshierarki, SOAIException, och sväljer inga undantag i något lager. Skadad video, en suddig QR-kod, en tappad kameraanslutning eller ett FFmpeg-fel returnerar vart och ett ett RFC-kompatibelt HTTP-felsvar, tillsammans med en detaljerad loggpost.',
     cards: [
       { title: 'Krypterat i vila', body: 'Enhetsuppgifter krypteras med Fernet.' },
       { title: 'Skydd mot path traversal', body: 'Alla API:er för filläsning/nedladdning validerar sökvägen innan en fil returneras.' },

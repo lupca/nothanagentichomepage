@@ -10,15 +10,15 @@ const content = {
     pillars: [
       {
         title: 'Lõi Agentic AI',
-        body: 'Không phải chatbot. Là tác nhân quan sát dây chuyền, đánh giá độ tin cậy, đề xuất quyết định và chờ người duyệt. Kết hợp mô hình thị giác chuyên biệt (YOLOv8, SAHI) với mô hình ngôn ngữ-thị giác cho các bài kiểm tra tuỳ biến theo mô tả bằng lời.',
+        body: 'Tác nhân quan sát dây chuyền, chấm điểm độ tin cậy cho từng phát hiện, và đưa đề xuất vào hàng đợi chờ người duyệt. Kết hợp mô hình thị giác YOLOv8 và SAHI với mô hình ngôn ngữ-thị giác (VLM) cho các bài kiểm tra định nghĩa bằng vài ảnh mẫu.',
       },
       {
         title: 'Tích hợp phần cứng',
-        body: 'Một lớp trừu tượng DeviceProvider tách nguồn hình ảnh khỏi lõi phân tích: thêm dòng camera mới, đầu đọc mã, hay thiết bị POS là viết thêm plugin, không sửa lõi. Chúng tôi cung cấp cả thiết bị và triển khai tại chỗ, không chỉ giao phần mềm.',
+        body: 'Lớp trừu tượng DeviceProvider tách nguồn hình ảnh khỏi lõi phân tích AnalysisEngine. Thêm một dòng camera, đầu đọc mã, hoặc thiết bị POS mới nghĩa là viết một plugin mới. Đội kỹ thuật cung cấp thiết bị và thực hiện triển khai tại nhà máy khách hàng.',
       },
       {
-        title: 'Bảo mật toàn diện',
-        body: 'Thông tin đăng nhập thiết bị mã hoá khi lưu. Mọi API xem và tải tệp chặn path traversal. Hệ thống chạy được hoàn toàn trong mạng nhà máy — hình ảnh sản xuất của khách hàng không cần rời khỏi cơ sở của họ.',
+        title: 'Bảo mật theo kiến trúc',
+        body: 'Thông tin đăng nhập thiết bị mã hoá bằng Fernet khi lưu. Mọi API xem và tải tệp kiểm tra chặn path traversal trước khi trả file. Hệ thống có thể chạy hoàn toàn trong mạng nội bộ nhà máy; hình ảnh sản xuất không cần rời khỏi cơ sở của khách hàng.',
       },
     ],
   },
@@ -27,15 +27,15 @@ const content = {
     pillars: [
       {
         title: 'Agentic AI core',
-        body: 'Not a chatbot. An agent that watches the line, scores its own confidence, proposes a decision, and waits for a human to approve it. We combine specialised vision models (YOLOv8, SAHI) with vision-language models for checks you can define in plain language.',
+        body: 'The agent watches the line, scores its own confidence for each detection, and places a proposal in a review queue. We combine specialised vision models (YOLOv8, SAHI) with a vision-language model for checks defined with a few sample images.',
       },
       {
         title: 'Hardware integration',
-        body: 'A DeviceProvider abstraction separates the image source from the analysis core: supporting a new camera line, barcode reader, or POS device means writing a plugin, not touching the core. We supply the equipment and do the on-site deployment, not just hand over software.',
+        body: 'A DeviceProvider abstraction separates the image source from the analysis core, AnalysisEngine. Supporting a new camera line, barcode reader, or POS device means writing a new plugin. Our team supplies the equipment and carries out deployment at the customer site.',
       },
       {
-        title: 'Security throughout',
-        body: 'Device credentials are encrypted at rest. Every file-viewing and file-download endpoint blocks path traversal. The system can run entirely inside the plant network — our customers’ production footage never has to leave their premises.',
+        title: 'Security by architecture',
+        body: 'Device credentials are encrypted with Fernet at rest. Every file-viewing and file-download endpoint checks for path traversal before returning a file. The system can run entirely inside the plant network; production footage never has to leave the customer’s premises.',
       },
     ],
   },
@@ -44,15 +44,15 @@ const content = {
     pillars: [
       {
         title: 'Agentic AI i kärnan',
-        body: 'Ingen chatbot. En agent som övervakar produktionslinjen, bedömer sin egen tillförlitlighet, föreslår ett beslut och väntar på att en människa godkänner det. Vi kombinerar specialiserade synmodeller (YOLOv8, SAHI) med vision-språkmodeller för kontroller du kan definiera i vanlig text.',
+        body: 'Agenten övervakar produktionslinjen, bedömer sin egen tillförlitlighet för varje upptäckt, och lägger ett förslag i en granskningskö. Vi kombinerar specialiserade synmodeller (YOLOv8, SAHI) med en vision-språkmodell för kontroller definierade med några exempelbilder.',
       },
       {
         title: 'Hårdvaruintegration',
-        body: 'En abstraktion som kallas DeviceProvider separerar bildkällan från analyskärnan: att stödja en ny kameramodell, kodläsare eller kassaenhet innebär att skriva en plugin, inte att ändra kärnan. Vi levererar utrustningen och gör installationen på plats — inte bara mjukvaran.',
+        body: 'En abstraktion som kallas DeviceProvider separerar bildkällan från analyskärnan, AnalysisEngine. Att stödja en ny kameramodell, kodläsare eller kassaenhet innebär att skriva en ny plugin. Vårt team levererar utrustningen och utför installationen hos kunden.',
       },
       {
-        title: 'Säkerhet genomgående',
-        body: 'Enhetsuppgifter krypteras i vila. Alla API:er för filvisning och filnedladdning blockerar path traversal. Systemet kan köras helt inom fabrikens nätverk — våra kunders produktionsbilder behöver aldrig lämna deras lokaler.',
+        title: 'Säkerhet i arkitekturen',
+        body: 'Enhetsuppgifter krypteras med Fernet i vila. Alla API:er för filvisning och filnedladdning kontrollerar path traversal innan en fil returneras. Systemet kan köras helt inom fabrikens nätverk; kundernas produktionsbilder behöver aldrig lämna deras lokaler.',
       },
     ],
   },

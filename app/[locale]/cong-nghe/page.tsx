@@ -78,11 +78,11 @@ const content: { vi: Locale; en: Locale } = {
   vi: {
     metaTitle: 'Công nghệ — Kiến trúc kỹ thuật | Nỏ Thần Agentic',
     metaDescription:
-      'Kiến trúc hệ thống SOAI: hai lớp trừu tượng DeviceProvider và AnalysisEngine, chiến lược suy luận biên/máy chủ, ma trận tích hợp thiết bị, phương pháp kiểm thử và nguyên tắc "lỗi phải kêu".',
+      'Kiến trúc hệ thống SOAI: hai lớp trừu tượng DeviceProvider và AnalysisEngine, chiến lược suy luận biên/máy chủ, ma trận tích hợp thiết bị, phương pháp kiểm thử và hệ phân cấp ngoại lệ SOAIException.',
     eyebrowIntro: 'Kiến trúc kỹ thuật',
     h1: 'Công nghệ',
     introParagraph:
-      'Hệ thống được xây trên hai lớp trừu tượng tách biệt hoàn toàn khỏi lõi xử lý: một cho nguồn ảnh (thiết bị), một cho năng lực phân tích (mô hình AI/CV). Cách chia này cho phép hệ thống mở rộng sang phần cứng mới hoặc bài toán kiểm tra mới bằng cách viết thêm plugin, không phải sửa lại lõi đã kiểm thử.',
+      'Hệ thống được xây trên hai lớp trừu tượng tách biệt hoàn toàn khỏi lõi xử lý: một cho nguồn ảnh (thiết bị), một cho năng lực phân tích (mô hình AI/CV). Cách chia này cho phép hệ thống mở rộng sang phần cứng mới hoặc bài toán kiểm tra mới bằng cách viết thêm plugin, để yên lõi đã kiểm thử.',
     eyebrowArch: 'Luồng xử lý',
     archTitle: 'Kiến trúc pipeline',
     archIntro:
@@ -107,7 +107,7 @@ const content: { vi: Locale; en: Locale } = {
         icon: BrainCircuit,
         title: 'AnalysisEngine',
         body:
-          'Tách logic suy luận (mô hình đếm vật thể, phân loại đúng/sai, mô hình ngôn ngữ-thị giác) khỏi phần điều phối tác vụ. Một nghiệp vụ kiểm tra mới là một engine mới cắm vào cùng interface, không phải một lần viết lại pipeline.',
+          'Tách logic suy luận (mô hình đếm vật thể, phân loại đúng/sai, mô hình ngôn ngữ-thị giác) khỏi phần điều phối tác vụ. Một nghiệp vụ kiểm tra mới là một engine mới cắm vào cùng interface; pipeline giữ nguyên.',
       },
     ],
     eyebrowStrategy: 'Suy luận biên hay máy chủ',
@@ -123,13 +123,13 @@ const content: { vi: Locale; en: Locale } = {
     edgeCard: {
       status: 'roadmap',
       title: 'Suy luận tại biên (ví dụ: Axis ACAP)',
-      pros: 'Độ trễ thấp nhất, hình ảnh không rời khỏi thiết bị — phù hợp khi chính sách dữ liệu của khách hàng không cho phép đưa hình ảnh sản xuất ra ngoài mạng nội bộ hoặc băng thông không đủ.',
-      note: 'Cập nhật mô hình phức tạp hơn (phải đóng gói và nạp lại theo từng thiết bị/hãng), ràng buộc bởi tài nguyên tính toán trên chip biên.',
+      pros: 'Chưa triển khai. Nếu làm, độ trễ sẽ thấp hơn và hình ảnh không cần rời khỏi thiết bị — phù hợp khi chính sách dữ liệu khách hàng cấm đưa hình sản xuất ra ngoài mạng nội bộ.',
+      note: 'Cập nhật mô hình sẽ phức tạp hơn (đóng gói và nạp lại theo từng thiết bị/hãng), và bị giới hạn bởi tài nguyên tính toán trên chip biên.',
     },
     eyebrowMatrix: 'Tích hợp mở',
     matrixTitle: 'Ma trận tích hợp thiết bị & giao thức',
     matrixIntro:
-      'Trạng thái hiện tại của từng dòng thiết bị. "POC" nghĩa là đã tích hợp và kiểm thử trong môi trường thử nghiệm nội bộ — không phải đang có quan hệ đối tác chính thức với hãng.',
+      'Trạng thái hiện tại của từng dòng thiết bị. "POC" nghĩa là đã tích hợp và kiểm thử trong môi trường thử nghiệm nội bộ. Chưa có quan hệ đối tác chính thức với hãng ở mức này.',
     matrixHeaders: { device: 'Dòng thiết bị', interfaces: 'Giao diện tích hợp', status: 'Trạng thái', note: 'Ghi chú' },
     deviceRows: [
       {
@@ -179,7 +179,7 @@ const content: { vi: Locale; en: Locale } = {
       { value: '27', label: 'Test áp lực & dữ liệu bất thường — file hỏng, mã QR mờ, mất kết nối mạng' },
     ],
     eyebrowPrinciples: 'Nguyên tắc engineering',
-    principlesTitle: 'Lỗi phải kêu.',
+    principlesTitle: 'Xử lý lỗi minh bạch',
     principlesBody:
       'Hệ thống không có đường fallback âm thầm và không nuốt exception ở bất kỳ tầng nào. Toàn bộ lỗi nghiệp vụ và lỗi hệ thống đi qua một hệ phân cấp ngoại lệ dùng riêng — SOAIException — để đảm bảo mọi sự cố (DB lỗi, file hỏng, mã QR mờ, FFmpeg thất bại, mất kết nối camera) đều quăng ra lỗi minh bạch, không bị bắt và bỏ qua.',
     principlesBody2:
@@ -193,7 +193,7 @@ const content: { vi: Locale; en: Locale } = {
   en: {
     metaTitle: 'Technology — Technical Architecture | Nỏ Thần Agentic',
     metaDescription:
-      'System architecture behind SOAI: the DeviceProvider and AnalysisEngine abstraction layers, edge vs. server inference strategy, device integration matrix, testing methodology, and the "errors must be loud" engineering principle.',
+      'System architecture behind SOAI: the DeviceProvider and AnalysisEngine abstraction layers, edge vs. server inference strategy, device integration matrix, testing methodology, and the SOAIException error hierarchy.',
     eyebrowIntro: 'Technical architecture',
     h1: 'Technology',
     introParagraph:
@@ -222,13 +222,13 @@ const content: { vi: Locale; en: Locale } = {
         icon: BrainCircuit,
         title: 'AnalysisEngine',
         body:
-          'Decouples inference logic (object counting, pass/fail classification, vision-language checks) from task orchestration. A new inspection task is a new engine plugged into the same interface, not a rewrite of the pipeline.',
+          'Decouples inference logic (object counting, pass/fail classification, vision-language checks) from task orchestration. A new inspection task is a new engine plugged into the same interface, and the pipeline stays unchanged.',
       },
     ],
     eyebrowStrategy: 'Edge vs. server inference',
     strategyTitle: 'Inference strategy: edge vs. server',
     strategyIntro:
-      'This is a real engineering trade-off, not a solved problem. We shipped server-side inference first because it gives the fastest model-update loop, and we are keeping the door open to edge inference for cases where data policy or bandwidth rules it out.',
+      'This is a real engineering trade-off with no single correct answer. We shipped server-side inference first because it gives the fastest model-update loop, and we are keeping the door open to edge inference for cases where data policy or bandwidth rules it out.',
     serverCard: {
       status: 'poc',
       title: 'Server-side inference',
@@ -238,8 +238,8 @@ const content: { vi: Locale; en: Locale } = {
     edgeCard: {
       status: 'roadmap',
       title: 'Edge inference (e.g. Axis ACAP)',
-      pros: 'Lowest latency, footage never leaves the device — fits cases where a customer\'s data policy forbids sending production footage off-site, or bandwidth is insufficient.',
-      note: 'Model updates are more involved (packaging and pushing per device/vendor), and computation is constrained by the edge chip.',
+      pros: 'Not yet implemented. If built, latency would drop and footage would stay on the device — for cases where a customer\'s data policy forbids sending production footage off-site.',
+      note: 'Model updates would be more involved (packaging and pushing per device/vendor), and computation would be constrained by the edge chip.',
     },
     eyebrowMatrix: 'Open integration',
     matrixTitle: 'Device & protocol integration matrix',
@@ -294,7 +294,7 @@ const content: { vi: Locale; en: Locale } = {
       { value: '27', label: 'Stress & adversarial-media tests — corrupted files, blurry QR codes, dropped network connections' },
     ],
     eyebrowPrinciples: 'Engineering principle',
-    principlesTitle: 'Errors must be loud.',
+    principlesTitle: 'Transparent error handling',
     principlesBody:
       'The system has no silent fallback path and swallows no exceptions at any layer. All business and system errors flow through a dedicated exception hierarchy — SOAIException — so every fault (a DB error, a corrupted file, a blurry QR code, a failed FFmpeg call, a dropped camera connection) surfaces as an explicit, uncaught error instead of being silently absorbed.',
     principlesBody2:

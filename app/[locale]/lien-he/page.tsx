@@ -46,7 +46,7 @@ const content: Record<'vi' | 'en' | 'sv', Copy> = {
     businessCta: 'Đi tới form liên hệ',
     detailsEyebrow: 'Thông tin liên hệ',
     detailsTitle: 'Liên hệ trực tiếp',
-    detailsNote: 'Đây là trang điều hướng, không phải một form thứ ba — hai lối trên đã dẫn tới đúng form cần dùng.',
+    detailsNote: 'Đây là trang điều hướng. Hai lối trên đã dẫn tới đúng form cần dùng.',
   },
   en: {
     metaTitle: 'Contact | Nỏ Thần Agentic',
@@ -68,7 +68,7 @@ const content: Record<'vi' | 'en' | 'sv', Copy> = {
     businessCta: 'Go to the contact form',
     detailsEyebrow: 'Contact details',
     detailsTitle: 'Reach us directly',
-    detailsNote: 'This is a routing page, not a third form — the two paths above already lead to the right form.',
+    detailsNote: 'This is a routing page. The two paths above lead to the right form.',
   },
   sv: {
     metaTitle: 'Kontakt | Nỏ Thần Agentic',
@@ -90,7 +90,7 @@ const content: Record<'vi' | 'en' | 'sv', Copy> = {
     businessCta: 'Gå till kontaktformuläret',
     detailsEyebrow: 'Kontaktuppgifter',
     detailsTitle: 'Nå oss direkt',
-    detailsNote: 'Detta är en navigeringssida, inte ett tredje formulär — de två vägarna ovan leder redan till rätt formulär.',
+    detailsNote: 'Detta är en navigeringssida. De två vägarna ovan leder till rätt formulär.',
   },
 };
 
@@ -187,11 +187,11 @@ export default async function Page({
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-5 h-5 text-orange shrink-0" aria-hidden="true" />
-                <span className="text-body text-paper/75">097 6007006</span>
+                <span className="text-body text-paper/75">0983 650 552</span>
               </div>
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-5 h-5 text-orange shrink-0 mt-0.5" aria-hidden="true" />
-                <span className="text-body text-paper/75">Phố Lê Văn Hiến, Phường Đức Thắng, Quận Bắc Từ Liêm, Hà Nội</span>
+                <span className="text-body text-paper/75">Số 1, ngõ 141/3, phố Lê Văn Hiến, phường Đông Ngạc, Hà Nội</span>
               </div>
             </div>
 

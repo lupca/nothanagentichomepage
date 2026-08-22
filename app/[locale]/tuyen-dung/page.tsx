@@ -44,10 +44,10 @@ const content: Record<'vi' | 'en', Content> = {
     heading: 'Làm cùng một đội ngũ nhỏ, đang xây thật',
     intro: [
       'Chúng tôi là một nhóm nhỏ, đang ở giai đoạn đầu: một người phụ trách chung và vài kỹ sư phụ trách trực tiếp từng dịch vụ (VOMA.VN, SOAI.VN). Không có phòng nhân sự, không có nhiều tầng quản lý, không có đội ngũ "chuyên gia" đông đảo — chỉ có người làm thật và hệ thống đang chạy thật.',
-      'Đây không phải là điều cần che giấu. Ở quy mô này, người vào sau tiếp cận trực tiếp kiến trúc hệ thống production, làm việc trực tiếp với khách hàng thật ngay từ đầu, và có ảnh hưởng rõ ràng lên hướng đi của sản phẩm — thứ rất khó có được ở một công ty đã lớn.',
+      'Ở quy mô này, người vào sau tiếp cận trực tiếp kiến trúc hệ thống production, làm việc trực tiếp với khách hàng thật ngay từ đầu, và có ảnh hưởng rõ ràng lên hướng đi của sản phẩm.',
     ],
     officeNote:
-      'Văn phòng làm việc tập trung (tầng 1, dự kiến hoàn thiện giữa hoặc cuối tháng 9) dùng cho họp kỹ thuật và nghiên cứu phần cứng; phần lớn công việc hiện tại linh hoạt theo tiến độ dự án.',
+      'Văn phòng làm việc tập trung (tầng 1, dự kiến hoàn thiện giữa hoặc cuối tháng 9) dùng cho họp kỹ thuật và nghiên cứu phần cứng; phần lớn công việc hiện tại được sắp xếp theo tiến độ từng dự án, không theo giờ hành chính cố định.',
     jobsEyebrow: 'Vị trí đang tuyển',
     jobsHeading: '3 vị trí, gắn với lộ trình thật của VOMA và SOAI',
     benefitsLabel: 'Những gì bạn sẽ có',
@@ -65,7 +65,7 @@ const content: Record<'vi' | 'en', Content> = {
         summary:
           'Mở rộng hệ thống thị giác máy tính của SOAI từ POC đã nghiệm thu sang các bài toán kiểm tra mới và triển khai tại biên (edge).',
         work:
-          'SOAI đã có 6 module thị giác máy tính chạy được trên YOLOv8/SAHI (đếm SKU dày đặc) và VLM few-shot (kiểm tra đúng/sai định nghĩa bằng lời). Giai đoạn tới cần đưa các mô hình này chạy ổn định trên thiết bị biên, tối ưu tốc độ suy luận, và mở rộng sang các bài kiểm tra mới theo yêu cầu khách hàng — an toàn lao động, kiểm soát tồn kho, giám sát dây chuyền. Bạn sẽ làm việc trực tiếp trên pipeline đang chạy thật, không phải một bản demo.',
+          'SOAI đã có 6 module thị giác máy tính chạy được trên YOLOv8/SAHI (đếm SKU dày đặc) và VLM few-shot (kiểm tra đúng/sai định nghĩa bằng lời). Giai đoạn tới cần đưa các mô hình này chạy ổn định trên thiết bị biên, tối ưu tốc độ suy luận, và mở rộng sang các bài kiểm tra mới theo yêu cầu khách hàng — an toàn lao động, kiểm soát tồn kho, giám sát dây chuyền. Bạn sẽ làm việc trực tiếp trên pipeline production đang phục vụ khách hàng thật.',
         benefits: [
           'Trực tiếp làm việc với khách hàng thật của SOAI, không qua trung gian',
           'Tiếp cận sâu vào kiến trúc hệ thống production (DeviceProvider, pipeline suy luận, Celery)',
@@ -86,7 +86,7 @@ const content: Record<'vi' | 'en', Content> = {
           'Hệ thống hiện dùng FastAPI và Celery, với một lớp trừu tượng DeviceProvider tách nguồn hình ảnh khỏi lõi phân tích. Công việc chính là viết thêm provider cho các giao thức camera công nghiệp mới (ONVIF, VAPIX, ISAPI) để mở rộng danh mục thiết bị hỗ trợ, đồng thời hỗ trợ giai đoạn 2 của VOMA — tích hợp cổng thanh toán và phần cứng bán lẻ (máy POS, máy quét mã vạch, thiết bị tạo mã QR).',
         benefits: [
           'Tiếp cận sâu vào kiến trúc hệ thống production đang chạy (FastAPI, Celery, mã hoá thông tin thiết bị)',
-          'Trực tiếp tham gia giai đoạn tích hợp phần cứng mới của cả VOMA và SOAI, không phải việc lặp lại',
+          'Trực tiếp tham gia giai đoạn tích hợp phần cứng mới của cả VOMA và SOAI',
           'Lộ trình tăng vai trò và cổ phần/quản trị khi dịch vụ mở rộng quy mô',
         ],
         arrangement:
@@ -99,7 +99,7 @@ const content: Record<'vi' | 'en', Content> = {
         tag: 'VOMA.VN hoặc SOAI.VN',
         title: 'Chuyên viên Giải pháp / Triển khai',
         summary:
-          'Làm việc trực tiếp với khách hàng để hiểu bài toán nghiệp vụ thật, không nhận yêu cầu rồi giao lại — đúng với định hướng chuyển từ gia công thụ động sang giải pháp có giá trị lâu dài.',
+          'Làm việc trực tiếp với khách hàng để hiểu bài toán nghiệp vụ thật, thay vì chỉ nhận yêu cầu rồi giao lại cho kỹ sư.',
         work:
           'Vai trò này khảo sát và triển khai giải pháp tại cơ sở khách hàng cho VOMA (bán hàng đa kênh, kế toán, kho bãi) hoặc SOAI (giám sát sản xuất, an toàn lao động), tùy năng lực và nhu cầu ở từng thời điểm. Bạn sẽ trực tiếp gặp khách hàng, xác định yêu cầu thực tế, và phối hợp với kỹ sư để đưa giải pháp vào vận hành — thay vì chỉ chuyển tiếp một bản spec.',
         benefits: [
@@ -121,10 +121,10 @@ const content: Record<'vi' | 'en', Content> = {
     heading: 'Join a small team that is actually building',
     intro: [
       'We are a small, early-stage team: one lead running the overall direction, and a handful of engineers each directly responsible for one service (VOMA.VN, SOAI.VN). No HR department, no layers of management, no large bench of "experts" — just people doing the work and systems that are actually running.',
-      "That's not something to hide. At this size, anyone who joins gets direct access to the production system architecture, works with real customers from day one, and has a real say in product direction — something much harder to get at a larger company.",
+      'At this size, anyone who joins gets direct access to the production system architecture, works with real customers from day one, and has a real say in product direction.',
     ],
     officeNote:
-      'A dedicated ground-floor office (expected ready mid-to-late September) will be used for technical meetings and hardware research; most work today is scheduled flexibly around project needs.',
+      'A dedicated ground-floor office (expected ready mid-to-late September) will be used for technical meetings and hardware research; most work today is scheduled around project deadlines, not fixed office hours.',
     jobsEyebrow: 'Open positions',
     jobsHeading: '3 roles, tied to the real VOMA and SOAI roadmap',
     benefitsLabel: 'What you get',
@@ -142,7 +142,7 @@ const content: Record<'vi' | 'en', Content> = {
         summary:
           'Extend SOAI’s computer vision system from a validated POC into new inspection types and edge deployment.',
         work:
-          "SOAI already runs 6 computer vision modules validated end to end, built on YOLOv8/SAHI (dense SKU counting) and a few-shot VLM (pass/fail checks defined in plain language). The next phase is getting these models running reliably on edge hardware, optimizing inference speed, and extending coverage to new inspection types customers are asking for — labor safety, inventory control, line monitoring. You'll work directly on the pipeline that's already live, not a demo.",
+          "SOAI already runs 6 computer vision modules validated end to end, built on YOLOv8/SAHI (dense SKU counting) and a few-shot VLM (pass/fail checks defined in plain language). The next phase is getting these models running reliably on edge hardware, optimizing inference speed, and extending coverage to new inspection types customers are asking for — labor safety, inventory control, line monitoring. You'll work directly on the production pipeline already serving real customers.",
         benefits: [
           'Direct work with SOAI’s real customers, no middle layer',
           'Deep access to the production system architecture (DeviceProvider, inference pipeline, Celery)',
@@ -163,7 +163,7 @@ const content: Record<'vi' | 'en', Content> = {
           'The system runs on FastAPI and Celery, with a DeviceProvider abstraction that decouples image sources from the analysis core. The core work is writing new providers for industrial camera protocols (ONVIF, VAPIX, ISAPI) to widen supported hardware, alongside supporting VOMA’s phase 2 — integrating payment gateways and retail hardware (POS terminals, barcode scanners, QR code devices).',
         benefits: [
           'Deep access to the live production architecture (FastAPI, Celery, encrypted device credentials)',
-          'Direct involvement in new hardware integration for both VOMA and SOAI, not repetitive work',
+          'Direct involvement in new hardware integration for both VOMA and SOAI',
           'A path to a larger role and equity/leadership as the services scale',
         ],
         arrangement:
@@ -176,9 +176,9 @@ const content: Record<'vi' | 'en', Content> = {
         tag: 'VOMA.VN or SOAI.VN',
         title: 'Solutions / Deployment Specialist',
         summary:
-          "Work directly with customers to understand real business problems — the opposite of taking a spec and handing it off, in line with our shift away from passive outsourcing.",
+          'Work directly with customers to understand real business problems, rather than taking a spec and handing it off to engineers.',
         work:
-          'This role scopes and deploys solutions on-site for VOMA (multi-channel sales, accounting, warehousing) or SOAI (production monitoring, labor safety), depending on capability and need at the time. You will meet customers directly, define real requirements, and work with engineers to get the solution into operation — not just relay a spec.',
+          'This role scopes and deploys solutions on-site for VOMA (multi-channel sales, accounting, warehousing) or SOAI (production monitoring, labor safety), depending on capability and need at the time. You will meet customers directly, define real requirements, and work with engineers to get the solution into operation.',
         benefits: [
           'Direct work with real customers from the very first projects',
           'Access to the production system architecture of both VOMA and SOAI',

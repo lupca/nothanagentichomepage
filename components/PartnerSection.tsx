@@ -9,8 +9,8 @@ const content = {
     intro: 'Chúng tôi tiếp cận với vị thế đối tác giải pháp: vừa phát triển phần mềm trên nền tảng của hãng, vừa tích hợp và cung cấp thiết bị cho dự án trọn gói tại Việt Nam.',
     points: [
       { title: 'Phần mềm làm thiết bị của bạn đáng giá hơn.', body: 'Mỗi bài toán nghiệp vụ chúng tôi giải trên camera của hãng là một lý do để khách hàng chọn thiết bị đó thay vì thiết bị rẻ hơn.' },
-      { title: 'Chúng tôi sống bằng doanh thu định kỳ, nên chúng tôi ở lại.', body: 'Mô hình của chúng tôi là phần mềm thuê theo chu kỳ kèm thiết bị, không phải dự án một lần rồi rút. Khách hàng còn dùng thì chúng tôi còn phải bảo trì.' },
-      { title: 'Đội kỹ thuật là người của chúng tôi.', body: 'Kiến trúc, mô hình và tích hợp thiết bị đều do đội nội bộ làm và chịu trách nhiệm, không gia công lại cho bên thứ ba.' },
+      { title: 'Mô hình thu phí định kỳ kèm thiết bị.', body: 'Phần mềm được cung cấp theo hình thức thuê bao định kỳ, đi kèm thiết bị đồng bộ. Đội kỹ thuật tiếp tục bảo trì trong suốt thời gian hợp đồng còn hiệu lực.' },
+      { title: 'Đội kỹ thuật nội bộ.', body: 'Kiến trúc plugin (AnalysisEngine/DeviceProvider), mô hình AI (YOLOv8, SAHI, VLM) và tích hợp thiết bị (VAPIX, ONVIF, ISAPI) đều do đội kỹ thuật nội bộ của công ty thực hiện.' },
     ],
     cta: 'Trao đổi về hợp tác',
     ctaLink: 'doi-tac',
@@ -20,8 +20,8 @@ const content = {
     intro: 'We come to you as a solution partner: developing software on your platform, while integrating and supplying your equipment for turnkey projects in Vietnam.',
     points: [
       { title: 'Software makes your hardware worth more.', body: 'Every business problem we solve on your cameras is another reason a customer chooses them over a cheaper alternative.' },
-      { title: 'We live on recurring revenue, so we stay.', body: 'Our model is subscription software bundled with equipment, not one-off project delivery. As long as the customer is running, we are still maintaining.' },
-      { title: 'The engineering team is ours.', body: 'Architecture, models, and device integration are built and owned by our in-house team, not subcontracted.' },
+      { title: 'Recurring subscription bundled with hardware.', body: 'Software is delivered as a recurring subscription paired with matched equipment. Our team continues maintenance for the life of the contract.' },
+      { title: 'In-house engineering team.', body: 'The plugin architecture (AnalysisEngine/DeviceProvider), the AI models (YOLOv8, SAHI, VLM), and the device integrations (VAPIX, ONVIF, ISAPI) are all built by our in-house team.' },
     ],
     cta: 'Start a partnership conversation',
     ctaLink: 'doi-tac',
@@ -31,8 +31,8 @@ const content = {
     intro: 'Vi kommer till er som en lösningspartner: vi utvecklar mjukvara på er plattform, samtidigt som vi integrerar och levererar er utrustning för nyckelfärdiga projekt i Vietnam.',
     points: [
       { title: 'Mjukvara gör er hårdvara mer värd.', body: 'Varje affärsproblem vi löser på era kameror är ännu ett skäl för en kund att välja dem framför ett billigare alternativ.' },
-      { title: 'Vi lever på återkommande intäkter, så vi stannar.', body: 'Vår modell är prenumerationsmjukvara paketerad med utrustning, inte engångsprojekt. Så länge kunden är i drift fortsätter vi att underhålla systemet.' },
-      { title: 'Det tekniska teamet är vårt eget.', body: 'Arkitektur, modeller och enhetsintegration byggs och ägs av vårt interna team, inte av underleverantörer.' },
+      { title: 'Återkommande prenumeration paketerad med hårdvara.', body: 'Mjukvaran levereras som en återkommande prenumeration tillsammans med matchad utrustning. Vårt team fortsätter underhållet under hela avtalstiden.' },
+      { title: 'Internt tekniskt team.', body: 'Pluginarkitekturen (AnalysisEngine/DeviceProvider), AI-modellerna (YOLOv8, SAHI, VLM) och enhetsintegrationerna (VAPIX, ONVIF, ISAPI) byggs alla av vårt interna team.' },
     ],
     cta: 'Starta ett partnersamtal',
     ctaLink: 'doi-tac',

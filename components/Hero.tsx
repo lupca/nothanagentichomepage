@@ -7,7 +7,7 @@ const content = {
   vi: {
     eyebrow: 'Giải pháp phần cứng + phần mềm · Lõi Agentic AI',
     h1: 'AI chạy trên thiết bị thật, trong nhà máy thật.',
-    sub: 'Nỏ Thần Agentic thiết kế và triển khai trọn gói phần cứng và phần mềm cho giám sát sản xuất, an toàn lao động và kiểm soát hàng hoá — với Agentic AI làm lõi và bảo mật là mặc định, không phải tuỳ chọn.',
+    sub: 'Nỏ Thần Agentic thiết kế và triển khai phần cứng và phần mềm cho giám sát sản xuất, an toàn lao động và kiểm soát hàng hoá. Agentic AI xử lý dữ liệu tại lõi hệ thống; thông tin đăng nhập thiết bị mã hoá bằng Fernet khi lưu.',
     ctaPrimary: 'Hợp tác cùng chúng tôi',
     ctaSecondary: 'Tải hồ sơ năng lực',
     diagramLabel: 'Bảng điều khiển SOAI',
@@ -17,7 +17,7 @@ const content = {
   en: {
     eyebrow: 'Hardware + software solutions · Agentic AI at the core',
     h1: 'AI that runs on real devices, on real factory floors.',
-    sub: 'Nỏ Thần Agentic designs and delivers end-to-end hardware and software for production monitoring, workplace safety, and goods control — with agentic AI at the core and security as a default, not an option.',
+    sub: 'Nỏ Thần Agentic designs and delivers hardware and software for production monitoring, workplace safety, and goods control. Agentic AI runs at the core of the system, and device credentials are encrypted with Fernet at rest.',
     ctaPrimary: 'Partner with us',
     ctaSecondary: 'Download capability profile',
     diagramLabel: 'The SOAI dashboard',
@@ -27,7 +27,7 @@ const content = {
   sv: {
     eyebrow: 'Hårdvaru- och mjukvarulösningar · Agentic AI i kärnan',
     h1: 'AI som körs på riktiga enheter, på riktiga fabriksgolv.',
-    sub: 'Nỏ Thần Agentic designar och levererar kompletta hårdvaru- och mjukvarulösningar för produktionsövervakning, arbetsmiljösäkerhet och godskontroll — med agentic AI i kärnan och säkerhet som standard, inte tillval.',
+    sub: 'Nỏ Thần Agentic designar och levererar hårdvara och mjukvara för produktionsövervakning, arbetsmiljösäkerhet och godskontroll. Agentic AI körs i systemets kärna, och enhetsuppgifter krypteras med Fernet i vila.',
     ctaPrimary: 'Bli partner med oss',
     ctaSecondary: 'Ladda ner kompetensprofil',
     diagramLabel: 'SOAI-instrumentpanelen',

@@ -10,7 +10,7 @@ interface Module {
 
 const content = {
   vi: {
-    tag: 'Bằng chứng, không phải lời hứa',
+    tag: 'Bằng chứng kiểm định độc lập',
     heading: 'POC SOAI — 6 module đã nghiệm thu',
     sub: '126/126 kịch bản test tự động, kiểm định độc lập qua 8 test suite (unit, integration, E2E, và stress test với ảnh/video hỏng).',
     colModule: 'Module',
@@ -26,7 +26,7 @@ const content = {
     ] as Module[],
   },
   en: {
-    tag: 'Evidence, not promises',
+    tag: 'Independently audited evidence',
     heading: 'SOAI POC — 6 modules accepted',
     sub: '126/126 automated test scenarios, independently audited across 8 test suites (unit, integration, E2E, and stress tests with corrupted images/video).',
     colModule: 'Module',

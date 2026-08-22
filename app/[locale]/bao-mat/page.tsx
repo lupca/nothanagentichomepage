@@ -56,11 +56,11 @@ const content: Record<'vi' | 'en' | 'sv', Copy> = {
   vi: {
     metaTitle: 'Bảo mật và chủ quyền dữ liệu | Nỏ Thần Agentic',
     metaDescription:
-      'Cách Nỏ Thần Agentic xử lý dữ liệu hình ảnh, kiểm soát truy cập, mã hoá thông tin thiết bị, chặn path traversal và nguyên tắc "lỗi phải kêu" — cùng lộ trình tuân thủ trung thực cho đối tác thẩm định.',
+      'Cách Nỏ Thần Agentic xử lý dữ liệu hình ảnh, kiểm soát truy cập, mã hoá thông tin thiết bị, chặn path traversal và hệ phân cấp ngoại lệ SOAIException — cùng lộ trình tuân thủ trung thực cho đối tác thẩm định.',
     eyebrow: 'Bảo mật',
     h1: 'Bảo mật và chủ quyền dữ liệu',
     intro:
-      'Với chúng tôi, bảo mật không phải một ô cần tick trong hồ sơ năng lực — đó là lý do hệ thống có thể chạy được trong mạng nhà máy mà hình ảnh sản xuất của khách hàng không cần rời khỏi cơ sở của họ. Trang này trình bày thẳng những câu hỏi mà một đội thẩm định kỹ thuật thường đặt ra, kèm trạng thái thực tế — không tô vẽ.',
+      'Hệ thống chạy được trong mạng nhà máy vì hình ảnh sản xuất của khách hàng không cần rời khỏi cơ sở của họ để phân tích. Trang này trả lời các câu hỏi một đội thẩm định kỹ thuật thường đặt ra, kèm trạng thái thực tế của từng hạng mục.',
     s1Eyebrow: 'Vị trí dữ liệu',
     s1Title: 'Dữ liệu lưu ở đâu?',
     s1Body: [
@@ -88,8 +88,8 @@ const content: Record<'vi' | 'en' | 'sv', Copy> = {
     s5Eyebrow: 'Nguyên tắc engineering',
     s5Title: 'Xử lý sự cố ra sao?',
     s5Body: [
-      'Chúng tôi theo nguyên tắc "lỗi phải kêu": không có đường fallback âm thầm, không nuốt exception. Toàn bộ hệ thống dùng một hệ thống ngoại lệ tuỳ biến (SOAIException) — mọi sự cố đều bật lên thành lỗi rõ ràng, kèm HTTP response tuân thủ chuẩn RFC và ghi log chi tiết.',
-      'Vì sao điều này quan trọng với bảo mật: một exception bị nuốt âm thầm có thể che giấu chính xác thứ mà một đội bảo mật cần nhìn thấy — một truy cập bất thường, một lỗi toàn vẹn dữ liệu, hay dấu hiệu sớm của một cuộc xâm nhập. Hệ thống báo lỗi rõ ràng và ghi log đầy đủ giúp sự cố được phát hiện và điều tra, thay vì bị che khuất sau một kết quả trông có vẻ bình thường.',
+      'Hệ thống dùng một hệ phân cấp ngoại lệ tuỳ biến, SOAIException, và không có đường fallback âm thầm. Mọi sự cố (lỗi DB, file hỏng, mã QR mờ, mất kết nối camera) đều quăng ra lỗi rõ ràng thay vì bị bắt và bỏ qua. Mỗi lỗi trả về một HTTP response tuân thủ chuẩn RFC, kèm mã lỗi và ghi log chi tiết ở phía server.',
+      'Một exception bị nuốt âm thầm có thể che giấu điều một đội bảo mật cần thấy: một truy cập bất thường, một lỗi toàn vẹn dữ liệu, hay dấu hiệu sớm của xâm nhập. Cơ chế này được kiểm chứng qua 27 bài stress test với video mờ, file hỏng và mất kết nối mạng, trong bộ 126/126 kịch bản test đã pass.',
     ],
     s6Eyebrow: '',
     s6Title: '',
@@ -120,11 +120,11 @@ const content: Record<'vi' | 'en' | 'sv', Copy> = {
   en: {
     metaTitle: 'Security & Data Sovereignty | Nỏ Thần Agentic',
     metaDescription:
-      'How Nỏ Thần Agentic handles video data, access control, device credential encryption, path-traversal protection, and the "errors must be loud" principle — plus an honest compliance roadmap for partner due diligence.',
+      'How Nỏ Thần Agentic handles video data, access control, device credential encryption, path-traversal protection, and the SOAIException error hierarchy — plus an honest compliance roadmap for partner due diligence.',
     eyebrow: 'Security',
     h1: 'Security and data sovereignty',
     intro:
-      'For us, security is not a checkbox on a capability sheet — it is the reason the system can run inside a factory network without a customer\'s production footage ever having to leave their premises. This page answers the questions a technical due-diligence team typically asks, with real status attached — no polish.',
+      'The system runs inside a factory network because a customer\'s production footage does not have to leave their premises for analysis. This page answers the questions a technical due-diligence team typically asks, with the real status attached to each one.',
     s1Eyebrow: 'Data location',
     s1Title: 'Where is data stored?',
     s1Body: [
@@ -152,8 +152,8 @@ const content: Record<'vi' | 'en' | 'sv', Copy> = {
     s5Eyebrow: 'Engineering principle',
     s5Title: 'How are faults handled?',
     s5Body: [
-      'We follow an "errors must be loud" principle: no silent fallback, no swallowed exceptions. The whole system runs on a custom exception hierarchy (SOAIException) — every fault surfaces as an explicit error, with an RFC-compliant HTTP response and a detailed log entry.',
-      'Why this matters for security specifically: a silently swallowed exception can hide exactly what a security team needs to see — an abnormal access pattern, a data-integrity fault, or an early sign of a breach. Loud errors and complete logs mean an incident gets noticed and investigated, instead of being masked behind a result that merely looks normal.',
+      'The system runs on a custom exception hierarchy, SOAIException, with no silent fallback path. Every fault (a DB error, a corrupted file, a blurry QR code, a dropped camera connection) surfaces as an explicit error instead of being caught and ignored. Each error returns an RFC-compliant HTTP response with a clear error code, and is logged in detail server-side.',
+      'A silently swallowed exception can hide exactly what a security team needs to see: an abnormal access pattern, a data-integrity fault, or an early sign of a breach. This mechanism was verified in 27 stress tests with blurred video, corrupted files, and dropped connections, part of the 126/126 test scenarios passed.',
     ],
     s6Eyebrow: '',
     s6Title: '',
@@ -184,11 +184,11 @@ const content: Record<'vi' | 'en' | 'sv', Copy> = {
   sv: {
     metaTitle: 'Säkerhet och datasuveränitet | Nỏ Thần Agentic',
     metaDescription:
-      'Hur Nỏ Thần Agentic hanterar videodata, åtkomstkontroll, kryptering av enhetsuppgifter, skydd mot path traversal och principen att fel alltid ska synas — samt en ärlig efterlevnadsplan för partnerns due diligence.',
+      'Hur Nỏ Thần Agentic hanterar videodata, åtkomstkontroll, kryptering av enhetsuppgifter, skydd mot path traversal och undantagshierarkin SOAIException — samt en ärlig efterlevnadsplan för partnerns due diligence.',
     eyebrow: 'Säkerhet',
     h1: 'Säkerhet och datasuveränitet',
     intro:
-      'För oss är säkerhet inte en ruta att kryssa i på ett kompetensblad — det är anledningen till att systemet kan köras inne i ett fabriksnätverk utan att kundens produktionsbilder någonsin behöver lämna anläggningen. Den här sidan går rakt på de frågor ett tekniskt due diligence-team brukar ställa, med verklig status — utan polish.',
+      'Systemet kan köras inne i ett fabriksnätverk eftersom kundens produktionsbilder inte behöver lämna anläggningen för analys. Den här sidan besvarar de frågor ett tekniskt due diligence-team brukar ställa, med verklig status för varje punkt.',
     s1Eyebrow: 'Datalagring',
     s1Title: 'Var lagras data?',
     s1Body: [
@@ -216,8 +216,8 @@ const content: Record<'vi' | 'en' | 'sv', Copy> = {
     s5Eyebrow: 'Ingenjörsprincip',
     s5Title: 'Hur hanteras fel?',
     s5Body: [
-      'Vi följer principen att fel alltid ska synas: ingen tyst fallback, inga nedsvalda undantag (swallowed exceptions). Hela systemet bygger på en egen exception-hierarki (SOAIException) — varje fel exponeras som ett tydligt fel, med ett RFC-kompatibelt HTTP-svar och en detaljerad loggpost.',
-      'Varför detta är särskilt viktigt för säkerheten: ett tyst nedsvalt undantag kan dölja precis det ett säkerhetsteam behöver se — ett avvikande åtkomstmönster, ett dataintegritetsfel, eller ett tidigt tecken på ett intrång. Tydliga felmeddelanden och fullständig loggning gör att en incident upptäcks och utreds, i stället för att döljas bakom ett resultat som bara ser normalt ut.',
+      'Systemet bygger på en egen undantagshierarki, SOAIException, utan tyst fallback. Varje fel (databasfel, trasig fil, otydlig QR-kod, förlorad kameraanslutning) exponeras som ett tydligt fel i stället för att fångas och ignoreras. Varje fel returnerar ett RFC-kompatibelt HTTP-svar med felkod och loggas i detalj på servern.',
+      'Ett tyst nedsvalt undantag kan dölja precis det ett säkerhetsteam behöver se: ett avvikande åtkomstmönster, ett dataintegritetsfel, eller ett tidigt tecken på intrång. Mekanismen är verifierad i 27 stresstester med suddig video, trasiga filer och förlorade anslutningar, en del av de 126 av 126 testscenarier som godkändes.',
     ],
     s6Eyebrow: '',
     s6Title: '',

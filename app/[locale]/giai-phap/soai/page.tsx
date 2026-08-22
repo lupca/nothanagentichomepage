@@ -75,7 +75,7 @@ const content = {
     eyebrow: 'SOAI.VN — AI Vision',
     h1: 'Giám sát sản xuất, an toàn lao động và kiểm soát hàng hoá bằng thị giác máy tính',
     intro:
-      'SOAI là nền tảng giám sát thông qua hình ảnh, xây cho doanh nghiệp sản xuất và quản lý hàng hoá tại Việt Nam. Chúng tôi không bán một sản phẩm đóng gói cứng nhắc — mỗi bài toán khách hàng được phân tích riêng, ghép từ các module thị giác đã kiểm thử, và triển khai với phần cứng tương ứng (camera IP, hộp xử lý biên, hoặc tích hợp trực tiếp vào camera hãng khi hạ tầng cho phép).',
+      'SOAI là nền tảng giám sát thông qua hình ảnh, xây cho doanh nghiệp sản xuất và quản lý hàng hoá tại Việt Nam. Kiến trúc plugin có hai lớp trừu tượng: AnalysisEngine cho phân tích và DeviceProvider cho nguồn hình. Mỗi bài toán khách hàng được ghép từ các module thị giác đã kiểm thử và triển khai với phần cứng tương ứng — camera IP, hộp xử lý biên, hoặc tích hợp trực tiếp vào camera hãng khi hạ tầng cho phép.',
     problemsEyebrow: 'Ba nhóm bài toán thực tế',
     problemsTitle: 'Từ hiện trường đến báo cáo',
     problems: [
@@ -115,7 +115,7 @@ const content = {
         status: 'poc' as Status,
       },
     ] satisfies ProblemGroup[],
-    modulesEyebrow: 'Bằng chứng, không phải lời hứa',
+    modulesEyebrow: 'Bằng chứng kiểm thử',
     modulesTitle: 'POC SOAI — 6 module đã nghiệm thu',
     modulesNote: '126/126 kịch bản test tự động, kiểm định độc lập qua 8 test suite (unit, integration, E2E, và stress test với ảnh/video hỏng).',
     modules: [
@@ -131,7 +131,7 @@ const content = {
       },
       {
         name: 'Kiểm tra đúng/sai',
-        capability: 'Nghiệp vụ mới định nghĩa bằng lời và vài ảnh mẫu, không cần huấn luyện lại — mở rộng sang bài toán kiểm tra mới trong ngày, không phải tuần.',
+        capability: 'Nghiệp vụ mới định nghĩa bằng lời và vài ảnh mẫu, không cần huấn luyện lại. Mở rộng sang bài toán kiểm tra mới mất một ngày.',
         stack: 'VLM · few-shot',
       },
       {
@@ -150,7 +150,7 @@ const content = {
         stack: 'FFmpeg',
       },
     ] satisfies Module[],
-    screenshotsEyebrow: 'Giao diện thật, không phải mockup',
+    screenshotsEyebrow: 'Giao diện hệ thống đang chạy',
     screenshotsTitle: 'Ảnh chụp trực tiếp từ hệ thống SOAI',
     demoDataCaption: 'Ảnh chụp hệ thống SOAI với dữ liệu minh hoạ.',
     screenshots: [
@@ -208,20 +208,20 @@ const content = {
         status: 'poc' as Status,
       },
       {
-        title: 'Giai đoạn 2 — Tích hợp AI trực tiếp vào camera hãng',
-        body: 'Đưa mô hình phát hiện chạy trực tiếp trên phần cứng của Axis và Hikvision thông qua các nền tảng phát triển của hãng (ACAP và tương đương) — đang ở giai đoạn kỹ thuật, làm việc để tham gia chương trình đối tác chính thức.',
+        title: 'Giai đoạn 2 — Nhúng AI vào camera qua ACAP',
+        body: 'Nhúng mô hình phát hiện trực tiếp vào camera Axis và Hikvision qua ACAP là giai đoạn 2 của lộ trình SOAI. Hiện chưa triển khai; đang tìm hiểu điều kiện tham gia chương trình đối tác của từng hãng.',
         status: 'roadmap' as Status,
       },
       {
-        title: 'Giai đoạn 3 — Giám sát toàn diện doanh nghiệp',
-        body: 'Mở rộng sang an toàn lao động, lưu thông hàng hoá và kiểm soát số lượng/tồn kho trên toàn bộ quy mô doanh nghiệp.',
+        title: 'Giai đoạn 3 — Mở rộng phạm vi giám sát',
+        body: 'Mở rộng sang an toàn lao động, lưu thông hàng hoá và kiểm soát số lượng/tồn kho trên toàn bộ quy mô doanh nghiệp. Chưa triển khai.',
         status: 'roadmap' as Status,
       },
     ] satisfies Phase[],
     demoEyebrow: 'Minh hoạ tương tác',
     demoTitle: 'AI đề xuất — người vận hành quyết định',
     ctaTitle: 'Trao đổi kỹ thuật về SOAI',
-    ctaBody: 'Gửi bài toán cụ thể của nhà máy hoặc kho hàng — chúng tôi phản hồi bằng đề xuất kỹ thuật, không phải slide bán hàng.',
+    ctaBody: 'Gửi bài toán cụ thể của nhà máy hoặc kho hàng. Đội kỹ thuật SOAI phản hồi bằng đề xuất triển khai, kèm module và stack phù hợp.',
     ctaButton: 'Trao đổi kỹ thuật về SOAI',
     situationLabel: 'Hiện trạng',
     whatLabel: 'Hệ thống làm gì',
@@ -238,7 +238,7 @@ const content = {
     eyebrow: 'SOAI.VN — AI Vision',
     h1: 'Computer vision for production monitoring, workplace safety, and goods control',
     intro:
-      'SOAI is a vision-based monitoring platform built for manufacturing and warehouse operators in Vietnam. We don’t ship a rigid packaged product — every customer problem is analyzed on its own terms, assembled from tested vision modules, and deployed with matching hardware: IP cameras, edge processing boxes, or direct integration into brand-name cameras where the infrastructure allows it.',
+      'SOAI is a vision-based monitoring platform built for manufacturing and warehouse operators in Vietnam. The plugin architecture has two abstraction layers: AnalysisEngine for analysis and DeviceProvider for image sources. Each customer problem is assembled from tested vision modules and deployed with matching hardware — IP cameras, edge processing boxes, or direct integration into brand-name cameras where the infrastructure allows it.',
     problemsEyebrow: 'Three real problem groups',
     problemsTitle: 'From the shop floor to the report',
     problems: [
@@ -278,7 +278,7 @@ const content = {
         status: 'poc' as Status,
       },
     ] satisfies ProblemGroup[],
-    modulesEyebrow: 'Evidence, not promises',
+    modulesEyebrow: 'Test evidence',
     modulesTitle: 'SOAI POC — six modules verified',
     modulesNote: '126/126 automated test scenarios passed, independently verified across 8 test suites (unit, integration, E2E, and stress tests with corrupted images/video).',
     modules: [
@@ -294,7 +294,7 @@ const content = {
       },
       {
         name: 'Binary classification',
-        capability: 'New checks are defined with plain language and a few sample images, no retraining required — a new inspection rule ships in a day, not a week.',
+        capability: 'New checks are defined with plain language and a few sample images, no retraining required. A new inspection rule ships in a day.',
         stack: 'VLM · few-shot',
       },
       {
@@ -304,7 +304,7 @@ const content = {
       },
       {
         name: 'Live view & snapshot',
-        capability: 'Live view across multiple cameras, manual or scheduled snapshots — active monitoring, not just after-the-fact review.',
+        capability: 'Live view across multiple cameras, manual or scheduled snapshots, for monitoring during a shift as well as after-the-fact review.',
         stack: 'MJPEG · Celery Beat',
       },
       {
@@ -313,7 +313,7 @@ const content = {
         stack: 'FFmpeg',
       },
     ] satisfies Module[],
-    screenshotsEyebrow: 'Real UI, not a mockup',
+    screenshotsEyebrow: 'Screenshots of the running system',
     screenshotsTitle: 'Screenshots straight from the SOAI system',
     demoDataCaption: 'SOAI system screenshot with demonstration data.',
     screenshots: [
@@ -371,20 +371,20 @@ const content = {
         status: 'poc' as Status,
       },
       {
-        title: 'Phase 2 — Integrate AI directly into brand-name cameras',
-        body: 'Run detection models directly on Axis and Hikvision hardware through the vendors’ development platforms (ACAP and equivalents) — currently at the technical-integration stage, working toward formal partner program participation.',
+        title: 'Phase 2 — ACAP embedding into camera hardware',
+        body: 'Embedding detection models directly into Axis and Hikvision cameras through ACAP is phase 2 of the SOAI roadmap. Not yet implemented; partner program requirements are still being confirmed with each vendor.',
         status: 'roadmap' as Status,
       },
       {
-        title: 'Phase 3 — Enterprise-wide monitoring',
-        body: 'Extend to workplace safety, goods flow, and inventory/quantity control across the whole enterprise.',
+        title: 'Phase 3 — Extend monitoring scope',
+        body: 'Extend to workplace safety, goods flow, and inventory/quantity control across the whole enterprise. Not yet implemented.',
         status: 'roadmap' as Status,
       },
     ] satisfies Phase[],
     demoEyebrow: 'Interactive demo',
     demoTitle: 'AI proposes — the operator decides',
     ctaTitle: 'Talk technical about SOAI',
-    ctaBody: 'Send us a specific problem from your factory or warehouse — we respond with a technical proposal, not a sales deck.',
+    ctaBody: 'Send a specific problem from your factory or warehouse. The SOAI engineering team replies with a deployment proposal, including modules and stack.',
     ctaButton: 'Talk technical about SOAI',
     situationLabel: 'Situation',
     whatLabel: 'What the system does',

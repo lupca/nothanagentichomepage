@@ -15,7 +15,7 @@ const content = {
   vi: {
     tag: 'Kiến trúc mở',
     heading: 'Ma trận tích hợp thiết bị',
-    sub: 'Một lớp trừu tượng DeviceProvider tách nguồn hình ảnh khỏi lõi phân tích — thêm một dòng thiết bị mới là viết thêm plugin, không sửa lõi.',
+    sub: 'Lớp trừu tượng DeviceProvider tách nguồn hình ảnh khỏi lõi phân tích AnalysisEngine. Thêm một dòng thiết bị mới nghĩa là viết một plugin mới cho lớp này.',
     colDevice: 'Dòng thiết bị',
     colInterfaces: 'Giao diện tích hợp',
     colStatus: 'Trạng thái',
@@ -24,16 +24,16 @@ const content = {
     rows: [
       { device: 'Camera IP theo chuẩn mở', interfaces: 'ONVIF Profile S · RTSP', status: 'live', note: 'Live view, snapshot định kỳ, ghi và trích xuất clip theo mốc thời gian.' },
       { device: 'Axis', interfaces: 'VAPIX · ONVIF', status: 'poc', note: 'Điều khiển thiết bị và lấy luồng hình. Đang trao đổi để tham gia chương trình đối tác của hãng.' },
-      { device: 'Axis — AI tại biên', interfaces: 'ACAP', status: 'roadmap', note: 'Đưa mô hình phát hiện chạy trực tiếp trên camera. Mục tiêu hợp tác kỹ thuật đề xuất với hãng.' },
+      { device: 'Axis — AI tại biên', interfaces: 'ACAP', status: 'roadmap', note: 'Nhúng mô hình phát hiện trực tiếp vào camera qua ACAP là giai đoạn 2 của lộ trình SOAI. Hiện chưa triển khai.' },
       { device: 'Hikvision', interfaces: 'ISAPI · SDK', status: 'poc', note: 'Tích hợp luồng hình và quản lý thiết bị.' },
       { device: 'Hộp xử lý biên', interfaces: 'x86 · NVIDIA Jetson', status: 'poc', note: 'Suy luận tại chỗ khi băng thông hoặc chính sách dữ liệu không cho phép đẩy hình lên máy chủ.' },
-      { device: 'Thiết bị bán hàng', interfaces: 'POS · máy quét mã · in QR', status: 'roadmap', note: 'Thuộc giai đoạn 2 của nền tảng VOMA.' },
+      { device: 'Thiết bị bán hàng', interfaces: 'POS · máy quét mã · in QR', status: 'roadmap', note: 'Giai đoạn 2 của lộ trình VOMA. Hiện chưa triển khai.' },
     ] as DeviceRow[],
   },
   en: {
     tag: 'Open architecture',
     heading: 'Device integration matrix',
-    sub: 'A DeviceProvider abstraction separates the image source from the analysis core — supporting a new device line means writing a plugin, not touching the core.',
+    sub: 'A DeviceProvider abstraction separates the image source from the analysis core, AnalysisEngine. Supporting a new device line means writing a new plugin for that layer.',
     colDevice: 'Device line',
     colInterfaces: 'Integration interface',
     colStatus: 'Status',
@@ -42,10 +42,10 @@ const content = {
     rows: [
       { device: 'Open-standard IP cameras', interfaces: 'ONVIF Profile S · RTSP', status: 'live', note: 'Live view, scheduled snapshots, recording and clip extraction by time range.' },
       { device: 'Axis', interfaces: 'VAPIX · ONVIF', status: 'poc', note: 'Device control and stream access. In discussion to join the manufacturer’s partner program.' },
-      { device: 'Axis — edge AI', interfaces: 'ACAP', status: 'roadmap', note: 'Running detection models directly on the camera. The technical partnership goal we’re proposing to the manufacturer.' },
+      { device: 'Axis — edge AI', interfaces: 'ACAP', status: 'roadmap', note: 'Embedding detection models directly on the camera via ACAP is stage 2 of the SOAI roadmap. Not yet implemented.' },
       { device: 'Hikvision', interfaces: 'ISAPI · SDK', status: 'poc', note: 'Stream integration and device management.' },
       { device: 'Edge processing box', interfaces: 'x86 · NVIDIA Jetson', status: 'poc', note: 'On-site inference when bandwidth or data policy forbids sending footage to a server.' },
-      { device: 'Point-of-sale devices', interfaces: 'POS · barcode scanner · QR printer', status: 'roadmap', note: 'Part of VOMA platform phase 2.' },
+      { device: 'Point-of-sale devices', interfaces: 'POS · barcode scanner · QR printer', status: 'roadmap', note: 'Stage 2 of the VOMA roadmap. Not yet implemented.' },
     ] as DeviceRow[],
   },
 };

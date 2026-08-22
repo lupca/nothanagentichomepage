@@ -29,14 +29,14 @@ const jsonLd = {
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Phố Lê Văn Hiến',
-    addressLocality: 'Phường Đức Thắng, Quận Bắc Từ Liêm',
+    addressLocality: 'Phường Đông Ngạc',
     addressRegion: 'Hà Nội',
     addressCountry: 'VN',
   },
   contactPoint: {
     '@type': 'ContactPoint',
     email: 'lienhe@nothanagentic.vn',
-    telephone: '+84-97-600-7006',
+    telephone: '+84-98-365-0552',
     contactType: 'sales',
     areaServed: 'VN',
     availableLanguage: ['vi', 'en', 'sv'],

@@ -4,19 +4,19 @@ import { Reveal } from './Reveal';
 
 const content = {
   vi: {
-    quote: 'Phần cứng là cây nỏ. Agentic AI là mũi tên. Chúng tôi làm cả hai.',
-    p1: 'Một mô hình AI đặt trên máy chủ có thể rất chính xác mà vẫn vô dụng, nếu nó không nhìn thấy dây chuyền và không ai hành động theo nó. Giá trị chỉ xuất hiện ở nơi phần mềm chạm được vào thiết bị: camera nào, đặt ở đâu, suy luận tại biên hay trên máy chủ, ai duyệt cảnh báo, và điều gì xảy ra trong ba giây sau đó. Chúng tôi nhận trách nhiệm cho toàn bộ đường đi đó — chọn thiết bị, tích hợp, mô hình, giao diện vận hành, và bảo trì.',
-    p2: 'Nỏ thần là vũ khí trong truyền thuyết Âu Lạc, được nhớ đến vì độ chính xác và vì một lần giương bắn ra nhiều mũi. Với một công ty làm thị giác máy tính cho an toàn và an ninh, chúng tôi không tìm được cái tên nào đúng hơn.',
+    quote: 'Nỏ Thần Agentic là công ty kỹ thuật, thành lập tại Hà Nội ngày 23/07/2026.',
+    p1: 'Đội kỹ thuật chọn thiết bị, viết phần mềm phân tích, và triển khai tại nhà máy khách hàng. Kiến trúc plugin tách nguồn hình ảnh (DeviceProvider) khỏi lõi phân tích (AnalysisEngine); thêm một dòng camera mới là viết một plugin, không sửa lõi hệ thống.',
+    p2: 'Công ty có hai thành viên góp vốn và một đội kỹ thuật nội bộ. Sản phẩm SOAI đã qua nghiệm thu POC với 126/126 kịch bản test tự động pass trên 8 test suite, kiểm định độc lập.',
   },
   en: {
-    quote: 'The hardware is the crossbow. Agentic AI is the arrow. We build both.',
-    p1: 'A model sitting on a server can be highly accurate and still worthless, if it cannot see the production line and nobody acts on what it says. Value appears only where software touches equipment: which camera, mounted where, inference at the edge or on the server, who approves an alert, and what happens in the three seconds after. We take responsibility for that entire path — device selection, integration, models, the operator interface, and maintenance.',
-    p2: 'Nỏ Thần is a crossbow from the legends of Âu Lạc, ancient Vietnam, remembered for its precision and for loosing many arrows with a single pull. For a company building computer vision for safety and security, we could not find a truer name.',
+    quote: 'Nỏ Thần Agentic is an engineering company, founded in Hanoi on 23 July 2026.',
+    p1: 'The team selects hardware, writes the analysis software, and deploys it on customer factory floors. A plugin architecture separates the image source (DeviceProvider) from the analysis core (AnalysisEngine); adding a new camera line means writing a plugin, not changing the core.',
+    p2: 'The company has two founding members and an in-house engineering team. The SOAI platform completed its POC with 126 of 126 automated test scenarios passed across 8 test suites, verified by an independent audit.',
   },
   sv: {
-    quote: 'Hårdvaran är armborstet. Agentic AI är pilen. Vi bygger båda.',
-    p1: 'En modell som körs på en server kan vara mycket precis och ändå värdelös, om den inte kan se produktionslinjen och ingen agerar på det den säger. Värdet uppstår bara där mjukvaran möter utrustningen: vilken kamera, monterad var, inferens vid kanten eller på servern, vem som godkänner ett larm, och vad som händer under de tre sekunderna efter. Vi tar ansvar för hela den kedjan — val av utrustning, integration, modeller, operatörsgränssnittet och underhåll.',
-    p2: 'Nỏ Thần är ett armborst ur legenderna om Âu Lạc, det forntida Vietnam, känt för sin precision och för att avfyra många pilar med ett enda drag. För ett företag som bygger datorseende för säkerhet hittade vi inget sannare namn.',
+    quote: 'Nỏ Thần Agentic är ett tekniskt företag, grundat i Hanoi den 23 juli 2026.',
+    p1: 'Teamet väljer hårdvara, skriver analysmjukvaran och installerar den hos kundens fabriker. En pluginarkitektur separerar bildkällan (DeviceProvider) från analyskärnan (AnalysisEngine); att lägga till en ny kameramodell innebär att skriva en plugin, inte att ändra kärnan.',
+    p2: 'Företaget har två grundare och ett internt tekniskt team. SOAI-plattformen genomförde sin POC med 126 av 126 automatiska testscenarier godkända över 8 testsviter, verifierat av en oberoende granskning.',
   },
 };
 

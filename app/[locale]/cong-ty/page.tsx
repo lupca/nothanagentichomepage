@@ -47,9 +47,9 @@ const content: Record<'vi' | 'en' | 'sv', Content> = {
     metaDescription:
       'Tầm nhìn, đội ngũ, mô hình quản trị và thông tin pháp lý của Nỏ Thần Agentic — công ty giải pháp phần cứng và phần mềm lấy Agentic AI làm cốt lõi.',
     eyebrow: 'Công ty',
-    h1: 'Xây giải pháp toàn diện, lấy Agentic AI làm cốt lõi',
+    h1: 'Giải pháp phần cứng và phần mềm, lấy Agentic AI làm lõi',
     intro:
-      'Chúng tôi đang chuyển dịch từ cách làm thụ động theo chỉ thị/spec kiểu gia công (outsourcing) sang hiểu sâu bài toán nghiệp vụ thực tế của khách hàng, để sản phẩm mang lại giá trị sử dụng lâu dài. Mô hình kinh doanh cốt lõi là SaaS thu phí theo chu kỳ (tháng/quý/năm), kết hợp cung cấp phần cứng đồng bộ (All-in-One) — phần mềm và thiết bị đi cùng nhau, không tách rời.',
+      'Mô hình kinh doanh cốt lõi là SaaS thu phí theo chu kỳ (tháng/quý/năm), kết hợp cung cấp phần cứng đồng bộ — phần mềm và thiết bị đi cùng nhau, không tách rời. Đội kỹ thuật làm việc trực tiếp với khách hàng để xác định bài toán nghiệp vụ cụ thể trước khi triển khai.',
     teamEyebrow: 'Đội ngũ',
     teamTitle: 'Ai đang trực tiếp làm việc',
     teamNote:
@@ -65,10 +65,10 @@ const content: Record<'vi' | 'en' | 'sv', Content> = {
     roadmapTag: 'Kế hoạch, chưa triển khai',
     roadmapBody: [
       'Khi từng dịch vụ — SOAI.VN, VOMA.VN — đạt quy mô lớn, chúng tôi có kế hoạch tách thành các công ty con độc lập, trao quyền điều hành cho nhân sự nòng cốt đang trực tiếp phụ trách giải pháp đó.',
-      'Đây là lộ trình cấu trúc dài hạn, không phải cấu trúc hiện tại của công ty. Chúng tôi công bố nó ở đây vì đối tác thẩm định có quyền biết chúng tôi đang đi theo hướng nào, không chỉ đang ở đâu.',
+      'Đây là lộ trình cấu trúc dài hạn; công ty hiện chưa vận hành theo mô hình này. Chúng tôi công bố nó ở đây vì đối tác thẩm định có quyền biết hướng đi, không chỉ trạng thái hiện tại.',
     ],
     commitEyebrow: 'Cam kết',
-    commitTitle: 'Năm cam kết',
+    commitTitle: 'Sáu cam kết',
     commitSub: 'Chỉ những cam kết khách hàng có thể bắt lỗi được.',
     commitments: [
       'Lộ trình công khai. Ba giai đoạn của mỗi nền tảng được công bố và cập nhật, kèm ngày.',
@@ -81,10 +81,12 @@ const content: Record<'vi' | 'en' | 'sv', Content> = {
     legalEyebrow: 'Pháp lý',
     legalTitle: 'Thông tin pháp lý',
     legal: [
-      { label: 'Tên công ty', value: 'Nỏ Thần Agentic' },
-      { label: 'Địa chỉ', value: 'Phố Lê Văn Hiến, Phường Đức Thắng, Quận Bắc Từ Liêm, Hà Nội' },
+      { label: 'Tên công ty', value: 'Công ty TNHH Nỏ Thần Agentic' },
+      { label: 'Mã số thuế', value: '0111579329, đăng ký lần đầu ngày 23/07/2026' },
+      { label: 'Địa chỉ', value: 'Số 1, ngõ 141/3, phố Lê Văn Hiến, phường Đông Ngạc, Hà Nội' },
+      { label: 'Người đại diện pháp luật', value: 'Ông Đào Duy Hưng' },
       { label: 'Email', value: 'lienhe@nothanagentic.vn' },
-      { label: 'Điện thoại', value: '097 6007006' },
+      { label: 'Điện thoại', value: '0983 650 552' },
     ],
     ctaTitle: 'Muốn xem thêm trước khi hợp tác?',
     ctaBody: 'Chúng tôi cung cấp báo cáo tài chính, danh sách nhân sự và tài liệu kiến trúc cho đối tác trong quá trình thẩm định.',
@@ -97,7 +99,7 @@ const content: Record<'vi' | 'en' | 'sv', Content> = {
     eyebrow: 'Company',
     h1: 'Building end-to-end solutions with Agentic AI at the core',
     intro:
-      'We are moving away from passive, spec-driven outsourcing-style delivery and toward genuinely understanding our customers\' business problems, so what we build creates lasting value rather than a one-off handover. Our core business model is a subscription SaaS (monthly/quarterly/annual) bundled with synchronized hardware (All-in-One) — software and devices ship together, not as separate purchases.',
+      'Our core business model is a subscription SaaS (monthly/quarterly/annual) bundled with synchronized hardware — software and devices ship together, not as separate purchases. The engineering team works directly with customers to define the business problem before deployment.',
     teamEyebrow: 'Team',
     teamTitle: 'Who is actually doing the work',
     teamNote:
@@ -116,7 +118,7 @@ const content: Record<'vi' | 'en' | 'sv', Content> = {
       'This is a long-term structural plan, not our current corporate structure. We state it plainly here because a due-diligence partner deserves to know the direction we are heading, not only where we stand today.',
     ],
     commitEyebrow: 'Commitments',
-    commitTitle: 'Five commitments',
+    commitTitle: 'Six commitments',
     commitSub: 'Only commitments a customer can hold us to.',
     commitments: [
       'Public roadmap. The three phases of every platform are published and updated, with dates.',
@@ -129,10 +131,12 @@ const content: Record<'vi' | 'en' | 'sv', Content> = {
     legalEyebrow: 'Legal',
     legalTitle: 'Legal information',
     legal: [
-      { label: 'Company name', value: 'Nỏ Thần Agentic' },
-      { label: 'Address', value: 'Phố Lê Văn Hiến, Đức Thắng Ward, Bắc Từ Liêm District, Hanoi, Vietnam' },
+      { label: 'Company name', value: 'No Than Agentic Company Limited' },
+      { label: 'Tax code', value: '0111579329, first registered 23 July 2026' },
+      { label: 'Address', value: 'So 1, ngo 141/3, pho Le Van Hien, Dong Ngac ward, Hanoi, Vietnam' },
+      { label: 'Legal representative', value: 'Mr. Đào Duy Hưng' },
       { label: 'Email', value: 'lienhe@nothanagentic.vn' },
-      { label: 'Phone', value: '+84 97 600 7006' },
+      { label: 'Phone', value: '+84 983 650 552' },
     ],
     ctaTitle: 'Want to see more before you commit?',
     ctaBody: 'We share financial statements, team rosters, and architecture documentation with partners during due diligence.',
@@ -145,7 +149,7 @@ const content: Record<'vi' | 'en' | 'sv', Content> = {
     eyebrow: 'Företaget',
     h1: 'Vi bygger helhetslösningar med Agentic AI i kärnan',
     intro:
-      'Vi rör oss bort från passiv, spec-styrd leverans i outsourcing-stil och mot att verkligen förstå kundens affärsproblem, så att det vi bygger skapar långsiktigt värde snarare än en enstaka överlämning. Vår kärnaffärsmodell är en SaaS-prenumeration (månad/kvartal/år) i kombination med synkroniserad hårdvara (All-in-One) — mjukvara och enheter levereras tillsammans, inte som separata köp.',
+      'Vår kärnaffärsmodell är en SaaS-prenumeration (månad/kvartal/år) i kombination med synkroniserad hårdvara — mjukvara och enheter levereras tillsammans, inte som separata köp. Utvecklingsteamet arbetar direkt med kunden för att definiera affärsproblemet innan driftsättning.',
     teamEyebrow: 'Team',
     teamTitle: 'Vilka som faktiskt utför arbetet',
     teamNote:
@@ -164,7 +168,7 @@ const content: Record<'vi' | 'en' | 'sv', Content> = {
       'Detta är en långsiktig strukturell plan, inte vår nuvarande bolagsstruktur. Vi skriver ut det tydligt här, eftersom en partner som genomför due diligence har rätt att veta vart vi är på väg, inte bara var vi står idag.',
     ],
     commitEyebrow: 'Åtaganden',
-    commitTitle: 'Fem åtaganden',
+    commitTitle: 'Sex åtaganden',
     commitSub: 'Bara åtaganden som en kund faktiskt kan hålla oss ansvariga för.',
     commitments: [
       'Offentlig färdplan. Varje plattforms tre faser publiceras och uppdateras, med datum.',
@@ -177,10 +181,12 @@ const content: Record<'vi' | 'en' | 'sv', Content> = {
     legalEyebrow: 'Juridik',
     legalTitle: 'Juridisk information',
     legal: [
-      { label: 'Företagsnamn', value: 'Nỏ Thần Agentic' },
-      { label: 'Adress', value: 'Phố Lê Văn Hiến, Đức Thắng, Bắc Từ Liêm-distriktet, Hanoi, Vietnam' },
+      { label: 'Företagsnamn', value: 'No Than Agentic Company Limited' },
+      { label: 'Organisationsnummer (MST)', value: '0111579329, förstaregistrerat 23 juli 2026' },
+      { label: 'Adress', value: 'So 1, ngo 141/3, pho Le Van Hien, Dong Ngac, Hanoi, Vietnam' },
+      { label: 'Juridisk företrädare', value: 'Herr Đào Duy Hưng' },
       { label: 'E-post', value: 'lienhe@nothanagentic.vn' },
-      { label: 'Telefon', value: '+84 97 600 7006' },
+      { label: 'Telefon', value: '+84 983 650 552' },
     ],
     ctaTitle: 'Vill du se mer innan ni går vidare?',
     ctaBody: 'Vi delar finansiella rapporter, personallistor och arkitekturdokumentation med partner under due diligence.',

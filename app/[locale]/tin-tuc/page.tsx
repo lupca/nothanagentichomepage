@@ -27,11 +27,11 @@ const content: Record<'vi' | 'en', Copy> = {
   vi: {
     metaTitle: 'Ghi chú kỹ thuật | Nỏ Thần Agentic',
     metaDescription:
-      'Ghi chú kỹ thuật từ đội ngũ Nỏ Thần Agentic về các quyết định kiến trúc thực tế trong hệ thống giám sát hình ảnh SOAI — kiến trúc plugin, đếm SKU bằng SAHI, kiểm thử, và nguyên tắc "lỗi phải kêu".',
+      'Ghi chú kỹ thuật từ đội ngũ Nỏ Thần Agentic về các quyết định kiến trúc thực tế trong hệ thống giám sát hình ảnh SOAI — kiến trúc plugin, đếm SKU bằng SAHI, kiểm thử, và hệ phân cấp ngoại lệ SOAIException.',
     eyebrow: 'Ghi chú kỹ thuật',
     h1: 'Tin tức & ghi chú kỹ thuật',
     intro:
-      'Đây không phải trang tin tức doanh nghiệp. Đây là những ghi chú ngắn giải thích vì sao chúng tôi chọn một cách làm cụ thể, viết từ chính đội ngũ đã đưa ra quyết định đó — dựa trên hệ thống SOAI đã nghiệm thu POC.',
+      'Đây là những ghi chú ngắn giải thích vì sao chúng tôi chọn một cách làm cụ thể, viết từ chính đội ngũ đã đưa ra quyết định đó, dựa trên hệ thống SOAI đã nghiệm thu POC.',
     readMore: 'Đọc tiếp',
     articles: [
       {
@@ -43,7 +43,7 @@ const content: Record<'vi' | 'en', Copy> = {
         body: [
           'Khi bắt đầu tích hợp camera cho hệ thống giám sát SOAI, chúng tôi gặp ngay một sự thật khó chịu: mỗi hãng camera có một giao thức riêng. Camera IP theo chuẩn mở dùng ONVIF Profile S và RTSP. Axis dùng VAPIX song song với ONVIF. Hikvision dùng ISAPI và SDK riêng của họ. Không có một API duy nhất để "nói chuyện" với tất cả camera trên đời, và sẽ không bao giờ có.',
           'Nếu viết logic đọc từng loại camera lẫn vào logic phân tích AI, mỗi lần thêm một hãng mới là một lần sửa lõi — rủi ro làm hỏng thứ đang chạy ổn định chỉ để thêm một thứ mới. Vì vậy chúng tôi dựng hai lớp trừu tượng tách biệt: `DeviceProvider` chịu trách nhiệm duy nhất là lấy được hình ảnh/video từ một thiết bị, bất kể giao thức gì bên dưới; `AnalysisEngine` chịu trách nhiệm duy nhất là phân tích một khung hình hoặc một video, không quan tâm hình đó lấy từ đâu.',
-          'Kết quả thực tế: thêm hỗ trợ một dòng camera mới nghĩa là viết một plugin `DeviceProvider` mới tuân theo interface đã định nghĩa, không phải sửa lại engine phân tích hay các module đã nghiệm thu (đếm SKU, phân tích video đóng gói, live view...). Tương tự, thêm một nghiệp vụ kiểm tra AI mới là viết một `AnalysisEngine` mới, không phải đụng vào lớp đọc thiết bị.',
+          'Kết quả thực tế: thêm hỗ trợ một dòng camera mới nghĩa là viết một plugin `DeviceProvider` mới tuân theo interface đã định nghĩa, để yên engine phân tích và các module đã nghiệm thu (đếm SKU, phân tích video đóng gói, live view...). Tương tự, thêm một nghiệp vụ kiểm tra AI mới là viết một `AnalysisEngine` mới, để yên lớp đọc thiết bị.',
           'Đây cũng là lý do chúng tôi có thể đàm phán hợp tác kỹ thuật với Axis và Hikvision mà không cần viết lại hệ thống — dù mỗi hãng có SDK và tài liệu khác nhau, chúng tôi chỉ cần một plugin tuân theo cùng một hợp đồng interface.',
         ],
       },
@@ -70,7 +70,7 @@ const content: Record<'vi' | 'en', Copy> = {
           'Bộ test của hệ thống SOAI được chia thành ba lớp. Lớp thứ nhất là 10 test suite unit và integration ở backend, bao phủ models, các `AnalysisEngine`, các worker xử lý bất đồng bộ (Celery) và các API. Lớp thứ hai là 99 kịch bản end-to-end, đi qua toàn bộ luồng dữ liệu thật: Upload → Process → Storage → Query — tức là kiểm tra không chỉ một hàm chạy đúng, mà cả một chuỗi bước từ lúc người dùng tải video lên đến lúc họ tra được kết quả.',
           'Lớp thứ ba là 27 bài test áp lực và đối kháng (stress & adversarial media test): đưa vào hệ thống video/ảnh mờ, file bị hỏng cấu trúc, mã QR không đọc được rõ, và kết nối mạng bị ngắt giữa lúc xử lý.',
           'Vì sao lớp thứ ba này quan trọng hơn ở một hệ thống giám sát so với phần mềm thông thường: nếu một ứng dụng quản lý văn bản gặp file hỏng và báo lỗi, người dùng thử lại là xong. Nhưng nếu một hệ thống giám sát gặp video hỏng hoặc ảnh mờ và im lặng trả về "không phát hiện vi phạm" — trông giống một kết quả bình thường — thì đó là một lỗ hổng an toàn thực sự, vì không ai biết hệ thống đã thất bại.',
-          'Đó là lý do 27 bài test adversarial này không phải là phần "để có cho đủ bộ", mà là phần chúng tôi coi trọng nhất trong toàn bộ 126 kịch bản: chúng kiểm tra đúng cái ranh giới giữa "hệ thống báo lỗi rõ ràng" và "hệ thống im lặng trả về kết quả sai".',
+          '27 bài test adversarial là phần chúng tôi coi trọng nhất trong toàn bộ 126 kịch bản, vì chúng kiểm tra đúng ranh giới giữa "hệ thống báo lỗi rõ ràng" và "hệ thống im lặng trả về kết quả sai".',
         ],
       },
       {
@@ -78,10 +78,10 @@ const content: Record<'vi' | 'en', Copy> = {
         title: 'Vì sao chúng tôi không có đường fallback im lặng',
         datePublished: '2026-05-12',
         excerpt:
-          'Một exception bị nuốt âm thầm có thể biến một video hỏng thành một kết quả "không có vi phạm" trông hoàn toàn bình thường. Chúng tôi chọn để lỗi kêu lên, thay vì để nó biến mất.',
+          'Một exception bị nuốt âm thầm có thể biến một video hỏng thành một kết quả "không có vi phạm" trông hoàn toàn bình thường. Chúng tôi cho lỗi nổi lên thành exception rõ ràng, kèm log chi tiết.',
         body: [
           'Hãy tưởng tượng một tình huống cụ thể: một file video ghi lại quá trình đóng hàng bị hỏng một phần do lỗi ghi đĩa, và khi hệ thống cố trích xuất khung hình bằng FFmpeg, lệnh gọi thất bại. Có hai cách một hệ thống có thể xử lý việc này. Cách thứ nhất: bắt lỗi, trả về một kết quả mặc định rỗng — ví dụ "không tìm thấy mã QR" hoặc "không phát hiện vi phạm" — và tiếp tục chạy. Cách thứ hai: để lỗi đó nổi lên thành một exception rõ ràng, kèm thông tin vì sao thất bại.',
-          'Chúng tôi chọn cách thứ hai một cách có chủ đích, và gọi nó là nguyên tắc "lỗi phải kêu". Toàn bộ hệ thống SOAI dùng một hệ thống ngoại lệ tuỳ biến gọi là `SOAIException`, phân theo loại lỗi cụ thể (lỗi cơ sở dữ liệu, file hỏng, lỗi xử lý media, lỗi kết nối thiết bị...). Mọi sự cố đều đi qua hệ thống này, được quăng lên thành một lỗi minh bạch kèm HTTP response tuân thủ chuẩn RFC, và được ghi log chi tiết.',
+          'Chúng tôi chọn cách thứ hai. Toàn bộ hệ thống SOAI dùng một hệ thống ngoại lệ tuỳ biến gọi là `SOAIException`, phân theo loại lỗi cụ thể (lỗi cơ sở dữ liệu, file hỏng, lỗi xử lý media, lỗi kết nối thiết bị...). Mọi sự cố đều đi qua hệ thống này, được quăng lên thành một lỗi minh bạch kèm HTTP response tuân thủ chuẩn RFC, và được ghi log chi tiết.',
           'Lý do điều này quan trọng với đúng bản chất của một hệ thống giám sát: giá trị của hệ thống nằm ở việc nó có thể trả lời chính xác "có" hoặc "không" cho một câu hỏi nghiệp vụ (có đủ hàng không, có vi phạm an toàn không). Một cách fallback im lặng — trả về mặc định khi gặp lỗi — sẽ biến một sự cố kỹ thuật thành một câu trả lời nghiệp vụ sai, và người xem báo cáo sẽ không có cách nào phân biệt được "không có vi phạm thật" với "hệ thống đã thất bại nhưng không ai biết".',
           'Nói cách khác, một lỗi hiện rõ và được ghi log là một sự cố có thể sửa. Một lỗi bị nuốt âm thầm là một sự cố sẽ quay lại tìm chúng tôi — dưới dạng một khách hàng mất niềm tin vào dữ liệu mà hệ thống báo cáo.',
         ],
@@ -91,11 +91,11 @@ const content: Record<'vi' | 'en', Copy> = {
   en: {
     metaTitle: 'Technical notes | Nỏ Thần Agentic',
     metaDescription:
-      'Technical notes from the Nỏ Thần Agentic team on real architecture decisions in the SOAI monitoring system — plugin architecture, SAHI-based SKU counting, testing strategy, and the "errors must be loud" principle.',
+      'Technical notes from the Nỏ Thần Agentic team on real architecture decisions in the SOAI monitoring system — plugin architecture, SAHI-based SKU counting, testing strategy, and the SOAIException error hierarchy.',
     eyebrow: 'Technical notes',
     h1: 'News & technical notes',
     intro:
-      'This is not a corporate news feed. These are short notes explaining why we made a specific engineering choice, written by the team that made it — grounded in the SOAI system we have actually built and tested through a POC acceptance cycle.',
+      'These are short notes explaining why we made a specific engineering choice, written by the team that made it, grounded in the SOAI system we have built and tested through a POC acceptance cycle.',
     readMore: 'Read more',
     articles: [
       {
@@ -107,7 +107,7 @@ const content: Record<'vi' | 'en', Copy> = {
         body: [
           'When we started integrating cameras for the SOAI monitoring system, we ran into an inconvenient fact immediately: every camera vendor has its own protocol. Open-standard IP cameras use ONVIF Profile S and RTSP. Axis uses VAPIX alongside ONVIF. Hikvision uses ISAPI and its own SDK. There is no single API that talks to every camera in existence, and there never will be.',
           'If device-reading logic for each brand were mixed into the AI analysis logic, every new vendor added would mean touching the core — risking breakage of something already running reliably just to add something new. So we built two separate abstraction layers: `DeviceProvider`, whose only job is to fetch images or video from a device regardless of the protocol underneath, and `AnalysisEngine`, whose only job is to analyze a frame or a video without caring where it came from.',
-          'The practical result: adding support for a new camera line means writing a new `DeviceProvider` plugin that follows the defined interface, not modifying the analysis engine or the already-accepted modules (SKU counting, packing video analysis, live view, and so on). Likewise, adding a new AI check is a new `AnalysisEngine`, not a change to the device layer.',
+          'The practical result: adding support for a new camera line means writing a new `DeviceProvider` plugin that follows the defined interface, leaving the analysis engine and the already-accepted modules untouched (SKU counting, packing video analysis, live view, and so on). Likewise, adding a new AI check means writing a new `AnalysisEngine`, and the device layer stays untouched.',
           'This is also why we can pursue technical partnership conversations with Axis and Hikvision without rewriting the system — even though each vendor has a different SDK and documentation, we only need one plugin conforming to the same interface contract.',
         ],
       },
@@ -131,10 +131,10 @@ const content: Record<'vi' | 'en', Copy> = {
         excerpt:
           'In a monitoring system, software that looks fine while processing corrupted input is more dangerous than software that fails loudly. That is why roughly a fifth of our test suite deliberately feeds it bad data.',
         body: [
-          'The SOAI test suite is organized into three layers. The first is 10 backend unit and integration suites, covering the models, the `AnalysisEngine` implementations, the asynchronous workers (Celery), and the APIs. The second is 99 end-to-end scenarios exercising the actual data flow: Upload → Process → Storage → Query — checking not just that a single function works, but that the whole chain from a user uploading a video to querying the result holds up.',
+          'The SOAI test suite is organized into three layers. The first is 10 backend unit and integration suites, covering the models, the `AnalysisEngine` implementations, the asynchronous workers (Celery), and the APIs. The second is 99 end-to-end scenarios exercising the actual data flow: Upload → Process → Storage → Query, checking the whole chain from a user uploading a video to querying the result, not only that a single function works.',
           'The third layer is 27 stress and adversarial-media tests: feeding the system blurry video or images, structurally corrupted files, QR codes that are not cleanly readable, and network connections that drop mid-processing.',
           'Why this third layer matters more here than in typical software: if a document management app hits a corrupted file and throws an error, the user just retries. But if a monitoring system hits a corrupted video or a blurry image and silently returns "no violation found" — which looks exactly like a normal result — that is a genuine safety gap, because nobody knows the system has failed.',
-          'That is why these 27 adversarial tests are not a box-ticking addition — they are the part of the full 126-scenario suite we weight most heavily. They test exactly the boundary between "the system reports a clear error" and "the system silently returns a wrong result".',
+          'These 27 adversarial tests are the part of the full 126-scenario suite we weight most heavily. They test exactly the boundary between "the system reports a clear error" and "the system silently returns a wrong result".',
         ],
       },
       {
@@ -142,10 +142,10 @@ const content: Record<'vi' | 'en', Copy> = {
         title: 'Why we have no silent fallback path',
         datePublished: '2026-05-12',
         excerpt:
-          'A silently swallowed exception can turn a corrupted video into a "no violation found" result that looks entirely normal. We chose to let errors be loud instead of letting them disappear.',
+          'A silently swallowed exception can turn a corrupted video into a "no violation found" result that looks entirely normal. We surface it as an explicit exception, with a detailed log entry.',
         body: [
           'Picture a concrete case: a video recording of a packing run is partially corrupted by a disk write error, and when the system tries to extract frames via FFmpeg, the call fails. There are two ways a system can handle this. The first: catch the error, return an empty default result — say, "no QR code found" or "no violation detected" — and keep running. The second: let the failure surface as an explicit exception, with information about why it failed.',
-          'We deliberately chose the second, and we call it the "errors must be loud" principle. The entire SOAI system runs on a custom exception hierarchy called `SOAIException`, categorized by specific failure type (database errors, corrupted files, media-processing errors, device connection errors, and so on). Every fault passes through this hierarchy, surfaces as a transparent error with an RFC-compliant HTTP response, and is logged in detail.',
+          'We deliberately chose the second. The entire SOAI system runs on a custom exception hierarchy called `SOAIException`, categorized by specific failure type (database errors, corrupted files, media-processing errors, device connection errors, and so on). Every fault passes through this hierarchy, surfaces as a transparent error with an RFC-compliant HTTP response, and is logged in detail.',
           'Why this matters specifically for a monitoring system: the value of such a system rests on being able to answer a business question accurately — is stock sufficient, was there a safety violation. A silent fallback that returns a default on error turns a technical fault into a wrong business answer, and whoever reads the report has no way to tell "genuinely no violation" apart from "the system failed and nobody knew".',
           'Put simply, a loud, logged error is an incident that can be fixed. A silently swallowed one is an incident that comes back to find us later — as a customer who has lost trust in what the system reports.',
         ],
