@@ -30,17 +30,17 @@ export const RevealContext = React.createContext<boolean>(false);
 
 /**
  * Reveal-on-scroll wrapper: fades and slides content up by 16px once, the
- * first time it enters the viewport. Deliberately restrained — no parallax,
- * no scale, no bounce, no looping motion — per the site's due-diligence
+ * first time it enters the viewport. Deliberately restrained - no parallax,
+ * no scale, no bounce, no looping motion - per the site's due-diligence
  * audience.
  *
  * Respects prefers-reduced-motion by skipping the scroll trigger and
- * animating straight to the resting state on mount, with zero duration —
+ * animating straight to the resting state on mount, with zero duration -
  * content is visually indistinguishable from static, fully-opaque markup.
  *
  * Important: both branches render the *same* `motion[as]` element type.
  * Swapping between a plain host element (e.g. `<div>`) and a `motion.div`
- * based on `shouldReduceMotion` causes a hydration mismatch — the server
+ * based on `shouldReduceMotion` causes a hydration mismatch - the server
  * always renders the animated variant (it can't know the client's OS
  * preference), and if the client's first render then produces a different
  * element type, hydration silently fails to reconcile the style attribute

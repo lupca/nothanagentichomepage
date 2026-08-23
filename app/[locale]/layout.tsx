@@ -25,7 +25,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 const SITE_URL = 'https://nothanagentic.vn';
-const SITE_TITLE = 'Nỏ Thần Agentic — Giải pháp phần cứng + phần mềm, lõi Agentic AI';
+const SITE_TITLE = 'Nỏ Thần Agentic - Giải pháp phần cứng và phần mềm, lõi Agentic AI';
 const SITE_DESCRIPTION =
   'Nỏ Thần Agentic xây và triển khai giải pháp trọn gói phần cứng và phần mềm cho giám sát sản xuất, an toàn lao động và kiểm soát hàng hoá tại doanh nghiệp Việt Nam, với Agentic AI làm lõi và bảo mật là mặc định.';
 
@@ -74,7 +74,7 @@ export const metadata: Metadata = {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'Nỏ Thần Agentic — giải pháp phần cứng và phần mềm với Agentic AI',
+        alt: 'Nỏ Thần Agentic - giải pháp phần cứng và phần mềm với Agentic AI',
       },
     ],
   },
@@ -118,7 +118,7 @@ export default async function RootLayout({
       <body className="bg-paper text-ink antialiased">
         {/* If JavaScript fails to load, framer-motion's inline `initial` style
             (opacity:0) on [data-reveal] elements would otherwise never animate
-            in. This noscript rule forces them visible — !important in a
+            in. This noscript rule forces them visible - !important in a
             stylesheet wins over a plain inline style. */}
         <noscript>
           <style>{'[data-reveal]{opacity:1 !important;transform:none !important;}'}</style>

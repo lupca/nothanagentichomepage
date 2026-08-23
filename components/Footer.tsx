@@ -5,8 +5,8 @@ import { Logo } from './Logo';
 
 const content = {
   vi: {
-    description: 'Giải pháp phần cứng + phần mềm lấy Agentic AI làm lõi, cho giám sát sản xuất, an toàn lao động và kiểm soát hàng hoá tại doanh nghiệp Việt Nam.',
-    securityNote: 'Mã hoá tại chỗ · chặn path traversal · triển khai on-prem',
+    description: 'Giải pháp phần cứng và phần mềm lấy Agentic AI làm lõi, cho giám sát sản xuất, an toàn lao động và kiểm soát hàng hoá tại doanh nghiệp Việt Nam.',
+    securityNote: 'Mã hoá khi lưu · chặn path traversal · on-prem',
     groups: [
       { title: 'Giải Pháp', links: [
         { label: 'Ba trụ năng lực', href: '#nang-luc' },
@@ -29,8 +29,8 @@ const content = {
     terms: 'Điều khoản dịch vụ',
   },
   en: {
-    description: 'Hardware + software solutions with Agentic AI at the core, for production monitoring, workplace safety, and goods control at Vietnamese businesses.',
-    securityNote: 'Encrypted at rest · path traversal blocked · on-prem deployment',
+    description: 'Hardware and software solutions with Agentic AI at the core, for production monitoring, workplace safety, and goods control at Vietnamese businesses.',
+    securityNote: 'Encrypted at rest · no path traversal · on-prem',
     groups: [
       { title: 'Solutions', links: [
         { label: 'Three capability pillars', href: '#nang-luc' },
@@ -54,7 +54,7 @@ const content = {
   },
   sv: {
     description: 'Hårdvaru- och mjukvarulösningar med Agentic AI i kärnan, för produktionsövervakning, arbetsmiljösäkerhet och godskontroll hos vietnamesiska företag.',
-    securityNote: 'Krypterat i vila · skydd mot path traversal · installation on-prem',
+    securityNote: 'Krypterat i vila · skydd mot path traversal · on-prem',
     groups: [
       { title: 'Lösningar', links: [
         { label: 'Tre kompetenspelare', href: '#nang-luc' },
@@ -133,7 +133,7 @@ export const Footer: React.FC<FooterProps> = async () => {
         <div className="border-t border-white/10 pt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
           <div className="flex items-center gap-2.5">
             <Mail className="w-5 h-5 text-orange shrink-0" />
-            <span className="text-body text-paper/75">lienhe@nothanagentic.vn</span>
+            <span className="text-body text-paper/75">contact@nothanagentic.vn</span>
           </div>
           <div className="flex items-center gap-2.5">
             <Phone className="w-5 h-5 text-orange shrink-0" />

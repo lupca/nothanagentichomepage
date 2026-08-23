@@ -56,7 +56,7 @@ const content: Record<'vi' | 'en' | 'sv', Copy> = {
   vi: {
     metaTitle: 'Bảo mật và chủ quyền dữ liệu | Nỏ Thần Agentic',
     metaDescription:
-      'Cách Nỏ Thần Agentic xử lý dữ liệu hình ảnh, kiểm soát truy cập, mã hoá thông tin thiết bị, chặn path traversal và hệ phân cấp ngoại lệ SOAIException — cùng lộ trình tuân thủ trung thực cho đối tác thẩm định.',
+      'Cách Nỏ Thần Agentic xử lý dữ liệu hình ảnh, kiểm soát truy cập, mã hoá thông tin thiết bị, chặn path traversal và hệ phân cấp ngoại lệ SOAIException, cùng lộ trình tuân thủ trung thực cho đối tác thẩm định.',
     eyebrow: 'Bảo mật',
     h1: 'Bảo mật và chủ quyền dữ liệu',
     intro:
@@ -64,7 +64,7 @@ const content: Record<'vi' | 'en' | 'sv', Copy> = {
     s1Eyebrow: 'Vị trí dữ liệu',
     s1Title: 'Dữ liệu lưu ở đâu?',
     s1Body: [
-      'Hệ thống có thể triển khai hoàn toàn on-premises — trong mạng nội bộ của khách hàng, không cần kết nối ra Internet để hoạt động.',
+      'Hệ thống có thể triển khai hoàn toàn on-premises, trong mạng nội bộ của khách hàng, không cần kết nối ra Internet để hoạt động.',
       'Suy luận AI được thực hiện tại biên (edge inference), ngay trên hộp xử lý đặt tại nhà máy hoặc trên camera. Nhờ vậy, hình ảnh và video sản xuất không nhất thiết phải rời khỏi cơ sở của khách hàng để được phân tích.',
     ],
     s2Eyebrow: 'Kiểm soát truy cập',
@@ -76,13 +76,13 @@ const content: Record<'vi' | 'en' | 'sv', Copy> = {
     s3Eyebrow: 'Mã hoá',
     s3Title: 'Mã hoá thế nào?',
     s3Body: [
-      'Thông tin đăng nhập thiết bị (tài khoản, mật khẩu camera) được mã hoá tại chỗ (at-rest) bằng thuật toán đối xứng Fernet trước khi lưu vào cơ sở dữ liệu — không lưu ở dạng plaintext.',
+      'Thông tin đăng nhập thiết bị (tài khoản, mật khẩu camera) được mã hoá at-rest bằng thuật toán đối xứng Fernet trước khi lưu vào cơ sở dữ liệu, không lưu ở dạng plaintext.',
       'Dữ liệu truyền đi được bảo vệ bằng SSL/TLS theo thực hành tiêu chuẩn, áp dụng cho các kết nối giữa client, máy chủ và thiết bị.',
     ],
     s4Eyebrow: 'An toàn API',
     s4Title: 'Chống tấn công qua đường dẫn file (path traversal)',
     s4Body: [
-      'Mọi API cho phép xem hoặc tải tệp — ảnh snapshot, video ghi lại, file xuất báo cáo — đều kiểm tra và chuẩn hoá đường dẫn trước khi trả file về cho client.',
+      'Mọi API cho phép xem hoặc tải tệp (ảnh snapshot, video ghi lại, file xuất báo cáo) đều kiểm tra và chuẩn hoá đường dẫn trước khi trả file về cho client.',
       'Cách làm này chặn một trong những lỗ hổng phổ biến nhất của hệ thống quản lý file: dùng ký tự "../" hoặc đường dẫn tuyệt đối để đọc file nằm ngoài phạm vi được phép.',
     ],
     s5Eyebrow: 'Nguyên tắc engineering',
@@ -102,7 +102,7 @@ const content: Record<'vi' | 'en' | 'sv', Copy> = {
     tableStatus: 'Trạng thái',
     tableMilestone: 'Mốc dự kiến',
     rows: [
-      { item: 'Mã hoá dữ liệu tại chỗ (Fernet)', status: 'live', milestone: 'Đã áp dụng trong sản phẩm' },
+      { item: 'Mã hoá dữ liệu at-rest (Fernet)', status: 'live', milestone: 'Đã áp dụng trong sản phẩm' },
       { item: 'Kiểm soát truy cập theo vai trò', status: 'live', milestone: 'Đã áp dụng trong sản phẩm' },
       { item: 'Chặn path traversal trên API file', status: 'live', milestone: 'Đã áp dụng trong sản phẩm' },
       { item: 'Ngoại lệ minh bạch (SOAIException) & log', status: 'live', milestone: 'Đã áp dụng trong sản phẩm' },
@@ -120,7 +120,7 @@ const content: Record<'vi' | 'en' | 'sv', Copy> = {
   en: {
     metaTitle: 'Security & Data Sovereignty | Nỏ Thần Agentic',
     metaDescription:
-      'How Nỏ Thần Agentic handles video data, access control, device credential encryption, path-traversal protection, and the SOAIException error hierarchy — plus an honest compliance roadmap for partner due diligence.',
+      'How Nỏ Thần Agentic handles video data, access control, device credential encryption, path-traversal protection, and the SOAIException error hierarchy, plus an honest compliance roadmap for partner due diligence.',
     eyebrow: 'Security',
     h1: 'Security and data sovereignty',
     intro:
@@ -128,7 +128,7 @@ const content: Record<'vi' | 'en' | 'sv', Copy> = {
     s1Eyebrow: 'Data location',
     s1Title: 'Where is data stored?',
     s1Body: [
-      'The system can be deployed fully on-premises — inside the customer\'s own network, with no internet connection required to operate.',
+      'The system can be deployed fully on-premises, inside the customer\'s own network, with no internet connection required to operate.',
       'AI inference runs at the edge, on a processing box on the factory floor or on the camera itself. As a result, production footage does not have to leave the customer\'s premises to be analyzed.',
     ],
     s2Eyebrow: 'Access control',
@@ -140,13 +140,13 @@ const content: Record<'vi' | 'en' | 'sv', Copy> = {
     s3Eyebrow: 'Encryption',
     s3Title: 'How is data encrypted?',
     s3Body: [
-      'Device credentials (camera usernames and passwords) are encrypted at rest using Fernet symmetric encryption before being written to the database — never stored as plaintext.',
+      'Device credentials (camera usernames and passwords) are encrypted at rest using Fernet symmetric encryption before being written to the database, never stored as plaintext.',
       'Data in transit is protected via SSL/TLS as standard practice, applied to connections between clients, the server, and devices.',
     ],
     s4Eyebrow: 'API safety',
     s4Title: 'Path traversal protection',
     s4Body: [
-      'Every API that serves or downloads a file — snapshots, recorded video, exported reports — validates and normalizes the requested path before returning the file to the client.',
+      'Every API that serves or downloads a file (snapshots, recorded video, exported reports) validates and normalizes the requested path before returning the file to the client.',
       'This closes one of the most common vulnerabilities in file-serving systems: using "../" sequences or absolute paths to read files outside the permitted scope.',
     ],
     s5Eyebrow: 'Engineering principle',
@@ -184,7 +184,7 @@ const content: Record<'vi' | 'en' | 'sv', Copy> = {
   sv: {
     metaTitle: 'Säkerhet och datasuveränitet | Nỏ Thần Agentic',
     metaDescription:
-      'Hur Nỏ Thần Agentic hanterar videodata, åtkomstkontroll, kryptering av enhetsuppgifter, skydd mot path traversal och undantagshierarkin SOAIException — samt en ärlig efterlevnadsplan för partnerns due diligence.',
+      'Hur Nỏ Thần Agentic hanterar videodata, åtkomstkontroll, kryptering av enhetsuppgifter, skydd mot path traversal och undantagshierarkin SOAIException, samt en ärlig efterlevnadsplan för partnerns due diligence.',
     eyebrow: 'Säkerhet',
     h1: 'Säkerhet och datasuveränitet',
     intro:
@@ -192,7 +192,7 @@ const content: Record<'vi' | 'en' | 'sv', Copy> = {
     s1Eyebrow: 'Datalagring',
     s1Title: 'Var lagras data?',
     s1Body: [
-      'Systemet kan driftsättas helt on-premises — inne i kundens eget nätverk, utan att internetuppkoppling krävs för drift.',
+      'Systemet kan driftsättas helt on-premises, inne i kundens eget nätverk, utan att internetuppkoppling krävs för drift.',
       'AI-inferens körs vid kanten (edge inference), direkt på en processorenhet på fabriksgolvet eller på kameran själv. Det innebär att produktionsbilder inte behöver lämna kundens anläggning för att analyseras.',
     ],
     s2Eyebrow: 'Åtkomstkontroll',
@@ -204,13 +204,13 @@ const content: Record<'vi' | 'en' | 'sv', Copy> = {
     s3Eyebrow: 'Kryptering',
     s3Title: 'Hur krypteras data?',
     s3Body: [
-      'Enhetsuppgifter (kamerans användarnamn och lösenord) krypteras at rest med symmetrisk Fernet-kryptering innan de skrivs till databasen — de lagras aldrig i klartext.',
+      'Enhetsuppgifter (kamerans användarnamn och lösenord) krypteras at rest med symmetrisk Fernet-kryptering innan de skrivs till databasen, de lagras aldrig i klartext.',
       'Data i transit skyddas med SSL/TLS som standardpraxis, tillämpat på anslutningar mellan klient, server och enheter.',
     ],
     s4Eyebrow: 'API-säkerhet',
     s4Title: 'Skydd mot path traversal',
     s4Body: [
-      'Varje API som visar eller levererar en fil — ögonblicksbilder, inspelad video, exporterade rapporter — validerar och normaliserar den begärda sökvägen innan filen returneras till klienten.',
+      'Varje API som visar eller levererar en fil (ögonblicksbilder, inspelad video, exporterade rapporter) validerar och normaliserar den begärda sökvägen innan filen returneras till klienten.',
       'Detta stänger en av de vanligaste sårbarheterna i filhanteringssystem: att använda "../"-sekvenser eller absoluta sökvägar för att läsa filer utanför den tillåtna omfattningen.',
     ],
     s5Eyebrow: 'Ingenjörsprincip',
@@ -376,7 +376,7 @@ export default async function Page({
           </div>
         </section>
 
-        {/* 6. Incident handling — on dark ink background, echoing Security.tsx */}
+        {/* 6. Incident handling - on dark ink background, echoing Security.tsx */}
         <section className="bg-ink text-white py-20 px-6 md:px-12 lg:px-24">
           <div className="max-w-4xl mx-auto space-y-6">
             <div className="space-y-3">
@@ -396,7 +396,7 @@ export default async function Page({
           </div>
         </section>
 
-        {/* 7. Compliance roadmap — the critical, most-scrutinized section */}
+        {/* 7. Compliance roadmap - the critical, most-scrutinized section */}
         <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line">
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="space-y-3">

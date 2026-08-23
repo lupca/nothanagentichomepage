@@ -36,7 +36,7 @@ interface Content {
 
 const content: Record<'vi' | 'en', Content> = {
   vi: {
-    metaTitle: 'Tuyển dụng — Nỏ Thần Agentic',
+    metaTitle: 'Tuyển dụng - Nỏ Thần Agentic',
     metaDescription:
       'Nỏ Thần Agentic đang tìm kỹ sư Computer Vision/AI, kỹ sư Backend & tích hợp thiết bị, và chuyên viên giải pháp/triển khai cho VOMA.VN và SOAI.VN. Tiếp cận trực tiếp hệ thống production và khách hàng thật.',
     eyebrow: 'Tuyển dụng',
@@ -52,7 +52,7 @@ const content: Record<'vi' | 'en', Content> = {
     applyLabel: 'Ứng tuyển',
     applyBody:
       'Gửi email giới thiệu ngắn về bản thân và (nếu có) một sản phẩm/đoạn code bạn tự hào. Không cần CV hình thức.',
-    applyEmail: 'lienhe@nothanagentic.vn',
+    applyEmail: 'contact@nothanagentic.vn',
     jobs: [
       {
         id: 'cv-ai-engineer',
@@ -62,7 +62,7 @@ const content: Record<'vi' | 'en', Content> = {
         summary:
           'Mở rộng hệ thống thị giác máy tính của SOAI từ POC đã nghiệm thu sang các bài toán kiểm tra mới và triển khai tại biên (edge).',
         work:
-          'SOAI đã có 6 module thị giác máy tính chạy được trên YOLOv8/SAHI (đếm SKU dày đặc) và VLM few-shot (kiểm tra đúng/sai định nghĩa bằng lời). Giai đoạn tới cần đưa các mô hình này chạy ổn định trên thiết bị biên, tối ưu tốc độ suy luận, và mở rộng sang các bài kiểm tra mới theo yêu cầu khách hàng — an toàn lao động, kiểm soát tồn kho, giám sát dây chuyền. Bạn sẽ làm việc trực tiếp trên pipeline production đang phục vụ khách hàng thật.',
+          'SOAI đã có 6 module thị giác máy tính chạy được trên YOLOv8/SAHI (đếm SKU dày đặc) và VLM few-shot (kiểm tra đúng/sai định nghĩa bằng lời). Giai đoạn tới cần đưa các mô hình này chạy ổn định trên thiết bị biên, tối ưu tốc độ suy luận, và mở rộng sang các bài kiểm tra mới theo yêu cầu khách hàng, ví dụ an toàn lao động, kiểm soát tồn kho, giám sát dây chuyền. Bạn sẽ làm việc trực tiếp trên pipeline production đang phục vụ khách hàng thật.',
         benefits: [
           'Trực tiếp làm việc với khách hàng thật của SOAI, không qua trung gian',
           'Tiếp cận sâu vào kiến trúc hệ thống production (DeviceProvider, pipeline suy luận, Celery)',
@@ -80,7 +80,7 @@ const content: Record<'vi' | 'en', Content> = {
         summary:
           'Mở rộng lớp DeviceProvider của SOAI để nói chuyện được với nhiều dòng camera/thiết bị hơn, và chuẩn bị hạ tầng backend cho giai đoạn tích hợp POS của VOMA.',
         work:
-          'Hệ thống hiện dùng FastAPI và Celery, với một lớp trừu tượng DeviceProvider tách nguồn hình ảnh khỏi lõi phân tích. Công việc chính là viết thêm provider cho các giao thức camera công nghiệp mới (ONVIF, VAPIX, ISAPI) để mở rộng danh mục thiết bị hỗ trợ, đồng thời hỗ trợ giai đoạn 2 của VOMA — tích hợp cổng thanh toán và phần cứng bán lẻ (máy POS, máy quét mã vạch, thiết bị tạo mã QR).',
+          'Hệ thống hiện dùng FastAPI và Celery, với một lớp trừu tượng DeviceProvider tách nguồn hình ảnh khỏi lõi phân tích. Công việc chính là viết thêm provider cho các giao thức camera công nghiệp mới (ONVIF, VAPIX, ISAPI) để mở rộng danh mục thiết bị hỗ trợ, đồng thời hỗ trợ giai đoạn 2 của VOMA: tích hợp cổng thanh toán và phần cứng bán lẻ (máy POS, máy quét mã vạch, thiết bị tạo mã QR).',
         benefits: [
           'Tiếp cận sâu vào kiến trúc hệ thống production đang chạy (FastAPI, Celery, mã hoá thông tin thiết bị)',
           'Trực tiếp tham gia giai đoạn tích hợp phần cứng mới của cả VOMA và SOAI',
@@ -98,7 +98,7 @@ const content: Record<'vi' | 'en', Content> = {
         summary:
           'Làm việc trực tiếp với khách hàng để hiểu bài toán nghiệp vụ thật, thay vì chỉ nhận yêu cầu rồi giao lại cho kỹ sư.',
         work:
-          'Vai trò này khảo sát và triển khai giải pháp tại cơ sở khách hàng cho VOMA (bán hàng đa kênh, kế toán, kho bãi) hoặc SOAI (giám sát sản xuất, an toàn lao động), tùy năng lực và nhu cầu ở từng thời điểm. Bạn sẽ trực tiếp gặp khách hàng, xác định yêu cầu thực tế, và phối hợp với kỹ sư để đưa giải pháp vào vận hành — thay vì chỉ chuyển tiếp một bản spec.',
+          'Vai trò này khảo sát và triển khai giải pháp tại cơ sở khách hàng cho VOMA (bán hàng đa kênh, kế toán, kho bãi) hoặc SOAI (giám sát sản xuất, an toàn lao động), tùy năng lực và nhu cầu ở từng thời điểm. Bạn sẽ trực tiếp gặp khách hàng, xác định yêu cầu thực tế, và phối hợp với kỹ sư để đưa giải pháp vào vận hành, thay vì chỉ chuyển tiếp một bản spec.',
         benefits: [
           'Trực tiếp làm việc với khách hàng thật ngay từ những dự án đầu tiên',
           'Tiếp cận kiến trúc hệ thống đang chạy production của cả VOMA và SOAI',
@@ -111,7 +111,7 @@ const content: Record<'vi' | 'en', Content> = {
     ],
   },
   en: {
-    metaTitle: 'Careers — Nỏ Thần Agentic',
+    metaTitle: 'Careers - Nỏ Thần Agentic',
     metaDescription:
       'Nỏ Thần Agentic is hiring a Computer Vision/AI engineer, a Backend & device integration engineer, and a Solutions/Deployment specialist for VOMA.VN and SOAI.VN. Direct access to production systems and real customers.',
     eyebrow: 'Careers',
@@ -127,7 +127,7 @@ const content: Record<'vi' | 'en', Content> = {
     applyLabel: 'Apply',
     applyBody:
       'Send a short email about yourself and, if you have one, a project or piece of code you are proud of. No formal CV required.',
-    applyEmail: 'lienhe@nothanagentic.vn',
+    applyEmail: 'contact@nothanagentic.vn',
     jobs: [
       {
         id: 'cv-ai-engineer',
@@ -137,7 +137,7 @@ const content: Record<'vi' | 'en', Content> = {
         summary:
           'Extend SOAI’s computer vision system from a validated POC into new inspection types and edge deployment.',
         work:
-          "SOAI already runs 6 computer vision modules validated end to end, built on YOLOv8/SAHI (dense SKU counting) and a few-shot VLM (pass/fail checks defined in plain language). The next phase is getting these models running reliably on edge hardware, optimizing inference speed, and extending coverage to new inspection types customers are asking for — labor safety, inventory control, line monitoring. You'll work directly on the production pipeline already serving real customers.",
+          "SOAI already runs 6 computer vision modules validated end to end, built on YOLOv8/SAHI (dense SKU counting) and a few-shot VLM (pass/fail checks defined in plain language). The next phase is getting these models running reliably on edge hardware, optimizing inference speed, and extending coverage to new inspection types customers are asking for, such as labor safety, inventory control, and line monitoring. You'll work directly on the production pipeline already serving real customers.",
         benefits: [
           'Direct work with SOAI’s real customers, no middle layer',
           'Deep access to the production system architecture (DeviceProvider, inference pipeline, Celery)',
@@ -155,7 +155,7 @@ const content: Record<'vi' | 'en', Content> = {
         summary:
           "Extend SOAI's DeviceProvider layer to talk to more camera/device protocols, and help build the backend for VOMA's upcoming POS integration phase.",
         work:
-          'The system runs on FastAPI and Celery, with a DeviceProvider abstraction that decouples image sources from the analysis core. The core work is writing new providers for industrial camera protocols (ONVIF, VAPIX, ISAPI) to widen supported hardware, alongside supporting VOMA’s phase 2 — integrating payment gateways and retail hardware (POS terminals, barcode scanners, QR code devices).',
+          'The system runs on FastAPI and Celery, with a DeviceProvider abstraction that decouples image sources from the analysis core. The core work is writing new providers for industrial camera protocols (ONVIF, VAPIX, ISAPI) to widen supported hardware, alongside supporting VOMA’s phase 2: integrating payment gateways and retail hardware (POS terminals, barcode scanners, QR code devices).',
         benefits: [
           'Deep access to the live production architecture (FastAPI, Celery, encrypted device credentials)',
           'Direct involvement in new hardware integration for both VOMA and SOAI',

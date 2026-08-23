@@ -69,13 +69,13 @@ interface Phase {
 
 const content = {
   vi: {
-    metaTitle: 'SOAI.VN — Giám sát sản xuất và an toàn lao động bằng AI Vision',
+    metaTitle: 'SOAI.VN - Giám sát sản xuất và an toàn lao động bằng AI Vision',
     metaDescription:
       'Nền tảng thị giác máy tính cho kiểm soát hàng hoá, an toàn lao động và giám sát vận hành. Sáu module đã nghiệm thu POC.',
-    eyebrow: 'SOAI.VN — AI Vision',
+    eyebrow: 'SOAI.VN - AI Vision',
     h1: 'Giám sát sản xuất, an toàn lao động và kiểm soát hàng hoá bằng thị giác máy tính',
     intro:
-      'SOAI là nền tảng giám sát thông qua hình ảnh, xây cho doanh nghiệp sản xuất và quản lý hàng hoá tại Việt Nam. Kiến trúc plugin có hai lớp trừu tượng: AnalysisEngine cho phân tích và DeviceProvider cho nguồn hình. Mỗi bài toán khách hàng được ghép từ các module thị giác đã kiểm thử và triển khai với phần cứng tương ứng — camera IP, hộp xử lý biên, hoặc tích hợp trực tiếp vào camera hãng khi hạ tầng cho phép.',
+      'SOAI là nền tảng giám sát thông qua hình ảnh, xây cho doanh nghiệp sản xuất và quản lý hàng hoá tại Việt Nam. Kiến trúc plugin có hai lớp trừu tượng: AnalysisEngine cho phân tích và DeviceProvider cho nguồn hình. Mỗi bài toán khách hàng được ghép từ các module thị giác đã kiểm thử và triển khai với phần cứng tương ứng: camera IP, hộp xử lý biên, hoặc tích hợp trực tiếp vào camera hãng khi hạ tầng cho phép.',
     problemsEyebrow: 'Ba nhóm bài toán thực tế',
     problemsTitle: 'Từ hiện trường đến báo cáo',
     problems: [
@@ -97,7 +97,7 @@ const content = {
         situation:
           'Vi phạm bảo hộ lao động và xâm nhập vùng nguy hiểm thường chỉ được phát hiện sau khi sự cố xảy ra, vì giám sát thủ công không thể phủ hết ca và hết khu vực.',
         whatItDoes:
-          'Phát hiện thiếu trang bị bảo hộ (mũ, vest) và người xuất hiện trong vùng hạn chế; các nghiệp vụ kiểm tra tuỳ biến — mô tả bằng lời kèm vài ảnh mẫu — được thêm vào hệ thống theo yêu cầu cụ thể của từng nhà máy, không cần huấn luyện lại mô hình từ đầu. Mọi phát hiện được chấm điểm độ tin cậy và đưa vào hàng chờ cho người vận hành duyệt, không có bước tự động hành động.',
+          'Phát hiện thiếu trang bị bảo hộ (mũ, vest) và người xuất hiện trong vùng hạn chế; các nghiệp vụ kiểm tra tuỳ biến, mô tả bằng lời kèm vài ảnh mẫu, được thêm vào hệ thống theo yêu cầu cụ thể của từng nhà máy, không cần huấn luyện lại mô hình từ đầu. Mọi phát hiện được chấm điểm độ tin cậy và đưa vào hàng chờ cho người vận hành duyệt, không có bước tự động hành động.',
         devices: 'Camera IP tại khu vực nguy hiểm/lối vào hạn chế; hộp xử lý biên khi cần suy luận tại chỗ.',
         dataFlow:
           'Suy luận có thể chạy tại biên (edge) để giảm băng thông và giữ hình ảnh trong cơ sở khách hàng; log quyết định lưu để truy vết sau này.',
@@ -109,24 +109,24 @@ const content = {
         situation:
           'Quản lý ca sản xuất cần xem lại một khoảng thời gian cụ thể (một sự cố, một ca làm) nhưng không có công cụ tra cứu nhanh, chỉ có video thô lưu rời rạc.',
         whatItDoes:
-          'Xem trực tiếp nhiều camera, chụp ảnh nhanh thủ công hoặc theo lịch định kỳ, liệt kê bản ghi theo thiết bị và cắt trích xuất chính xác theo khoảng thời gian cần xem — phục vụ điều tra sự cố hoặc báo cáo ca.',
+          'Xem trực tiếp nhiều camera, chụp ảnh nhanh thủ công hoặc theo lịch định kỳ, liệt kê bản ghi theo thiết bị và cắt trích xuất chính xác theo khoảng thời gian cần xem, phục vụ điều tra sự cố hoặc báo cáo ca.',
         devices: 'Toàn bộ camera đã kết nối trong hệ thống quản lý thiết bị.',
         dataFlow: 'Luồng hình và bản ghi lưu trữ nội bộ; quyền truy cập theo tài khoản, chống truy cập tệp ngoài phạm vi cho phép.',
         status: 'poc' as Status,
       },
     ] satisfies ProblemGroup[],
     modulesEyebrow: 'Module hệ thống',
-    modulesTitle: 'POC SOAI — 6 module đã nghiệm thu',
+    modulesTitle: 'POC SOAI: 6 module đã nghiệm thu',
     modulesNote: 'Mỗi module dưới đây đã được kiểm thử và nghiệm thu trong POC, với stack kỹ thuật tương ứng.',
     modules: [
       {
         name: 'Phân tích video đóng gói',
-        capability: 'Bóc tách mã QR trong video đóng hàng, gắn mốc thời gian bắt đầu/kết thúc cho từng đơn — tra được clip của bất kỳ khiếu nại nào trong vài giây.',
+        capability: 'Bóc tách mã QR trong video đóng hàng, gắn mốc thời gian bắt đầu/kết thúc cho từng đơn, tra được clip của bất kỳ khiếu nại nào trong vài giây.',
         stack: 'OpenCV · pyzbar · Celery',
       },
       {
         name: 'Đếm SKU trên ảnh',
-        capability: 'Đếm vật thể dày đặc trong dưới 3 giây, xuất ảnh có khung phát hiện và lưu phiên bản mô hình đã dùng — đối soát được số liệu về sau.',
+        capability: 'Đếm vật thể dày đặc trong dưới 3 giây, xuất ảnh có khung phát hiện và lưu phiên bản mô hình đã dùng, đối soát được số liệu về sau.',
         stack: 'YOLOv8 · SAHI',
       },
       {
@@ -136,17 +136,17 @@ const content = {
       },
       {
         name: 'Quản lý thiết bị',
-        capability: 'Khai báo và kiểm tra kết nối camera/thiết bị tập trung, mật khẩu mã hoá khi lưu — vận hành nhiều điểm camera từ một nơi.',
+        capability: 'Khai báo và kiểm tra kết nối camera/thiết bị tập trung, mật khẩu mã hoá khi lưu, vận hành nhiều điểm camera từ một nơi.',
         stack: 'FastAPI · Fernet',
       },
       {
         name: 'Live view & snapshot',
-        capability: 'Xem trực tiếp nhiều camera cùng lúc, chụp ảnh thủ công hoặc theo lịch định kỳ — giám sát chủ động thay vì chỉ xem lại sau sự cố.',
+        capability: 'Xem trực tiếp nhiều camera cùng lúc, chụp ảnh thủ công hoặc theo lịch định kỳ, giám sát chủ động thay vì chỉ xem lại sau sự cố.',
         stack: 'MJPEG · Celery Beat',
       },
       {
         name: 'Ghi & trích xuất video',
-        capability: 'Liệt kê bản ghi theo thiết bị và cắt clip chính xác theo khoảng thời gian yêu cầu — phục vụ điều tra sự cố và làm bằng chứng.',
+        capability: 'Liệt kê bản ghi theo thiết bị và cắt clip chính xác theo khoảng thời gian yêu cầu, phục vụ điều tra sự cố và làm bằng chứng.',
         stack: 'FFmpeg',
       },
     ] satisfies Module[],
@@ -203,23 +203,23 @@ const content = {
     roadmapTitle: 'Từ giám sát hàng hoá đến camera hãng',
     phases: [
       {
-        title: 'Giai đoạn 1 — Xây dựng hệ thống giám sát hàng hoá',
+        title: 'Giai đoạn 1: Xây dựng hệ thống giám sát hàng hoá',
         body: 'Hệ thống giám sát tại chỗ và khâu đóng hàng online: sáu module ở trên, đã nghiệm thu POC.',
         status: 'poc' as Status,
       },
       {
-        title: 'Giai đoạn 2 — Nhúng AI vào camera qua ACAP',
+        title: 'Giai đoạn 2: Nhúng AI vào camera qua ACAP',
         body: 'Nhúng mô hình phát hiện trực tiếp vào camera Axis và Hikvision qua ACAP là giai đoạn 2 của lộ trình SOAI. Hiện chưa triển khai; đang tìm hiểu điều kiện tham gia chương trình đối tác của từng hãng.',
         status: 'roadmap' as Status,
       },
       {
-        title: 'Giai đoạn 3 — Mở rộng phạm vi giám sát',
+        title: 'Giai đoạn 3: Mở rộng phạm vi giám sát',
         body: 'Mở rộng sang an toàn lao động, lưu thông hàng hoá và kiểm soát số lượng/tồn kho trên toàn bộ quy mô doanh nghiệp. Chưa triển khai.',
         status: 'roadmap' as Status,
       },
     ] satisfies Phase[],
     demoEyebrow: 'Minh hoạ tương tác',
-    demoTitle: 'AI đề xuất — người vận hành quyết định',
+    demoTitle: 'AI đề xuất, người vận hành quyết định',
     ctaTitle: 'Trao đổi kỹ thuật về SOAI',
     ctaBody: 'Gửi bài toán cụ thể của nhà máy hoặc kho hàng. Đội kỹ thuật SOAI phản hồi bằng đề xuất triển khai, kèm module và stack phù hợp.',
     ctaButton: 'Trao đổi kỹ thuật về SOAI',
@@ -232,13 +232,13 @@ const content = {
     stackCol: 'Nền tảng kỹ thuật',
   },
   en: {
-    metaTitle: 'SOAI.VN — AI Vision for Production Monitoring and Workplace Safety',
+    metaTitle: 'SOAI.VN - AI Vision for Production Monitoring and Workplace Safety',
     metaDescription:
       'A computer-vision platform for goods control, workplace safety, and operations monitoring. Six modules verified in POC.',
-    eyebrow: 'SOAI.VN — AI Vision',
+    eyebrow: 'SOAI.VN - AI Vision',
     h1: 'Computer vision for production monitoring, workplace safety, and goods control',
     intro:
-      'SOAI is a vision-based monitoring platform built for manufacturing and warehouse operators in Vietnam. The plugin architecture has two abstraction layers: AnalysisEngine for analysis and DeviceProvider for image sources. Each customer problem is assembled from tested vision modules and deployed with matching hardware — IP cameras, edge processing boxes, or direct integration into brand-name cameras where the infrastructure allows it.',
+      'SOAI is a vision-based monitoring platform built for manufacturing and warehouse operators in Vietnam. The plugin architecture has two abstraction layers: AnalysisEngine for analysis and DeviceProvider for image sources. Each customer problem is assembled from tested vision modules and deployed with matching hardware: IP cameras, edge processing boxes, or direct integration into brand-name cameras where the infrastructure allows it.',
     problemsEyebrow: 'Three real problem groups',
     problemsTitle: 'From the shop floor to the report',
     problems: [
@@ -260,7 +260,7 @@ const content = {
         situation:
           'PPE violations and entries into hazardous zones are usually caught only after an incident, because manual monitoring can’t cover every shift and every area.',
         whatItDoes:
-          'Detects missing protective equipment (helmets, vests) and presence in restricted zones; custom checks — described in plain language with a handful of sample images — are added for a specific factory’s requirements without retraining a model from scratch. Every detection is scored for confidence and queued for a human operator to approve; nothing acts automatically.',
+          'Detects missing protective equipment (helmets, vests) and presence in restricted zones; custom checks, described in plain language with a handful of sample images, are added for a specific factory’s requirements without retraining a model from scratch. Every detection is scored for confidence and queued for a human operator to approve; nothing acts automatically.',
         devices: 'IP cameras at hazardous areas or restricted entry points; edge processing boxes when on-site inference is required.',
         dataFlow:
           'Inference can run at the edge to cut bandwidth and keep imagery inside the customer’s facility; decision logs are kept for later audit.',
@@ -270,26 +270,26 @@ const content = {
         icon: Activity,
         title: 'Operations monitoring',
         situation:
-          'Shift managers need to pull up a specific window of time — an incident, a shift — but have no fast way to search through raw, scattered video files.',
+          'Shift managers need to pull up a specific window of time, such as an incident or a shift, but have no fast way to search through raw, scattered video files.',
         whatItDoes:
-          'Live view across multiple cameras, manual or scheduled snapshots, per-device recording lists, and precise clip extraction for the exact time range needed — for incident investigation or shift reporting.',
+          'Live view across multiple cameras, manual or scheduled snapshots, per-device recording lists, and precise clip extraction for the exact time range needed, for incident investigation or shift reporting.',
         devices: 'All cameras already registered in the device management system.',
         dataFlow: 'Streams and recordings are stored internally; access is account-scoped, with protection against reading files outside the allowed path.',
         status: 'poc' as Status,
       },
     ] satisfies ProblemGroup[],
     modulesEyebrow: 'System modules',
-    modulesTitle: 'SOAI POC — six modules verified',
+    modulesTitle: 'SOAI POC: six modules verified',
     modulesNote: 'Each module below has been tested and verified in POC, with the matching technical stack.',
     modules: [
       {
         name: 'Packing video analysis',
-        capability: 'Extracts QR codes from packing video and timestamps the start/end of each order — pull up the clip behind any complaint in seconds.',
+        capability: 'Extracts QR codes from packing video and timestamps the start/end of each order, so you can pull up the clip behind any complaint in seconds.',
         stack: 'OpenCV · pyzbar · Celery',
       },
       {
         name: 'SKU image counting',
-        capability: 'Counts dense objects in under 3 seconds, exports annotated images, and records the model version used — so counts can be audited later.',
+        capability: 'Counts dense objects in under 3 seconds, exports annotated images, and records the model version used, so counts can be audited later.',
         stack: 'YOLOv8 · SAHI',
       },
       {
@@ -299,7 +299,7 @@ const content = {
       },
       {
         name: 'Device management',
-        capability: 'Central registration and connection testing for cameras/devices, with credentials encrypted at rest — run many camera sites from one place.',
+        capability: 'Central registration and connection testing for cameras/devices, with credentials encrypted at rest, run many camera sites from one place.',
         stack: 'FastAPI · Fernet',
       },
       {
@@ -309,7 +309,7 @@ const content = {
       },
       {
         name: 'Video recording & export',
-        capability: 'Per-device recording lists and precise clip extraction for a requested time range — for incident investigation and evidence.',
+        capability: 'Per-device recording lists and precise clip extraction for a requested time range, for incident investigation and evidence.',
         stack: 'FFmpeg',
       },
     ] satisfies Module[],
@@ -366,23 +366,23 @@ const content = {
     roadmapTitle: 'From goods monitoring to brand-name cameras',
     phases: [
       {
-        title: 'Phase 1 — Build the goods monitoring system',
+        title: 'Phase 1: Build the goods monitoring system',
         body: 'On-site monitoring and online packing analysis: the six modules above, verified in POC.',
         status: 'poc' as Status,
       },
       {
-        title: 'Phase 2 — ACAP embedding into camera hardware',
+        title: 'Phase 2: ACAP embedding into camera hardware',
         body: 'Embedding detection models directly into Axis and Hikvision cameras through ACAP is phase 2 of the SOAI roadmap. Not yet implemented; partner program requirements are still being confirmed with each vendor.',
         status: 'roadmap' as Status,
       },
       {
-        title: 'Phase 3 — Extend monitoring scope',
+        title: 'Phase 3: Extend monitoring scope',
         body: 'Extend to workplace safety, goods flow, and inventory/quantity control across the whole enterprise. Not yet implemented.',
         status: 'roadmap' as Status,
       },
     ] satisfies Phase[],
     demoEyebrow: 'Interactive demo',
-    demoTitle: 'AI proposes — the operator decides',
+    demoTitle: 'AI proposes, the operator decides',
     ctaTitle: 'Talk technical about SOAI',
     ctaBody: 'Send a specific problem from your factory or warehouse. The SOAI engineering team replies with a deployment proposal, including modules and stack.',
     ctaButton: 'Talk technical about SOAI',

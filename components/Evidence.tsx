@@ -11,15 +11,15 @@ interface Module {
 const content = {
   vi: {
     tag: 'Bằng chứng kỹ thuật',
-    heading: 'POC SOAI — 6 module đã nghiệm thu',
+    heading: 'POC SOAI - 6 module đã nghiệm thu',
     sub: 'Từng module dưới đây đã qua nghiệm thu, kèm năng lực cụ thể và nền tảng kỹ thuật đã dùng.',
     colModule: 'Module',
     colCapability: 'Năng lực',
     colStack: 'Nền tảng kỹ thuật',
     modules: [
-      { name: 'Phân tích video đóng gói', capability: 'Bóc tách mã QR trong video đóng hàng, gắn mốc thời gian bắt đầu/kết thúc cho từng đơn — tra được clip của bất kỳ khiếu nại nào.', stack: 'OpenCV · pyzbar · Celery' },
+      { name: 'Phân tích video đóng gói', capability: 'Bóc tách mã QR trong video đóng hàng, gắn mốc thời gian bắt đầu/kết thúc cho từng đơn. Tra được clip của bất kỳ khiếu nại nào.', stack: 'OpenCV · pyzbar · Celery' },
       { name: 'Đếm SKU trên ảnh', capability: 'Đếm vật thể dày đặc trong dưới 3 giây, xuất ảnh có khung phát hiện và lưu phiên bản mô hình đã dùng.', stack: 'YOLOv8 · SAHI' },
-      { name: 'Kiểm tra đúng/sai', capability: 'Nghiệp vụ mới định nghĩa bằng lời và vài ảnh mẫu, không cần huấn luyện lại — mở rộng sang bài toán mới trong ngày.', stack: 'VLM · few-shot' },
+      { name: 'Kiểm tra đúng/sai', capability: 'Nghiệp vụ mới định nghĩa bằng lời và vài ảnh mẫu, không cần huấn luyện lại. Mở rộng sang bài toán mới trong ngày.', stack: 'VLM · few-shot' },
       { name: 'Quản lý thiết bị', capability: 'Khai báo thiết bị, kiểm tra kết nối, mật khẩu mã hoá khi lưu.', stack: 'FastAPI · Fernet' },
       { name: 'Live view & snapshot', capability: 'Xem trực tiếp và chụp ảnh thủ công hoặc theo lịch định kỳ.', stack: 'MJPEG · Celery Beat' },
       { name: 'Ghi & trích xuất video', capability: 'Liệt kê bản ghi và cắt clip chính xác theo khoảng thời gian yêu cầu.', stack: 'FFmpeg' },
@@ -27,15 +27,15 @@ const content = {
   },
   en: {
     tag: 'Technical evidence',
-    heading: 'SOAI POC — 6 modules accepted',
+    heading: 'SOAI POC - 6 modules accepted',
     sub: 'Each module below has been accepted, with its concrete capability and the technical stack behind it.',
     colModule: 'Module',
     colCapability: 'Capability',
     colStack: 'Technical stack',
     modules: [
-      { name: 'Packing video analysis', capability: 'Extracts QR codes from packing footage and timestamps each order’s segment — any customer complaint can be traced to its clip.', stack: 'OpenCV · pyzbar · Celery' },
+      { name: 'Packing video analysis', capability: 'Extracts QR codes from packing footage and timestamps each order’s segment. Any customer complaint can be traced to its clip.', stack: 'OpenCV · pyzbar · Celery' },
       { name: 'SKU image counting', capability: 'Counts densely packed objects in under 3 seconds, returns an annotated image, and records the model version used.', stack: 'YOLOv8 · SAHI' },
-      { name: 'Binary classification', capability: 'New checks are defined in plain language plus a few reference images, with no retraining — a new inspection can ship the same day.', stack: 'VLM · few-shot' },
+      { name: 'Binary classification', capability: 'New checks are defined in plain language plus a few reference images, with no retraining. A new inspection can ship the same day.', stack: 'VLM · few-shot' },
       { name: 'Device management', capability: 'Device registry, connection testing, credentials encrypted at rest.', stack: 'FastAPI · Fernet' },
       { name: 'Live view & snapshot', capability: 'Live streaming plus manual and scheduled snapshots.', stack: 'MJPEG · Celery Beat' },
       { name: 'Video recording & export', capability: 'Lists recordings and cuts clips to an exact requested time range.', stack: 'FFmpeg' },

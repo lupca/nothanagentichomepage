@@ -16,7 +16,7 @@ export interface HeroVideoProps {
  * attribute (so the browser can't start playback straight from the raw
  * server-rendered HTML before React even hydrates). Instead, playback is
  * started imperatively in an effect, only when the visitor does not prefer
- * reduced motion — mirroring the useReducedMotion approach in Reveal.tsx.
+ * reduced motion - mirroring the useReducedMotion approach in Reveal.tsx.
  * When reduced motion is preferred, the element simply sits on its poster
  * frame, unplayed.
  */

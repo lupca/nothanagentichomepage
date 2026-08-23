@@ -40,10 +40,10 @@ interface Screenshot {
 
 const content = {
   vi: {
-    metaTitle: 'VOMA.VN — Nền tảng bán hàng đa kênh và quản trị vận hành',
+    metaTitle: 'VOMA.VN - Nền tảng bán hàng đa kênh và quản trị vận hành',
     metaDescription:
       'VOMA là nền tảng bán hàng đa kênh và quản trị vận hành, đã đăng ký bảo hộ nhãn hiệu độc quyền tại Việt Nam. Nỏ Thần Agentic phụ trách phần tích hợp phần cứng.',
-    eyebrow: 'VOMA.VN — Thương mại đa kênh',
+    eyebrow: 'VOMA.VN - Thương mại đa kênh',
     h1: 'Nền tảng bán hàng đa kênh và quản trị vận hành',
     intro:
       'VOMA là nền tảng phần mềm quản trị bán hàng đa kênh: hoá đơn điện tử, bán hàng online (các sàn như TikTok, Shopee) và offline, kế toán, và quản lý kho bãi trong một hệ thống. VOMA được một đội kỹ thuật riêng trong Nỏ Thần Agentic phụ trách và phát triển trực tiếp.',
@@ -74,7 +74,7 @@ const content = {
     hardwareIntro:
       'Nỏ Thần Agentic là đơn vị phụ trách phần tích hợp phần cứng của VOMA trong lộ trình 3 giai đoạn của nền tảng:',
     hardwarePhase2Title: 'Giai đoạn 2',
-    hardwarePhase2Body: 'Tích hợp cổng thanh toán và phần cứng bán hàng — máy POS, máy quét mã vạch, thiết bị tạo mã QR. Chưa triển khai.',
+    hardwarePhase2Body: 'Tích hợp cổng thanh toán và phần cứng bán hàng, ví dụ máy POS, máy quét mã vạch, thiết bị tạo mã QR. Chưa triển khai.',
     hardwarePhase3Title: 'Giai đoạn 3',
     hardwarePhase3Body: 'Ứng dụng thị giác máy tính vào giám sát vận hành bán hàng và quản lý nhập/xuất kho. Chưa triển khai; cần chạy thử nghiệm trước khi thương mại hoá.',
     ctaTitle: 'Xem chi tiết sản phẩm tại voma.vn',
@@ -82,10 +82,10 @@ const content = {
     ctaButton: 'Truy cập voma.vn',
   },
   en: {
-    metaTitle: 'VOMA.VN — Multi-channel Commerce and Management Platform',
+    metaTitle: 'VOMA.VN - Multi-channel Commerce and Management Platform',
     metaDescription:
       'VOMA is a multi-channel commerce and management platform with a registered trademark in Vietnam. Nỏ Thần Agentic handles its hardware integration track.',
-    eyebrow: 'VOMA.VN — Multi-channel Commerce',
+    eyebrow: 'VOMA.VN - Multi-channel Commerce',
     h1: 'A multi-channel commerce and management platform',
     intro:
       'VOMA is a commerce management platform covering e-invoicing, online selling (marketplaces like TikTok and Shopee) and offline selling, accounting, and warehouse management in one system. It is owned and developed by a dedicated team within Nỏ Thần Agentic.',
@@ -115,7 +115,7 @@ const content = {
     hardwareTitle: 'Hardware integration roadmap',
     hardwareIntro: 'Nỏ Thần Agentic handles the hardware integration track of VOMA’s three-phase roadmap:',
     hardwarePhase2Title: 'Phase 2',
-    hardwarePhase2Body: 'Payment gateway and point-of-sale hardware — POS terminals, barcode scanners, QR code generation devices. Not yet implemented.',
+    hardwarePhase2Body: 'Payment gateway and point-of-sale hardware, such as POS terminals, barcode scanners, and QR code generation devices. Not yet implemented.',
     hardwarePhase3Title: 'Phase 3',
     hardwarePhase3Body: 'Computer vision applied to sales floor monitoring and warehouse in/out management. Not yet implemented; a trial run is planned before commercial rollout.',
     ctaTitle: 'See the full product at voma.vn',

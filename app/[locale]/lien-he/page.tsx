@@ -183,7 +183,7 @@ export default async function Page({
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
               <div className="flex items-center gap-2.5">
                 <Mail className="w-5 h-5 text-orange shrink-0" aria-hidden="true" />
-                <span className="text-body text-paper/75">lienhe@nothanagentic.vn</span>
+                <span className="text-body text-paper/75">contact@nothanagentic.vn</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-5 h-5 text-orange shrink-0" aria-hidden="true" />

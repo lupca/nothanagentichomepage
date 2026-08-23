@@ -67,7 +67,7 @@ function StatusTag({ status, locale }: { status: Status; locale: Locale }) {
 
 const content = {
   vi: {
-    metaTitle: 'Đối tác giải pháp cho hãng phần cứng camera — Nỏ Thần Agentic',
+    metaTitle: 'Đối tác giải pháp cho hãng phần cứng camera - Nỏ Thần Agentic',
     metaDescription:
       'Nỏ Thần Agentic tiếp cận các hãng phần cứng camera (Axis, Hikvision) với vị thế đối tác giải pháp: phát triển phần mềm trên nền tảng của hãng và tích hợp thiết bị cho dự án trọn gói tại Việt Nam.',
     eyebrow: 'Đối tác',
@@ -79,7 +79,7 @@ const content = {
     values: [
       {
         title: 'Phần mềm làm thiết bị của bạn đáng giá hơn.',
-        body: 'Mỗi bài toán nghiệp vụ chúng tôi giải trực tiếp trên camera của hãng — đếm hàng, phát hiện vi phạm bảo hộ, trích xuất bằng chứng theo mốc thời gian — là một lý do cụ thể để khách hàng doanh nghiệp chọn thiết bị đó thay vì một thiết bị rẻ hơn không có lớp phần mềm đi kèm. Camera có phần mềm phân tích đi kèm giải quyết được bài toán vận hành cụ thể ngay khi lắp đặt.',
+        body: 'Mỗi bài toán nghiệp vụ chúng tôi giải trực tiếp trên camera của hãng (đếm hàng, phát hiện vi phạm bảo hộ, trích xuất bằng chứng theo mốc thời gian) là một lý do cụ thể để khách hàng doanh nghiệp chọn thiết bị đó thay vì một thiết bị rẻ hơn không có lớp phần mềm đi kèm. Camera có phần mềm phân tích đi kèm giải quyết được bài toán vận hành cụ thể ngay khi lắp đặt.',
       },
       {
         title: 'Mô hình thu phí định kỳ, kèm phần cứng đồng bộ.',
@@ -96,7 +96,7 @@ const content = {
       {
         icon: Code2,
         title: 'Phát triển phần mềm trên nền tảng của hãng (ADP/ISV)',
-        body: 'Tham gia chương trình đối tác phát triển phần mềm chính thức của hãng, xây dựng ứng dụng và tích hợp trên nền tảng do hãng cung cấp — mang thêm giá trị phân tích và tự động hoá cho khách hàng dùng thiết bị của hãng.',
+        body: 'Tham gia chương trình đối tác phát triển phần mềm chính thức của hãng, xây dựng ứng dụng và tích hợp trên nền tảng do hãng cung cấp, mang thêm giá trị phân tích và tự động hoá cho khách hàng dùng thiết bị của hãng.',
       },
       {
         icon: PackageCheck,
@@ -113,7 +113,7 @@ const content = {
     matrixEyebrow: 'Kiến trúc mở',
     matrixTitle: 'Ma trận tích hợp thiết bị',
     matrixNote:
-      'Một lớp trừu tượng DeviceProvider tách nguồn hình ảnh khỏi lõi phân tích — thêm một dòng thiết bị mới là viết thêm plugin, không sửa lõi. Đây cũng là lý do tích hợp với nền tảng của một hãng mới không đòi hỏi viết lại hệ thống.',
+      'Một lớp trừu tượng DeviceProvider tách nguồn hình ảnh khỏi lõi phân tích. Thêm một dòng thiết bị mới là viết thêm plugin, không sửa lõi. Đây cũng là lý do tích hợp với nền tảng của một hãng mới không đòi hỏi viết lại hệ thống.',
     matrixCols: { device: 'Dòng thiết bị', interfaces: 'Giao diện tích hợp', status: 'Trạng thái', note: 'Ghi chú' },
     deviceRows: [
       {
@@ -129,7 +129,7 @@ const content = {
         note: 'Điều khiển thiết bị và lấy luồng hình. Đang trao đổi để tham gia chương trình đối tác của hãng.',
       },
       {
-        device: 'Axis — AI tại biên',
+        device: 'Axis - AI tại biên',
         interfaces: 'ACAP',
         status: 'roadmap',
         note: 'Nhúng mô hình phát hiện trực tiếp trên camera qua ACAP. Chưa triển khai; là mục tiêu hợp tác kỹ thuật đề xuất với hãng.',
@@ -199,7 +199,7 @@ const content = {
     },
   },
   en: {
-    metaTitle: 'Solution Partner for Camera Hardware Manufacturers — Nỏ Thần Agentic',
+    metaTitle: 'Solution Partner for Camera Hardware Manufacturers - Nỏ Thần Agentic',
     metaDescription:
       'Nỏ Thần Agentic approaches camera and surveillance hardware manufacturers (Axis, Hikvision) as a solution partner: developing software on the manufacturer’s platform and integrating hardware for turnkey deployments in Vietnam.',
     eyebrow: 'Partners',
@@ -211,7 +211,7 @@ const content = {
     values: [
       {
         title: 'Software makes your hardware worth more.',
-        body: 'Every business problem we solve directly on the manufacturer’s camera — counting goods, detecting PPE violations, pulling timestamped evidence — is a concrete reason for a business customer to choose that device over a cheaper one with no software layer attached. A camera with analytics software attached solves a specific operating problem the moment it is installed.',
+        body: 'Every business problem we solve directly on the manufacturer’s camera (counting goods, detecting PPE violations, pulling timestamped evidence) is a concrete reason for a business customer to choose that device over a cheaper one with no software layer attached. A camera with analytics software attached solves a specific operating problem the moment it is installed.',
       },
       {
         title: 'Recurring subscription revenue, bundled hardware.',
@@ -228,7 +228,7 @@ const content = {
       {
         icon: Code2,
         title: 'Software development on the manufacturer’s platform (ADP/ISV)',
-        body: 'Joining a manufacturer’s formal software developer partner program, building applications and integrations on the platform they provide — adding analytics and automation value for customers already running their hardware.',
+        body: 'Joining a manufacturer’s formal software developer partner program, building applications and integrations on the platform they provide, adding analytics and automation value for customers already running their hardware.',
       },
       {
         icon: PackageCheck,
@@ -245,7 +245,7 @@ const content = {
     matrixEyebrow: 'Open architecture',
     matrixTitle: 'Device integration matrix',
     matrixNote:
-      'A DeviceProvider abstraction layer separates the image source from the analytics core — adding a new device line means writing a plugin, not rewriting the core. It’s also why integrating a new manufacturer’s platform doesn’t require rebuilding the system.',
+      'A DeviceProvider abstraction layer separates the image source from the analytics core. Adding a new device line means writing a plugin, not rewriting the core. It’s also why integrating a new manufacturer’s platform doesn’t require rebuilding the system.',
     matrixCols: { device: 'Device line', interfaces: 'Integration interface', status: 'Status', note: 'Note' },
     deviceRows: [
       {
@@ -261,7 +261,7 @@ const content = {
         note: 'Device control and video stream access. Currently in discussion to join the vendor’s partner program.',
       },
       {
-        device: 'Axis — edge AI',
+        device: 'Axis - edge AI',
         interfaces: 'ACAP',
         status: 'roadmap',
         note: 'Embedding detection models directly on the camera via ACAP. Not yet implemented; a proposed technical partnership goal with the vendor.',
@@ -318,7 +318,7 @@ const content = {
       submitLabel: 'Send inquiry',
       submittingLabel: 'Sending...',
       successTitle: 'Sent successfully!',
-      successBody: 'Thank you — our team will get back to you as soon as possible.',
+      successBody: 'Thank you. Our team will get back to you as soon as possible.',
       resetLabel: 'Send another inquiry',
       submitErrorLabel: 'Something went wrong sending your request. Please try again, or reach us directly at support@nothanagentic.vn or +84 983 650 552.',
       errors: {
@@ -331,7 +331,7 @@ const content = {
     },
   },
   sv: {
-    metaTitle: 'Lösningspartner för tillverkare av kamerahårdvara — Nỏ Thần Agentic',
+    metaTitle: 'Lösningspartner för tillverkare av kamerahårdvara - Nỏ Thần Agentic',
     metaDescription:
       'Nỏ Thần Agentic närmar sig tillverkare av kamera- och övervakningshårdvara (Axis, Hikvision) som en lösningspartner: vi utvecklar programvara på tillverkarens plattform och integrerar hårdvaran i nyckelfärdiga projekt i Vietnam.',
     eyebrow: 'Partners',
@@ -343,7 +343,7 @@ const content = {
     values: [
       {
         title: 'Programvara gör er hårdvara mer värd.',
-        body: 'Varje affärsproblem vi löser direkt på tillverkarens kamera — lagerräkning, upptäckt av bristande skyddsutrustning, tidsstämplade bevis — är ett konkret skäl för en företagskund att välja just den enheten framför en billigare utan tillhörande mjukvarulager. En kamera med analysprogramvara löser ett konkret driftproblem direkt vid installation.',
+        body: 'Varje affärsproblem vi löser direkt på tillverkarens kamera (lagerräkning, upptäckt av bristande skyddsutrustning, tidsstämplade bevis) är ett konkret skäl för en företagskund att välja just den enheten framför en billigare utan tillhörande mjukvarulager. En kamera med analysprogramvara löser ett konkret driftproblem direkt vid installation.',
       },
       {
         title: 'Återkommande abonnemangsintäkter, hårdvara i samma paket.',
@@ -360,7 +360,7 @@ const content = {
       {
         icon: Code2,
         title: 'Programvaruutveckling på tillverkarens plattform (ADP/ISV)',
-        body: 'Att gå med i en tillverkares formella partnerprogram för mjukvaruutvecklare, och bygga applikationer och integrationer på den plattform de tillhandahåller — vilket ger analys- och automatiseringsvärde till kunder som redan använder deras hårdvara.',
+        body: 'Att gå med i en tillverkares formella partnerprogram för mjukvaruutvecklare, och bygga applikationer och integrationer på den plattform de tillhandahåller, vilket ger analys- och automatiseringsvärde till kunder som redan använder deras hårdvara.',
       },
       {
         icon: PackageCheck,
@@ -377,7 +377,7 @@ const content = {
     matrixEyebrow: 'Öppen arkitektur',
     matrixTitle: 'Integrationsmatris för enheter',
     matrixNote:
-      'Ett abstraktionslager, DeviceProvider, separerar bildkällan från analyskärnan — att lägga till en ny enhetstyp innebär att skriva ett nytt plugin, inte att skriva om kärnan. Det är också skälet till att integration med en ny tillverkares plattform inte kräver att systemet byggs om.',
+      'Ett abstraktionslager, DeviceProvider, separerar bildkällan från analyskärnan. Att lägga till en ny enhetstyp innebär att skriva ett nytt plugin, inte att skriva om kärnan. Det är också skälet till att integration med en ny tillverkares plattform inte kräver att systemet byggs om.',
     matrixCols: { device: 'Enhetstyp', interfaces: 'Integrationsgränssnitt', status: 'Status', note: 'Anteckning' },
     deviceRows: [
       {
@@ -393,7 +393,7 @@ const content = {
         note: 'Enhetsstyrning och åtkomst till videoström. Diskussioner pågår om att gå med i tillverkarens partnerprogram.',
       },
       {
-        device: 'Axis — edge-AI',
+        device: 'Axis - edge-AI',
         interfaces: 'ACAP',
         status: 'roadmap',
         note: 'Att bädda in detekteringsmodeller direkt i kameran via ACAP. Ej implementerat; ett föreslaget tekniskt samarbetsmål med tillverkaren.',
@@ -450,7 +450,7 @@ const content = {
       submitLabel: 'Skicka förfrågan',
       submittingLabel: 'Skickar...',
       successTitle: 'Skickat!',
-      successBody: 'Tack — vårt team återkommer så snart som möjligt.',
+      successBody: 'Tack. Vårt team återkommer så snart som möjligt.',
       resetLabel: 'Skicka en till förfrågan',
       submitErrorLabel: 'Något gick fel när förfrågan skickades. Försök igen, eller kontakta oss direkt på support@nothanagentic.vn eller +84 983 650 552.',
       errors: {
@@ -577,9 +577,6 @@ export default async function PartnersPage({
                       {t.matrixCols.interfaces}
                     </th>
                     <th className="text-left font-mono text-caption uppercase tracking-wider text-navy-400 font-medium px-4 py-3 border-b border-line">
-                      {t.matrixCols.status}
-                    </th>
-                    <th className="text-left font-mono text-caption uppercase tracking-wider text-navy-400 font-medium px-4 py-3 border-b border-line">
                       {t.matrixCols.note}
                     </th>
                   </tr>
@@ -589,9 +586,6 @@ export default async function PartnersPage({
                     <tr key={idx} className="border-b border-line last:border-b-0">
                       <td className="px-4 py-3.5 font-semibold text-ink align-top whitespace-nowrap">{row.device}</td>
                       <td className="px-4 py-3.5 font-mono text-caption text-navy-400 align-top whitespace-nowrap">{row.interfaces}</td>
-                      <td className="px-4 py-3.5 align-top">
-                        <StatusTag status={row.status} locale={locale} />
-                      </td>
                       <td className="px-4 py-3.5 text-navy-400 align-top">{row.note}</td>
                     </tr>
                   ))}

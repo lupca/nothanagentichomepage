@@ -76,7 +76,7 @@ const STATUS_CLASS: Record<Status, string> = {
 
 const content: { vi: Locale; en: Locale } = {
   vi: {
-    metaTitle: 'Công nghệ — Kiến trúc kỹ thuật | Nỏ Thần Agentic',
+    metaTitle: 'Công nghệ - Kiến trúc kỹ thuật | Nỏ Thần Agentic',
     metaDescription:
       'Kiến trúc hệ thống SOAI: hai lớp trừu tượng DeviceProvider và AnalysisEngine, chiến lược suy luận biên/máy chủ, ma trận tích hợp thiết bị, phương pháp kiểm thử và hệ phân cấp ngoại lệ SOAIException.',
     eyebrowIntro: 'Kiến trúc kỹ thuật',
@@ -86,7 +86,7 @@ const content: { vi: Locale; en: Locale } = {
     eyebrowArch: 'Luồng xử lý',
     archTitle: 'Kiến trúc pipeline',
     archIntro:
-      'Một sự kiện đi từ thiết bị vật lý đến màn hình vận hành qua sáu chặng. Hai chặng ở giữa — DeviceProvider và AnalysisEngine — là điểm mở duy nhất của hệ thống.',
+      'Một sự kiện đi từ thiết bị vật lý đến màn hình vận hành qua sáu chặng. Hai chặng ở giữa, DeviceProvider và AnalysisEngine, là điểm mở duy nhất của hệ thống.',
     pipeline: [
       { icon: Camera, title: 'Thiết bị', sub: 'Camera IP · máy POS · máy quét mã' },
       { icon: Cable, title: 'DeviceProvider', sub: 'Lớp trừu tượng nguồn ảnh', highlight: true },
@@ -101,7 +101,7 @@ const content: { vi: Locale; en: Locale } = {
         icon: Cable,
         title: 'DeviceProvider',
         body:
-          'Tách hoàn toàn logic lấy hình ảnh/video khỏi phần còn lại của hệ thống. Thêm một dòng camera mới, một đầu đọc mã, hay một máy POS nghĩa là viết một provider mới tuân theo interface có sẵn — không đụng đến worker, API hay giao diện đang chạy production.',
+          'Tách hoàn toàn logic lấy hình ảnh/video khỏi phần còn lại của hệ thống. Thêm một dòng camera mới, một đầu đọc mã, hay một máy POS nghĩa là viết một provider mới tuân theo interface có sẵn, không đụng đến worker, API hay giao diện đang chạy production.',
       },
       {
         icon: BrainCircuit,
@@ -123,13 +123,13 @@ const content: { vi: Locale; en: Locale } = {
     edgeCard: {
       status: 'roadmap',
       title: 'Suy luận tại biên (ví dụ: Axis ACAP)',
-      pros: 'Chưa triển khai. Nếu làm, độ trễ sẽ thấp hơn và hình ảnh không cần rời khỏi thiết bị — phù hợp khi chính sách dữ liệu khách hàng cấm đưa hình sản xuất ra ngoài mạng nội bộ.',
+      pros: 'Chưa triển khai. Nếu làm, độ trễ sẽ thấp hơn và hình ảnh không cần rời khỏi thiết bị, phù hợp khi chính sách dữ liệu khách hàng cấm đưa hình sản xuất ra ngoài mạng nội bộ.',
       note: 'Cập nhật mô hình sẽ phức tạp hơn (đóng gói và nạp lại theo từng thiết bị/hãng), và bị giới hạn bởi tài nguyên tính toán trên chip biên.',
     },
     eyebrowMatrix: 'Tích hợp mở',
     matrixTitle: 'Ma trận tích hợp thiết bị & giao thức',
     matrixIntro:
-      'Trạng thái hiện tại của từng dòng thiết bị. "POC" nghĩa là đã tích hợp và kiểm thử trong môi trường thử nghiệm nội bộ. Chưa có quan hệ đối tác chính thức với hãng ở mức này.',
+      'Giao thức tích hợp theo từng dòng thiết bị. Mức độ triển khai cụ thể của từng dòng được ghi trong cột ghi chú.',
     matrixHeaders: { device: 'Dòng thiết bị', interfaces: 'Giao diện tích hợp', status: 'Trạng thái', note: 'Ghi chú' },
     deviceRows: [
       {
@@ -145,7 +145,7 @@ const content: { vi: Locale; en: Locale } = {
         note: 'Điều khiển thiết bị và lấy luồng hình đã kiểm thử trong POC nội bộ. Chưa có quan hệ đối tác chính thức với Axis.',
       },
       {
-        device: 'Axis — AI tại biên',
+        device: 'Axis - AI tại biên',
         interfaces: 'ACAP',
         status: 'roadmap',
         note: 'Đưa AnalysisEngine chạy trực tiếp trên camera qua nền tảng ACAP. Định hướng kỹ thuật, chưa triển khai.',
@@ -174,14 +174,14 @@ const content: { vi: Locale; en: Locale } = {
     testingIntro:
       'Kiểm định độc lập trên 8 test suite, bao phủ từ unit test của từng module đến toàn bộ luồng dữ liệu và các kịch bản đầu vào lỗi.',
     testingStats: [
-      { value: '10', label: 'Suite unit/integration backend — Models, Engines, Workers, APIs' },
-      { value: '99', label: 'Kịch bản E2E — toàn bộ luồng Upload → Process → Storage → Query' },
-      { value: '27', label: 'Test áp lực & dữ liệu bất thường — file hỏng, mã QR mờ, mất kết nối mạng' },
+      { value: '10', label: 'Suite unit/integration backend: Models, Engines, Workers, APIs' },
+      { value: '99', label: 'Kịch bản E2E: toàn bộ luồng Upload → Process → Storage → Query' },
+      { value: '27', label: 'Test áp lực & dữ liệu bất thường: file hỏng, mã QR mờ, mất kết nối mạng' },
     ],
     eyebrowPrinciples: 'Nguyên tắc engineering',
     principlesTitle: 'Xử lý lỗi minh bạch',
     principlesBody:
-      'Hệ thống không có đường fallback âm thầm và không nuốt exception ở bất kỳ tầng nào. Toàn bộ lỗi nghiệp vụ và lỗi hệ thống đi qua một hệ phân cấp ngoại lệ dùng riêng — SOAIException — để đảm bảo mọi sự cố (DB lỗi, file hỏng, mã QR mờ, FFmpeg thất bại, mất kết nối camera) đều quăng ra lỗi minh bạch, không bị bắt và bỏ qua.',
+      'Hệ thống không có đường fallback âm thầm và không nuốt exception ở bất kỳ tầng nào. Toàn bộ lỗi nghiệp vụ và lỗi hệ thống đi qua một hệ phân cấp ngoại lệ dùng riêng gọi là SOAIException, để đảm bảo mọi sự cố (DB lỗi, file hỏng, mã QR mờ, FFmpeg thất bại, mất kết nối camera) đều quăng ra lỗi minh bạch, không bị bắt và bỏ qua.',
     principlesBody2:
       'Mỗi lỗi trả về một HTTP response tuân theo chuẩn RFC kèm mã lỗi rõ nghĩa, đồng thời ghi log chi tiết ở phía server. Trong giám sát sản xuất, một con số sai mà không ai biết là sai luôn tệ hơn một lỗi hiện ra ngay lập tức.',
     ctaTitle: 'Muốn xem sâu hơn?',
@@ -191,7 +191,7 @@ const content: { vi: Locale; en: Locale } = {
     ctaSecondary: 'Xem tài liệu kỹ thuật đầy đủ',
   },
   en: {
-    metaTitle: 'Technology — Technical Architecture | Nỏ Thần Agentic',
+    metaTitle: 'Technology - Technical Architecture | Nỏ Thần Agentic',
     metaDescription:
       'System architecture behind SOAI: the DeviceProvider and AnalysisEngine abstraction layers, edge vs. server inference strategy, device integration matrix, testing methodology, and the SOAIException error hierarchy.',
     eyebrowIntro: 'Technical architecture',
@@ -201,7 +201,7 @@ const content: { vi: Locale; en: Locale } = {
     eyebrowArch: 'Processing flow',
     archTitle: 'Pipeline architecture',
     archIntro:
-      'An event travels from a physical device to the operator dashboard through six stages. The two middle stages — DeviceProvider and AnalysisEngine — are the only extension points in the system.',
+      'An event travels from a physical device to the operator dashboard through six stages. The two middle stages, DeviceProvider and AnalysisEngine, are the only extension points in the system.',
     pipeline: [
       { icon: Camera, title: 'Device', sub: 'IP camera · POS terminal · barcode scanner' },
       { icon: Cable, title: 'DeviceProvider', sub: 'Image-source abstraction layer', highlight: true },
@@ -216,7 +216,7 @@ const content: { vi: Locale; en: Locale } = {
         icon: Cable,
         title: 'DeviceProvider',
         body:
-          'Fully decouples image/video acquisition from the rest of the system. Adding a new camera brand, a barcode reader, or a POS terminal means writing a new provider against the existing interface — no changes to the workers, the API, or the UI already running in production.',
+          'Fully decouples image/video acquisition from the rest of the system. Adding a new camera brand, a barcode reader, or a POS terminal means writing a new provider against the existing interface, with no changes to the workers, the API, or the UI already running in production.',
       },
       {
         icon: BrainCircuit,
@@ -238,13 +238,13 @@ const content: { vi: Locale; en: Locale } = {
     edgeCard: {
       status: 'roadmap',
       title: 'Edge inference (e.g. Axis ACAP)',
-      pros: 'Not yet implemented. If built, latency would drop and footage would stay on the device — for cases where a customer\'s data policy forbids sending production footage off-site.',
+      pros: 'Not yet implemented. If built, latency would drop and footage would stay on the device, for cases where a customer\'s data policy forbids sending production footage off-site.',
       note: 'Model updates would be more involved (packaging and pushing per device/vendor), and computation would be constrained by the edge chip.',
     },
     eyebrowMatrix: 'Open integration',
     matrixTitle: 'Device & protocol integration matrix',
     matrixIntro:
-      'Current status per device family. "POC" means integrated and tested in an internal test environment — it does not imply a formal partnership with the vendor.',
+      'Integration protocol per device family. Deployment status for each line is noted in the notes column.',
     matrixHeaders: { device: 'Device family', interfaces: 'Integration interface', status: 'Status', note: 'Notes' },
     deviceRows: [
       {
@@ -260,7 +260,7 @@ const content: { vi: Locale; en: Locale } = {
         note: 'Device control and stream access tested in an internal POC. No formal partnership with Axis at this stage.',
       },
       {
-        device: 'Axis — edge AI',
+        device: 'Axis - edge AI',
         interfaces: 'ACAP',
         status: 'roadmap',
         note: 'Running AnalysisEngine directly on the camera via the ACAP platform. Technical direction, not yet built.',
@@ -289,14 +289,14 @@ const content: { vi: Locale; en: Locale } = {
     testingIntro:
       'Independently verified across 8 test suites, covering everything from per-module unit tests to the full data flow and adversarial input scenarios.',
     testingStats: [
-      { value: '10', label: 'Backend unit/integration suites — Models, Engines, Workers, APIs' },
-      { value: '99', label: 'E2E scenarios — full Upload → Process → Storage → Query data flow' },
-      { value: '27', label: 'Stress & adversarial-media tests — corrupted files, blurry QR codes, dropped network connections' },
+      { value: '10', label: 'Backend unit/integration suites: Models, Engines, Workers, APIs' },
+      { value: '99', label: 'E2E scenarios: full Upload → Process → Storage → Query data flow' },
+      { value: '27', label: 'Stress & adversarial-media tests: corrupted files, blurry QR codes, dropped network connections' },
     ],
     eyebrowPrinciples: 'Engineering principle',
     principlesTitle: 'Transparent error handling',
     principlesBody:
-      'The system has no silent fallback path and swallows no exceptions at any layer. All business and system errors flow through a dedicated exception hierarchy — SOAIException — so every fault (a DB error, a corrupted file, a blurry QR code, a failed FFmpeg call, a dropped camera connection) surfaces as an explicit, uncaught error instead of being silently absorbed.',
+      'The system has no silent fallback path and swallows no exceptions at any layer. All business and system errors flow through a dedicated exception hierarchy called SOAIException, so every fault (a DB error, a corrupted file, a blurry QR code, a failed FFmpeg call, a dropped camera connection) surfaces as an explicit, uncaught error instead of being silently absorbed.',
     principlesBody2:
       'Every error returns an RFC-compliant HTTP response with a clear error code, and is logged in detail server-side. In production monitoring, a wrong number nobody knows is wrong is always worse than an error that shows up immediately.',
     ctaTitle: 'Want to go deeper?',
@@ -460,9 +460,6 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                       {t.matrixHeaders.interfaces}
                     </th>
                     <th className="text-left font-mono text-caption uppercase tracking-wider text-navy-400 font-medium px-4 py-3 border-b border-line">
-                      {t.matrixHeaders.status}
-                    </th>
-                    <th className="text-left font-mono text-caption uppercase tracking-wider text-navy-400 font-medium px-4 py-3 border-b border-line">
                       {t.matrixHeaders.note}
                     </th>
                   </tr>
@@ -472,13 +469,6 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                     <tr key={idx} className="border-b border-line last:border-b-0">
                       <td className="px-4 py-3.5 font-semibold text-ink align-top whitespace-nowrap">{row.device}</td>
                       <td className="px-4 py-3.5 font-mono text-caption text-navy-400 align-top whitespace-nowrap">{row.interfaces}</td>
-                      <td className="px-4 py-3.5 align-top">
-                        <span
-                          className={`inline-block whitespace-nowrap text-caption font-mono uppercase tracking-wide px-2 py-0.5 border ${STATUS_CLASS[row.status]}`}
-                        >
-                          {statusLabel[row.status]}
-                        </span>
-                      </td>
                       <td className="px-4 py-3.5 text-navy-400 align-top">{row.note}</td>
                     </tr>
                   ))}

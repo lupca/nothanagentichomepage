@@ -21,9 +21,9 @@ const content = {
     ariaResults: 'Kết quả lệnh',
     commands: [
       { id: 'nang-luc', label: 'Xem Ba trụ năng lực', hint: 'Agentic AI · Tích hợp phần cứng · Bảo mật', icon: ScanEye, href: '#nang-luc' },
-      { id: 'he-thong', label: 'Xem Ma trận tích hợp thiết bị', hint: 'Camera, giao thức, trạng thái', icon: Cable, href: '/cong-nghe' },
+      { id: 'he-thong', label: 'Xem Ma trận tích hợp thiết bị', hint: 'Camera, giao thức tích hợp', icon: Cable, href: '/cong-nghe' },
       { id: 'bao-mat', label: 'Xem nguyên tắc bảo mật & engineering', hint: 'Mã hoá, chống path traversal, on-prem', icon: ShieldCheck, href: '/bao-mat' },
-      { id: 'ai-decisions', label: 'Mở minh hoạ AI đề xuất — người duyệt', hint: 'Duyệt đề xuất từ hệ thống', icon: Settings2, href: '#ai-decisions' },
+      { id: 'ai-decisions', label: 'Mở minh hoạ AI đề xuất - người duyệt', hint: 'Duyệt đề xuất từ hệ thống', icon: Settings2, href: '#ai-decisions' },
       { id: 'demo', label: 'Trao đổi hợp tác / kỹ thuật', hint: 'Nói chuyện với đội kỹ thuật', icon: Calendar, href: '#lead-capture' },
     ] as CommandItem[],
   },
@@ -34,7 +34,7 @@ const content = {
     ariaResults: 'Command results',
     commands: [
       { id: 'nang-luc', label: 'View the three capability pillars', hint: 'Agentic AI · hardware integration · security', icon: ScanEye, href: '#nang-luc' },
-      { id: 'he-thong', label: 'View the device integration matrix', hint: 'Cameras, protocols, status', icon: Cable, href: '/cong-nghe' },
+      { id: 'he-thong', label: 'View the device integration matrix', hint: 'Cameras, integration protocols', icon: Cable, href: '/cong-nghe' },
       { id: 'bao-mat', label: 'View security & engineering principles', hint: 'Encryption, path traversal, on-prem', icon: ShieldCheck, href: '/bao-mat' },
       { id: 'ai-decisions', label: 'Open the AI-proposes / human-approves demo', hint: 'Review proposals from the system', icon: Settings2, href: '#ai-decisions' },
       { id: 'demo', label: 'Start a partnership / technical conversation', hint: 'Talk to our engineering team', icon: Calendar, href: '#lead-capture' },

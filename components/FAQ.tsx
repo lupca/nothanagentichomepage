@@ -7,11 +7,11 @@ import { ChevronDown, HelpCircle, ShieldCheck } from 'lucide-react';
 const content = {
   vi: {
     heading: 'Câu hỏi thường gặp',
-    footnote: 'Mã hoá tại chỗ (Fernet) và kiểm soát truy cập theo vai trò trên toàn bộ hệ thống.',
+    footnote: 'Mã hoá khi lưu (Fernet) và kiểm soát truy cập theo vai trò trên toàn bộ hệ thống.',
     faqs: [
       { question: 'Dữ liệu hình ảnh của nhà máy có rời khỏi cơ sở của chúng tôi không?', answer: 'Không, nếu bạn không muốn. Hệ thống triển khai được hoàn toàn trong mạng nội bộ, suy luận tại biên ngay tại nhà máy. Thông tin đăng nhập thiết bị mã hoá khi lưu, mọi API tải tệp đều chặn path traversal.' },
       { question: 'Tích hợp với camera hãng nào?', answer: 'Mọi camera IP theo chuẩn ONVIF/RTSP đang chạy sản xuất. Axis và Hikvision đang ở giai đoạn POC. Xem ma trận tích hợp thiết bị đầy đủ ở mục Ma trận tích hợp thiết bị trên trang này.' },
-      { question: 'Mất bao lâu để triển khai một bài toán mới?', answer: 'Với kiểm tra đúng/sai định nghĩa bằng lời và vài ảnh mẫu, một nghiệp vụ mới có thể chạy trong ngày, không cần huấn luyện lại mô hình. Với tích hợp thiết bị mới, thời gian phụ thuộc giao thức của thiết bị — trao đổi trực tiếp để có mốc cụ thể.' },
+      { question: 'Mất bao lâu để triển khai một bài toán mới?', answer: 'Với kiểm tra đúng/sai định nghĩa bằng lời và vài ảnh mẫu, một nghiệp vụ mới có thể chạy trong ngày, không cần huấn luyện lại mô hình. Với tích hợp thiết bị mới, thời gian phụ thuộc giao thức của thiết bị. Trao đổi trực tiếp để có mốc cụ thể.' },
     ],
   },
   en: {
@@ -20,7 +20,7 @@ const content = {
     faqs: [
       { question: 'Does our factory footage ever leave our premises?', answer: 'Not if you don’t want it to. The system deploys fully inside your internal network, with inference at the edge right on the factory floor. Device credentials are encrypted at rest, and every file-download API blocks path traversal.' },
       { question: 'Which camera brands do you integrate with?', answer: 'Any IP camera on the ONVIF/RTSP standard already runs in production. Axis and Hikvision are at the POC stage. See the full device integration matrix in the Device Integration Matrix section on this page.' },
-      { question: 'How long does it take to roll out a new check?', answer: 'For binary checks defined in plain language plus a few sample images, a new check can ship the same day, with no model retraining. For a new device integration, timing depends on that device’s protocol — talk to us directly for a concrete estimate.' },
+      { question: 'How long does it take to roll out a new check?', answer: 'For binary checks defined in plain language plus a few sample images, a new check can ship the same day, with no model retraining. For a new device integration, timing depends on that device’s protocol. Talk to us directly for a concrete estimate.' },
     ],
   },
 };

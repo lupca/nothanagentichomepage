@@ -12,7 +12,7 @@ const phoneRegex = /^(0|\+84)(3|5|7|8|9)[0-9]{8}$/;
 const content = {
   vi: {
     heading: 'Trao đổi kỹ thuật hoặc nhận hồ sơ năng lực',
-    sub: 'Để lại thông tin công việc, đội kỹ thuật sẽ liên hệ trực tiếp — cho cả đối tác thiết bị và doanh nghiệp có bài toán cụ thể.',
+    sub: 'Để lại thông tin công việc, đội kỹ thuật sẽ liên hệ trực tiếp. Áp dụng cho cả đối tác thiết bị và doanh nghiệp có bài toán cụ thể.',
     emailLabel: 'Email công việc *',
     emailPlaceholder: 'name@company.com',
     companyLabel: 'Tên doanh nghiệp / công ty *',
@@ -35,7 +35,7 @@ const content = {
   },
   en: {
     heading: 'Talk to our engineers or get the capability profile',
-    sub: 'Leave your work details and our engineering team will reach out directly — for hardware partners and businesses with a concrete problem alike.',
+    sub: 'Leave your work details and our engineering team will reach out directly. This applies to hardware partners and businesses with a concrete problem alike.',
     emailLabel: 'Work email *',
     emailPlaceholder: 'name@company.com',
     companyLabel: 'Company name *',

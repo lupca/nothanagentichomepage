@@ -6,7 +6,7 @@ import HumanOverridePanel from './HumanOverridePanel';
 const content = {
   vi: {
     tag: 'Minh hoạ tương tác',
-    title: 'AI đề xuất — người vận hành quyết định',
+    title: 'AI đề xuất - người vận hành quyết định',
     sub: 'Hệ thống phát hiện, chấm điểm độ tin cậy, và đề xuất hành động. Không có bước nào tự thực hiện mà thiếu người duyệt.',
     pendingLabel: 'Đang chờ duyệt (3 phát hiện)',
     primaryTitle: 'Phát hiện: công nhân không đội mũ bảo hộ · Line 2',
@@ -21,7 +21,7 @@ const content = {
   },
   en: {
     tag: 'Interactive demo',
-    title: 'AI proposes — the operator decides',
+    title: 'AI proposes - the operator decides',
     sub: 'The system detects, scores its own confidence, and proposes an action. No step runs on its own without a human approval.',
     pendingLabel: 'Pending review (3 detections)',
     primaryTitle: 'Detection: worker without a hard hat · Line 2',
@@ -36,7 +36,7 @@ const content = {
   },
   sv: {
     tag: 'Interaktiv demo',
-    title: 'AI föreslår — operatören beslutar',
+    title: 'AI föreslår - operatören beslutar',
     sub: 'Systemet upptäcker, bedömer sin egen tillförlitlighet och föreslår en åtgärd. Inget steg utförs på egen hand utan mänskligt godkännande.',
     pendingLabel: 'Väntar på godkännande (3 upptäckter)',
     primaryTitle: 'Upptäckt: arbetare utan skyddshjälm · Linje 2',

@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { X, ZoomIn } from 'lucide-react';
 
 /**
- * ImageLightbox — click-to-enlarge for a single image.
+ * ImageLightbox - click-to-enlarge for a single image.
  *
  * Renders a keyboard-accessible trigger button around a thumbnail `<Image>`;
  * clicking (or pressing Enter/Space on) it opens a full-screen overlay
@@ -18,14 +18,14 @@ import { X, ZoomIn } from 'lucide-react';
  *   thumbnail and the enlarged view (width/height are the image's intrinsic
  *   pixel size, used for aspect ratio).
  * - caption: optional text shown under the thumbnail and under the enlarged
- *   image (e.g. a "demonstration data" notice) — plain text/JSX.
+ *   image (e.g. a "demonstration data" notice) - plain text/JSX.
  * - closeLabel / openLabel: localized accessible strings for the close
  *   button and the trigger's aria-label. Callers own i18n (this component
  *   has no locale knowledge); pass the picked strings for the caller's
  *   `pick(locale)` dictionary.
  * - sizes, className, imageClassName: layout passthroughs for the thumbnail.
  *
- * Reusable as-is for any product screenshot grid — SOAI's page can adopt it
+ * Reusable as-is for any product screenshot grid - SOAI's page can adopt it
  * with the same props shape.
  */
 export interface ImageLightboxProps {

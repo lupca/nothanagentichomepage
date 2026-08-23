@@ -5,7 +5,7 @@ import HeroVideo from './HeroVideo';
 
 const content = {
   vi: {
-    eyebrow: 'Giải pháp phần cứng + phần mềm · Lõi Agentic AI',
+    eyebrow: 'Giải pháp phần cứng và phần mềm · Lõi Agentic AI',
     h1: 'Tích hợp camera IP qua ONVIF và RTSP, xử lý dữ liệu ngay tại nhà máy.',
     sub: 'Nỏ Thần Agentic thiết kế và triển khai phần cứng và phần mềm cho giám sát sản xuất, an toàn lao động và kiểm soát hàng hoá. Agentic AI xử lý dữ liệu tại lõi hệ thống; thông tin đăng nhập thiết bị mã hoá bằng Fernet khi lưu.',
     ctaPrimary: 'Hợp tác cùng chúng tôi',
@@ -15,7 +15,7 @@ const content = {
     dashboardCaption: 'Video thao tác trên hệ thống SOAI với dữ liệu minh hoạ.',
   },
   en: {
-    eyebrow: 'Hardware + software solutions · Agentic AI at the core',
+    eyebrow: 'Hardware and software solutions · Agentic AI at the core',
     h1: 'Connects to IP cameras over ONVIF and RTSP and processes all data on-site at your factory.',
     sub: 'Nỏ Thần Agentic designs and delivers hardware and software for production monitoring, workplace safety, and goods control. Agentic AI runs at the core of the system, and device credentials are encrypted with Fernet at rest.',
     ctaPrimary: 'Partner with us',
@@ -99,7 +99,7 @@ export const Hero: React.FC<HeroProps> = async () => {
           screens it can land on top of whatever content is at the bottom of the
           initial (unscrolled) view. The extra top margin below pushes this visual
           block down far enough that the widget's circle sits over empty hero
-          background instead of the video — the video itself remains fully visible
+          background instead of the video - the video itself remains fully visible
           once the visitor scrolls a little further.
         */}
         <div className="lg:col-span-6 flex justify-center mt-28 sm:mt-0">

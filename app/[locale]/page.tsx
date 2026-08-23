@@ -35,7 +35,7 @@ const jsonLd = {
   },
   contactPoint: {
     '@type': 'ContactPoint',
-    email: 'lienhe@nothanagentic.vn',
+    email: 'contact@nothanagentic.vn',
     telephone: '+84-98-365-0552',
     contactType: 'sales',
     areaServed: 'VN',

@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'Nỏ Thần Agentic — giải pháp phần cứng và phần mềm với Agentic AI';
+export const alt = 'Nỏ Thần Agentic - giải pháp phần cứng và phần mềm với Agentic AI';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -53,7 +53,7 @@ export default function OpengraphImage() {
             maxWidth: '820px',
           }}
         >
-          Giải pháp phần cứng + phần mềm, lõi Agentic AI, cho giám sát sản xuất và an toàn lao động
+          Giải pháp phần cứng và phần mềm, lõi Agentic AI, cho giám sát sản xuất và an toàn lao động
         </div>
       </div>
     ),
