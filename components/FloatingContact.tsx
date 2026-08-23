@@ -27,7 +27,7 @@ export const FloatingContact: React.FC<FloatingContactProps> = () => {
       {/* Expanded details: revealed on hover/focus */}
       <div
         data-testid="contact-details"
-        className="w-64 bg-white text-ink rounded-2xl shadow-2xl border border-black/5 p-4 space-y-3
+        className="w-64 bg-paper text-ink rounded-2xl shadow-2xl border border-line p-4 space-y-3
           opacity-0 translate-y-2 pointer-events-none invisible
           group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto group-hover:visible
           group-focus-within:opacity-100 group-focus-within:translate-y-0 group-focus-within:pointer-events-auto group-focus-within:visible
@@ -40,7 +40,7 @@ export const FloatingContact: React.FC<FloatingContactProps> = () => {
           href="https://zalo.me/nothanagentic"
           target="_blank"
           rel="noreferrer"
-          className="flex items-center gap-2.5 min-h-[44px] px-3 rounded-lg bg-paper hover:bg-orange/10 text-body font-semibold text-ink transition-colors"
+          className="flex items-center gap-2.5 min-h-[44px] px-3 rounded-lg bg-paper hover:bg-paper-200 text-body font-semibold text-ink transition-colors"
         >
           <span className="w-6 h-6 rounded-full bg-[#0068FF] text-white flex items-center justify-center text-caption font-extrabold shrink-0">
             Z
@@ -51,7 +51,7 @@ export const FloatingContact: React.FC<FloatingContactProps> = () => {
           href="https://www.messenger.com/t/nothanagentic"
           target="_blank"
           rel="noreferrer"
-          className="flex items-center gap-2.5 min-h-[44px] px-3 rounded-lg bg-paper hover:bg-orange/10 text-body font-semibold text-ink transition-colors"
+          className="flex items-center gap-2.5 min-h-[44px] px-3 rounded-lg bg-paper hover:bg-paper-200 text-body font-semibold text-ink transition-colors"
         >
           <span className="w-6 h-6 rounded-full bg-[#0084FF] text-white flex items-center justify-center shrink-0">
             <MessageCircle className="w-3.5 h-3.5" />

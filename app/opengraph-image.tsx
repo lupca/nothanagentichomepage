@@ -16,19 +16,19 @@ export default function OpengraphImage() {
           flexDirection: 'column',
           justifyContent: 'center',
           padding: '80px',
-          backgroundColor: '#0B0B1F',
+          backgroundColor: '#1B1917',
           backgroundImage:
-            'radial-gradient(circle at 85% 20%, rgba(232,84,30,0.35), transparent 45%)',
+            'radial-gradient(circle at 85% 20%, rgba(178,83,46,0.30), transparent 45%)',
           fontFamily: 'sans-serif',
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
           <svg width="56" height="48" viewBox="0 0 19 16" fill="none">
-            <path d="M9.5 0L19 16H0L9.5 0Z" fill="#E8541E" />
-            <circle cx="9.5" cy="10" r="3" fill="#1B1B4B" />
+            <path d="M9.5 0L19 16H0L9.5 0Z" fill="#B2532E" />
+            <circle cx="9.5" cy="10" r="3" fill="#3D3833" />
           </svg>
           <div style={{ display: 'flex', fontSize: 40, fontWeight: 800, color: '#FFFFFF' }}>
-            NỎ THẦN <span style={{ color: '#E8541E' }}>AGENTIC</span>
+            NỎ THẦN <span style={{ color: '#B2532E' }}>AGENTIC</span>
           </div>
         </div>
         <div

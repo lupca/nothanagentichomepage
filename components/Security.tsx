@@ -51,7 +51,7 @@ export const Security: React.FC<SecurityProps> = async () => {
     <section className="bg-ink text-white py-20 px-6 md:px-12 lg:px-24" id="bao-mat" aria-label="Security and engineering principles">
       <div className="max-w-4xl mx-auto space-y-8">
         <Reveal className="space-y-3">
-          <span className="text-caption font-mono uppercase tracking-wider text-orange">{t.tag}</span>
+          <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.tag}</span>
           <h2 className="font-display text-2xl md:text-h2 font-bold text-white">{t.heading}</h2>
         </Reveal>
 
@@ -65,7 +65,7 @@ export const Security: React.FC<SecurityProps> = async () => {
             return (
               <Reveal key={idx} delay={idx * 0.07}>
                 <div className="rounded-xl border border-white/10 bg-white/5 p-5 space-y-2.5 h-full">
-                  <Icon className="w-5 h-5 text-orange" />
+                  <Icon className="w-5 h-5 text-navy-400" />
                   <p className="text-body font-bold text-white">{card.title}</p>
                   <p className="text-caption text-white/60 leading-relaxed">{card.body}</p>
                 </div>

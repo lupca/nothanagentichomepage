@@ -190,7 +190,7 @@ export default async function Page({
       <Header />
       <main className="min-h-screen bg-paper text-ink antialiased">
         {/* 1. Intro */}
-        <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line">
+        <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line">
           <div className="max-w-4xl mx-auto space-y-6">
             <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.eyebrow}</span>
             <h1 className="font-display text-h1 font-bold text-ink">{t.h1}</h1>
@@ -205,17 +205,17 @@ export default async function Page({
               <article key={a.slug} id={a.slug} className={idx > 0 ? 'pt-16 border-t border-line space-y-6' : 'space-y-6'}>
                 <div className="space-y-3">
                   <div className="flex items-center gap-2 text-caption font-mono uppercase tracking-wider text-navy-400">
-                    <Calendar className="w-4 h-4 text-orange-600" aria-hidden="true" />
+                    <Calendar className="w-4 h-4 text-navy-400" aria-hidden="true" />
                     <time dateTime={a.datePublished}>{a.datePublished}</time>
                   </div>
                   <h2 className="font-display text-h2 font-bold text-ink flex items-start gap-3">
-                    <Newspaper className="w-6 h-6 text-orange-600 shrink-0 mt-1" aria-hidden="true" />
+                    <Newspaper className="w-6 h-6 text-navy-400 shrink-0 mt-1" aria-hidden="true" />
                     <span>{a.title}</span>
                   </h2>
                   <p className="text-body text-navy-400 leading-relaxed font-semibold">{a.excerpt}</p>
                 </div>
                 <div
-                  className="bg-white border border-line p-8 space-y-4"
+                  className="bg-paper border border-line p-8 space-y-4"
                   style={{ clipPath: 'polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%)' }}
                 >
                   {a.body.map((p, i) => (
@@ -226,7 +226,7 @@ export default async function Page({
                 </div>
                 <a
                   href={`#${a.slug}`}
-                  className="inline-flex items-center gap-1.5 text-caption font-mono uppercase tracking-wider text-orange-600 hover:text-orange transition-colors"
+                  className="inline-flex items-center gap-1.5 text-caption font-mono uppercase tracking-wider text-navy-400 hover:text-ink transition-colors"
                 >
                   {t.readMore}
                 </a>

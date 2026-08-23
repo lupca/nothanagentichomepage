@@ -41,7 +41,7 @@ export const StatsStrip: React.FC<StatsStripProps> = async () => {
   const t = pick(locale);
 
   return (
-    <section className="bg-white border-b border-line" aria-label="Proof stats">
+    <section className="bg-paper border-b border-line" aria-label="Proof stats">
       <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-line">
         {t.stats.map((stat, idx) => (
           <Reveal key={idx} delay={idx * 0.07} className="px-6 py-8 md:px-8">

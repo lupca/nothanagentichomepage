@@ -65,7 +65,7 @@ export const AIDecisionWidget: React.FC<AIDecisionWidgetProps> = async () => {
   return (
     <div id="ai-decisions" className="space-y-6" aria-label="AI proposes, operator approves">
       <div className="max-w-2xl space-y-2">
-        <span className="inline-flex items-center gap-2 text-caption font-mono font-bold uppercase tracking-wider text-orange">
+        <span className="inline-flex items-center gap-2 text-caption font-mono font-bold uppercase tracking-wider text-navy-400">
           <Settings2 className="w-4 h-4" />
           {t.tag}
         </span>
@@ -88,7 +88,7 @@ export const AIDecisionWidget: React.FC<AIDecisionWidgetProps> = async () => {
         <div className="rounded-xl border border-white/10 bg-white/5 p-5 space-y-4">
           <div className="flex items-start justify-between gap-4 flex-wrap">
             <div className="flex items-start gap-3">
-              <HardHat className="w-5 h-5 text-orange shrink-0 mt-1" />
+              <HardHat className="w-5 h-5 text-white/60 shrink-0 mt-1" />
               <div>
                 <p className="text-body font-bold text-white">{t.primaryTitle}</p>
                 <p className="text-caption text-white/60 mt-1">{t.primaryMeta}</p>

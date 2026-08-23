@@ -42,7 +42,7 @@ export const FAQ: React.FC<FAQProps> = () => {
 
   return (
     <section
-      className="bg-white py-20 px-6 md:px-12 lg:px-24"
+      className="bg-paper py-20 px-6 md:px-12 lg:px-24"
       id="faq"
       aria-label="Frequently asked questions"
     >
@@ -93,7 +93,7 @@ export const FAQ: React.FC<FAQProps> = () => {
                     isOpen ? 'max-h-[300px] border-t border-navy-400/10' : 'max-h-0'
                   }`}
                 >
-                  <div className="p-6 text-body text-navy-400 bg-white leading-relaxed">
+                  <div className="p-6 text-body text-navy-400 bg-paper leading-relaxed">
                     {faq.answer}
                   </div>
                 </div>

@@ -50,7 +50,7 @@ export const PartnerSection: React.FC<PartnerSectionProps> = async () => {
   const t = pick(locale);
 
   return (
-    <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line" id="doi-tac" aria-label="For hardware manufacturers">
+    <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line" id="doi-tac" aria-label="For hardware manufacturers">
       <div className="max-w-4xl mx-auto space-y-8">
         <Reveal className="space-y-4 max-w-2xl">
           <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.heading}</h2>
@@ -61,7 +61,7 @@ export const PartnerSection: React.FC<PartnerSectionProps> = async () => {
           {t.points.map((p, idx) => (
             <Reveal key={idx} delay={idx * 0.07}>
               <div className="flex gap-4">
-                <span className="font-mono text-caption text-orange-600 mt-1.5 shrink-0">0{idx + 1}</span>
+                <span className="font-mono text-caption text-navy-400 mt-1.5 shrink-0">0{idx + 1}</span>
                 <div>
                   <p className="text-body font-bold text-ink">{p.title}</p>
                   <p className="text-body text-navy-400 leading-relaxed mt-1">{p.body}</p>

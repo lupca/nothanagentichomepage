@@ -241,7 +241,7 @@ export default async function Page({
       />
       <Header />
       <main className="min-h-screen bg-paper text-ink antialiased">
-        <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line">
+        <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line">
           <div className="max-w-7xl mx-auto space-y-8">
             <div className="max-w-2xl space-y-4">
               <span className="text-caption font-mono uppercase tracking-wider text-orange-600">
@@ -262,7 +262,7 @@ export default async function Page({
         <section className="bg-paper py-20 px-6 md:px-12 lg:px-24" aria-label={t.jobsHeading}>
           <div className="max-w-7xl mx-auto space-y-14">
             <div className="max-w-2xl space-y-4">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">
                 {t.jobsEyebrow}
               </span>
               <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.jobsHeading}</h2>
@@ -281,9 +281,9 @@ export default async function Page({
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="p-3 bg-ink rounded-lg w-fit">
-                        <Icon className="w-6 h-6 text-orange" />
+                        <Icon className="w-6 h-6 text-navy-400" />
                       </div>
-                      <span className="text-caption font-mono uppercase tracking-wider text-orange-600 text-right">
+                      <span className="text-caption font-mono uppercase tracking-wider text-navy-400 text-right">
                         {job.tag}
                       </span>
                     </div>

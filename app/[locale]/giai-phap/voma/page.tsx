@@ -173,10 +173,10 @@ export default async function VomaPage({
           </div>
         </section>
 
-        <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.screenshotsTitle}>
+        <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.screenshotsTitle}>
           <div className="max-w-5xl mx-auto space-y-8">
             <Reveal className="max-w-2xl space-y-4">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.screenshotsEyebrow}</span>
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.screenshotsEyebrow}</span>
               <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.screenshotsTitle}</h2>
             </Reveal>
 
@@ -202,7 +202,7 @@ export default async function VomaPage({
           </div>
         </section>
 
-        <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line">
+        <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line">
           <div className="max-w-3xl mx-auto space-y-6">
             <div
               className="bg-paper border border-line p-8 space-y-4"
@@ -211,9 +211,9 @@ export default async function VomaPage({
               }}
             >
               <div className="p-3 bg-ink rounded-lg w-fit">
-                <BadgeCheck className="w-6 h-6 text-orange" />
+                <BadgeCheck className="w-6 h-6 text-navy-400" />
               </div>
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.trademarkEyebrow}</span>
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.trademarkEyebrow}</span>
               <h2 className="text-h3 font-bold text-ink">{t.trademarkTitle}</h2>
               <p className="text-body text-navy-400 leading-relaxed">{t.trademarkBody}</p>
             </div>
@@ -223,18 +223,18 @@ export default async function VomaPage({
         <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line">
           <div className="max-w-3xl mx-auto space-y-8">
             <div className="space-y-4">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.hardwareEyebrow}</span>
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.hardwareEyebrow}</span>
               <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.hardwareTitle}</h2>
               <p className="text-body text-navy-400 leading-relaxed">{t.hardwareIntro}</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-white border border-line p-6 space-y-3">
+              <div className="bg-paper border border-line p-6 space-y-3">
                 <StatusTag status="roadmap" locale={locale} />
                 <h3 className="text-h3 font-bold text-ink">{t.hardwarePhase2Title}</h3>
                 <p className="text-body text-navy-400 leading-relaxed">{t.hardwarePhase2Body}</p>
               </div>
-              <div className="bg-white border border-line p-6 space-y-3">
+              <div className="bg-paper border border-line p-6 space-y-3">
                 <StatusTag status="roadmap" locale={locale} />
                 <h3 className="text-h3 font-bold text-ink">{t.hardwarePhase3Title}</h3>
                 <p className="text-body text-navy-400 leading-relaxed">{t.hardwarePhase3Body}</p>

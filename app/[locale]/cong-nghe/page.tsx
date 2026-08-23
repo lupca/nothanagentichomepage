@@ -337,10 +337,10 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         </section>
 
         {/* 2. Architecture pipeline */}
-        <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.archTitle}>
+        <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.archTitle}>
           <div className="max-w-5xl mx-auto space-y-12">
             <div className="max-w-2xl space-y-4">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.eyebrowArch}</span>
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.eyebrowArch}</span>
               <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.archTitle}</h2>
               <p className="text-body text-navy-400 leading-relaxed">{t.archIntro}</p>
             </div>
@@ -383,7 +383,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                       style={{ clipPath: 'polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%)' }}
                     >
                       <div className="p-3 bg-ink rounded-lg w-fit mb-5">
-                        <Icon className="w-6 h-6 text-orange" />
+                        <Icon className="w-6 h-6 text-navy-400" />
                       </div>
                       <h4 className="text-h3 font-bold text-ink mb-3 font-mono">{a.title}</h4>
                       <p className="text-body text-navy-400 leading-relaxed">{a.body}</p>
@@ -399,16 +399,16 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.strategyTitle}>
           <div className="max-w-5xl mx-auto space-y-10">
             <div className="max-w-2xl space-y-4">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.eyebrowStrategy}</span>
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.eyebrowStrategy}</span>
               <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.strategyTitle}</h2>
               <p className="text-body text-navy-400 leading-relaxed">{t.strategyIntro}</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white border border-line p-8 space-y-4">
+              <div className="bg-paper border border-line p-8 space-y-4">
                 <div className="flex items-center justify-between gap-3">
                   <div className="p-2.5 bg-ink rounded-lg w-fit">
-                    <Cloud className="w-5 h-5 text-orange" />
+                    <Cloud className="w-5 h-5 text-navy-400" />
                   </div>
                   <span
                     className={`inline-block whitespace-nowrap text-caption font-mono uppercase tracking-wide px-2 py-0.5 border ${STATUS_CLASS[t.serverCard.status]}`}
@@ -421,10 +421,10 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
                 <p className="text-caption text-navy-400 leading-relaxed border-t border-line pt-3">{t.serverCard.note}</p>
               </div>
 
-              <div className="bg-white border border-line p-8 space-y-4">
+              <div className="bg-paper border border-line p-8 space-y-4">
                 <div className="flex items-center justify-between gap-3">
                   <div className="p-2.5 bg-ink rounded-lg w-fit">
-                    <Cpu className="w-5 h-5 text-orange" />
+                    <Cpu className="w-5 h-5 text-navy-400" />
                   </div>
                   <span
                     className={`inline-block whitespace-nowrap text-caption font-mono uppercase tracking-wide px-2 py-0.5 border ${STATUS_CLASS[t.edgeCard.status]}`}
@@ -441,10 +441,10 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         </section>
 
         {/* 4. Device / protocol integration matrix */}
-        <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.matrixTitle}>
+        <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.matrixTitle}>
           <div className="max-w-7xl mx-auto space-y-8">
             <div className="max-w-2xl space-y-4">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.eyebrowMatrix}</span>
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.eyebrowMatrix}</span>
               <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.matrixTitle}</h2>
               <p className="text-body text-navy-400 leading-relaxed">{t.matrixIntro}</p>
             </div>
@@ -482,9 +482,9 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.testingTitle}>
           <div className="max-w-5xl mx-auto space-y-10">
             <div className="max-w-2xl space-y-4">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.eyebrowTesting}</span>
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.eyebrowTesting}</span>
               <h2 className="font-display text-2xl md:text-h2 font-bold text-ink flex items-center gap-3">
-                <FlaskConical className="w-6 h-6 text-orange-600" />
+                <FlaskConical className="w-6 h-6 text-navy-400" />
                 {t.testingTitle}
               </h2>
               <p className="text-body text-navy-400 leading-relaxed">{t.testingIntro}</p>
@@ -492,8 +492,8 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {t.testingStats.map((s, idx) => (
-                <div key={idx} className="bg-white border border-line p-6 space-y-2">
-                  <p className="font-display text-h1 font-extrabold text-orange-600 leading-none">{s.value}</p>
+                <div key={idx} className="bg-paper border border-line p-6 space-y-2">
+                  <p className="font-display text-h1 font-extrabold text-navy-400 leading-none">{s.value}</p>
                   <p className="text-caption text-navy-400 leading-relaxed">{s.label}</p>
                 </div>
               ))}
@@ -505,7 +505,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         <section className="bg-ink text-white py-20 px-6 md:px-12 lg:px-24" aria-label={t.principlesTitle}>
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="space-y-3">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange flex items-center gap-2">
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400 flex items-center gap-2">
                 <AlertTriangle className="w-4 h-4" />
                 {t.eyebrowPrinciples}
               </span>
@@ -518,7 +518,7 @@ export default async function Page({ params }: { params: Promise<{ locale: strin
         </section>
 
         {/* 7. CTA */}
-        <section className="bg-white py-20 px-6 md:px-12 lg:px-24" aria-label={t.ctaTitle}>
+        <section className="bg-paper py-20 px-6 md:px-12 lg:px-24" aria-label={t.ctaTitle}>
           <div className="max-w-4xl mx-auto space-y-6">
             <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.ctaTitle}</h2>
             <p className="text-body text-navy-400 leading-relaxed max-w-2xl">{t.ctaBody}</p>

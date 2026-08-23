@@ -110,7 +110,7 @@ export const Footer: React.FC<FooterProps> = async () => {
           <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
             {t.groups.map((group, idx) => (
               <div key={idx} className="space-y-4">
-                <h4 className="text-caption font-bold uppercase tracking-wider text-orange">
+                <h4 className="text-caption font-bold uppercase tracking-wider text-paper/80">
                   {group.title}
                 </h4>
                 <ul className="space-y-2">
@@ -132,15 +132,15 @@ export const Footer: React.FC<FooterProps> = async () => {
 
         <div className="border-t border-white/10 pt-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
           <div className="flex items-center gap-2.5">
-            <Mail className="w-5 h-5 text-orange shrink-0" />
+            <Mail className="w-5 h-5 text-paper/60 shrink-0" />
             <span className="text-body text-paper/75">contact@nothanagentic.vn</span>
           </div>
           <div className="flex items-center gap-2.5">
-            <Phone className="w-5 h-5 text-orange shrink-0" />
+            <Phone className="w-5 h-5 text-paper/60 shrink-0" />
             <span className="text-body text-paper/75">0983 650 552</span>
           </div>
           <div className="flex items-start gap-2.5">
-            <MapPin className="w-5 h-5 text-orange shrink-0 mt-0.5" />
+            <MapPin className="w-5 h-5 text-paper/60 shrink-0 mt-0.5" />
             <span className="text-body text-paper/75">Số 1, ngõ 141/3, phố Lê Văn Hiến, Phường Đông Ngạc, Thành phố Hà Nội</span>
           </div>
         </div>

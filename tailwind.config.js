@@ -7,12 +7,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        ink:    { DEFAULT: '#0B0B1F', 800: '#14143A' },
-        navy:   { DEFAULT: '#1B1B4B', 400: '#4A4E6E' },
-        orange: { DEFAULT: '#E8541E', 600: '#B23F0F', 400: '#FF7A45' },
-        paper:  { DEFAULT: '#F5F4F0', 200: '#EDECE6' },
-        line:   '#DCDBD3',
-        state:  { ok: '#0E7A55', wait: '#9A5B08', stop: '#B4232E' },
+        ink:    { DEFAULT: '#1B1917', 800: '#28241F' },
+        navy:   { DEFAULT: '#3D3833', 400: '#65605A' },
+        orange: { DEFAULT: '#B2532E', 600: '#8B3F22', 400: '#C97A52' },
+        paper:  { DEFAULT: '#F7F5F1', 200: '#EEEAE3' },
+        line:   '#DEDAD2',
+        state:  { ok: '#127A56', wait: '#7A5C12', stop: '#A32E2E' },
       },
       fontFamily: {
         sans: ['var(--font-plus-jakarta-sans)', 'Plus Jakarta Sans', 'sans-serif'],

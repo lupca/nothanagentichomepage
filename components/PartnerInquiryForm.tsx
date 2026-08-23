@@ -93,7 +93,7 @@ export const PartnerInquiryForm: React.FC<PartnerInquiryFormProps> = ({ labels }
   const errKey = (key?: string) => (key ? labels.errors[key as keyof typeof labels.errors] : undefined);
 
   return (
-    <div className="lg:col-span-6 bg-white text-ink p-8 rounded-3xl shadow-2xl border border-white/10 w-full text-left">
+    <div className="lg:col-span-6 bg-paper text-ink p-8 rounded-3xl shadow-2xl border border-white/10 w-full text-left">
       {isSubmitted ? (
         <div className="text-center py-8 space-y-4" role="alert">
           <div className="inline-flex p-3 bg-state-ok/10 text-state-ok rounded-full">

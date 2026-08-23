@@ -97,7 +97,7 @@ export const HumanOverridePanel: React.FC<HumanOverridePanelProps> = ({ itemLabe
   return (
     <div
       data-testid="human-override-panel"
-      className="rounded-xl border border-navy-400/15 bg-white p-4 space-y-3"
+      className="rounded-xl border border-navy-400/15 bg-paper p-4 space-y-3"
     >
       <p className="text-caption font-bold text-navy-400 uppercase tracking-wider">
         {t.heading}

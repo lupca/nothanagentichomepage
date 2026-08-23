@@ -221,7 +221,7 @@ export default async function Page({
       <Header />
       <main className="min-h-screen bg-paper text-ink antialiased">
         {/* 1. Intro / vision */}
-        <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line">
+        <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line">
           <div className="max-w-7xl mx-auto space-y-6">
             <span className="text-caption font-mono uppercase tracking-wider text-orange-600">
               {t.eyebrow}
@@ -235,7 +235,7 @@ export default async function Page({
         <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line">
           <div className="max-w-7xl mx-auto space-y-10">
             <div className="max-w-2xl space-y-4">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">
                 {t.teamEyebrow}
               </span>
               <h2 className="font-display text-h2 font-bold text-ink">{t.teamTitle}</h2>
@@ -245,14 +245,14 @@ export default async function Page({
               {t.team.map((row, idx) => (
                 <div
                   key={idx}
-                  className="bg-white border border-line p-8"
+                  className="bg-paper border border-line p-8"
                   style={{
                     clipPath:
                       'polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%)',
                   }}
                 >
                   <div className="flex items-start gap-3">
-                    <div className="p-2 bg-orange/10 text-orange rounded-full shrink-0">
+                    <div className="p-2 bg-navy-400/10 text-navy-400 rounded-full shrink-0">
                       <Users className="w-5 h-5" strokeWidth={2.5} />
                     </div>
                     <div className="space-y-1.5">
@@ -267,10 +267,10 @@ export default async function Page({
         </section>
 
         {/* 3. Governance roadmap */}
-        <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line">
+        <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl space-y-6">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">
                 {t.roadmapEyebrow}
               </span>
               <h2 className="font-display text-h2 font-bold text-ink">{t.roadmapTitle}</h2>
@@ -293,7 +293,7 @@ export default async function Page({
         <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line">
           <div className="max-w-3xl mx-auto space-y-8">
             <div className="max-w-2xl space-y-4">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">
                 {t.commitEyebrow}
               </span>
               <h2 className="font-display text-h2 font-bold text-ink">{t.commitTitle}</h2>
@@ -313,14 +313,14 @@ export default async function Page({
         </section>
 
         {/* 5. Legal information */}
-        <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line">
+        <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line">
           <div className="max-w-7xl mx-auto space-y-10">
             <div className="max-w-2xl space-y-4">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">
                 {t.legalEyebrow}
               </span>
               <h2 className="font-display text-h2 font-bold text-ink flex items-center gap-3">
-                <Building2 className="w-6 h-6 text-orange" />
+                <Building2 className="w-6 h-6 text-navy-400" />
                 {t.legalTitle}
               </h2>
             </div>
@@ -344,7 +344,7 @@ export default async function Page({
                     className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-4 p-5 bg-paper/40"
                   >
                     <div className="flex items-center gap-2.5 sm:w-40 shrink-0">
-                      <Icon className="w-4 h-4 text-orange shrink-0" />
+                      <Icon className="w-4 h-4 text-navy-400 shrink-0" />
                       <span className="text-caption font-mono uppercase tracking-wider text-navy-400">
                         {row.label}
                       </span>

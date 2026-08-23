@@ -54,10 +54,10 @@ export const DeviceMatrix: React.FC<DeviceMatrixProps> = async () => {
   const t = pick(locale);
 
   return (
-    <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line" id="he-thong" aria-label="Device integration matrix">
+    <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line" id="he-thong" aria-label="Device integration matrix">
       <div className="max-w-7xl mx-auto space-y-8">
         <Reveal className="max-w-2xl space-y-4">
-          <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.tag}</span>
+          <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.tag}</span>
           <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.heading}</h2>
           <p className="text-body text-navy-400 leading-relaxed">{t.sub}</p>
         </Reveal>

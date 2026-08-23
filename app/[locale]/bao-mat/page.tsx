@@ -288,7 +288,7 @@ export default async function Page({
       <Header />
       <main className="min-h-screen bg-paper text-ink antialiased">
         {/* 1. Intro */}
-        <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line">
+        <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line">
           <div className="max-w-4xl mx-auto space-y-6">
             <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.eyebrow}</span>
             <h1 className="font-display text-h1 font-bold text-ink">{t.h1}</h1>
@@ -300,9 +300,9 @@ export default async function Page({
         <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line">
           <div className="max-w-4xl mx-auto space-y-6">
             <div className="space-y-3">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.s1Eyebrow}</span>
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.s1Eyebrow}</span>
               <h2 className="font-display text-h2 font-bold text-ink flex items-center gap-3">
-                <Server className="w-6 h-6 text-orange-600" aria-hidden="true" />
+                <Server className="w-6 h-6 text-navy-400" aria-hidden="true" />
                 {t.s1Title}
               </h2>
             </div>
@@ -317,12 +317,12 @@ export default async function Page({
         </section>
 
         {/* 3. Who sees what */}
-        <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line">
+        <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line">
           <div className="max-w-4xl mx-auto space-y-6">
             <div className="space-y-3">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.s2Eyebrow}</span>
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.s2Eyebrow}</span>
               <h2 className="font-display text-h2 font-bold text-ink flex items-center gap-3">
-                <Users className="w-6 h-6 text-orange-600" aria-hidden="true" />
+                <Users className="w-6 h-6 text-navy-400" aria-hidden="true" />
                 {t.s2Title}
               </h2>
             </div>
@@ -340,9 +340,9 @@ export default async function Page({
         <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line">
           <div className="max-w-4xl mx-auto space-y-6">
             <div className="space-y-3">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.s3Eyebrow}</span>
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.s3Eyebrow}</span>
               <h2 className="font-display text-h2 font-bold text-ink flex items-center gap-3">
-                <KeyRound className="w-6 h-6 text-orange-600" aria-hidden="true" />
+                <KeyRound className="w-6 h-6 text-navy-400" aria-hidden="true" />
                 {t.s3Title}
               </h2>
             </div>
@@ -357,12 +357,12 @@ export default async function Page({
         </section>
 
         {/* 5. Path traversal */}
-        <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line">
+        <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line">
           <div className="max-w-4xl mx-auto space-y-6">
             <div className="space-y-3">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.s4Eyebrow}</span>
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.s4Eyebrow}</span>
               <h2 className="font-display text-h2 font-bold text-ink flex items-center gap-3">
-                <ShieldAlert className="w-6 h-6 text-orange-600" aria-hidden="true" />
+                <ShieldAlert className="w-6 h-6 text-navy-400" aria-hidden="true" />
                 {t.s4Title}
               </h2>
             </div>
@@ -380,9 +380,9 @@ export default async function Page({
         <section className="bg-ink text-white py-20 px-6 md:px-12 lg:px-24">
           <div className="max-w-4xl mx-auto space-y-6">
             <div className="space-y-3">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange">{t.s5Eyebrow}</span>
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.s5Eyebrow}</span>
               <h2 className="font-display text-h2 font-bold text-white flex items-center gap-3">
-                <Lock className="w-6 h-6 text-orange" aria-hidden="true" />
+                <Lock className="w-6 h-6 text-navy-400" aria-hidden="true" />
                 {t.s5Title}
               </h2>
             </div>
@@ -397,12 +397,12 @@ export default async function Page({
         </section>
 
         {/* 7. Compliance roadmap - the critical, most-scrutinized section */}
-        <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line">
+        <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line">
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="space-y-3">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.s7Eyebrow}</span>
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.s7Eyebrow}</span>
               <h2 className="font-display text-h2 font-bold text-ink flex items-center gap-3">
-                <FileCheck className="w-6 h-6 text-orange-600" aria-hidden="true" />
+                <FileCheck className="w-6 h-6 text-navy-400" aria-hidden="true" />
                 {t.s7Title}
               </h2>
               <p className="text-body text-navy-400 leading-relaxed max-w-3xl">{t.s7Intro}</p>
@@ -441,7 +441,7 @@ export default async function Page({
               className="p-6 bg-paper border border-line flex items-start gap-4"
               style={{ clipPath: 'polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%)' }}
             >
-              <AlertTriangle className="w-5 h-5 text-orange-600 shrink-0 mt-0.5" aria-hidden="true" />
+              <AlertTriangle className="w-5 h-5 text-navy-400 shrink-0 mt-0.5" aria-hidden="true" />
               <p className="text-body text-navy-400 leading-relaxed">{t.s7Note}</p>
             </div>
           </div>

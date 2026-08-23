@@ -71,7 +71,7 @@ export const Pillars: React.FC<PillarsProps> = async () => {
 
   return (
     <section
-      className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line"
+      className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line"
       id="nang-luc"
       aria-label="Three capability pillars"
     >
@@ -94,7 +94,7 @@ export const Pillars: React.FC<PillarsProps> = async () => {
                   }}
                 >
                   <div className="p-3 bg-ink rounded-lg w-fit mb-5">
-                    <Icon className="w-6 h-6 text-orange" />
+                    <Icon className="w-6 h-6 text-navy-400" />
                   </div>
                   <h3 className="text-h3 font-bold text-ink mb-3">{pillar.title}</h3>
                   <p className="text-body text-navy-400 leading-relaxed">{pillar.body}</p>

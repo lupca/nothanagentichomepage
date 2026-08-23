@@ -116,7 +116,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = () => {
         aria-modal="true"
         aria-label={t.ariaLabel}
         onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-xl bg-white rounded-2xl shadow-2xl border border-black/5 overflow-hidden"
+        className="w-full max-w-xl bg-paper rounded-2xl shadow-2xl border border-line overflow-hidden"
       >
         <div className="flex items-center gap-3 px-5 py-4 border-b border-navy-400/10">
           <Search className="w-5 h-5 text-navy-400 shrink-0" />
@@ -144,7 +144,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = () => {
                   onClick={() => handleSelect(item)}
                   className="w-full flex items-center gap-3 px-5 py-3 min-h-[48px] text-left hover:bg-paper transition-colors"
                 >
-                  <item.icon className="w-4 h-4 text-orange shrink-0" />
+                  <item.icon className="w-4 h-4 text-navy-400 shrink-0" />
                   <span className="flex-1 min-w-0">
                     <span className="block text-body font-semibold text-ink truncate">
                       {item.label}

@@ -504,17 +504,17 @@ export default async function PartnersPage({
         </section>
 
         {/* 2. Value propositions */}
-        <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.valuesTitle}>
+        <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.valuesTitle}>
           <div className="max-w-4xl mx-auto space-y-10">
             <div className="max-w-2xl space-y-4">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.valuesEyebrow}</span>
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.valuesEyebrow}</span>
               <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.valuesTitle}</h2>
             </div>
 
             <div className="space-y-8">
               {t.values.map((v, idx) => (
                 <div key={idx} className="flex gap-4">
-                  <span className="font-mono text-caption text-orange-600 mt-1.5 shrink-0">0{idx + 1}</span>
+                  <span className="font-mono text-caption text-navy-400 mt-1.5 shrink-0">0{idx + 1}</span>
                   <div className="space-y-2">
                     <p className="text-h3 font-bold text-ink">{v.title}</p>
                     <p className="text-body text-navy-400 leading-relaxed">{v.body}</p>
@@ -529,7 +529,7 @@ export default async function PartnersPage({
         <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.formsTitle}>
           <div className="max-w-7xl mx-auto space-y-10">
             <div className="max-w-2xl space-y-4">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.formsEyebrow}</span>
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.formsEyebrow}</span>
               <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.formsTitle}</h2>
             </div>
 
@@ -539,12 +539,12 @@ export default async function PartnersPage({
                 return (
                   <div
                     key={idx}
-                    className="bg-white border border-line p-8 space-y-4"
+                    className="bg-paper border border-line p-8 space-y-4"
                     style={{ clipPath: 'polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%)' }}
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div className="p-3 bg-ink rounded-lg w-fit">
-                        <Icon className="w-6 h-6 text-orange" />
+                        <Icon className="w-6 h-6 text-navy-400" />
                       </div>
                       {f.tag && <StatusTag status={f.tag} locale={locale} />}
                     </div>
@@ -558,10 +558,10 @@ export default async function PartnersPage({
         </section>
 
         {/* 4. Device matrix */}
-        <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.matrixTitle}>
+        <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.matrixTitle}>
           <div className="max-w-7xl mx-auto space-y-8">
             <div className="max-w-2xl space-y-4">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.matrixEyebrow}</span>
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.matrixEyebrow}</span>
               <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.matrixTitle}</h2>
               <p className="text-body text-navy-400 leading-relaxed">{t.matrixNote}</p>
             </div>
@@ -599,7 +599,7 @@ export default async function PartnersPage({
         <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.processTitle}>
           <div className="max-w-7xl mx-auto space-y-10">
             <div className="max-w-2xl space-y-4">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.processEyebrow}</span>
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.processEyebrow}</span>
               <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.processTitle}</h2>
             </div>
 
@@ -608,9 +608,9 @@ export default async function PartnersPage({
                 const icons = [MessagesSquare, ShieldCheck, FlaskConical, Rocket];
                 const Icon = icons[idx] ?? Timer;
                 return (
-                  <div key={idx} className="bg-white border border-line p-6 space-y-3">
+                  <div key={idx} className="bg-paper border border-line p-6 space-y-3">
                     <div className="flex items-center gap-3">
-                      <span className="font-mono text-caption text-orange-600">0{idx + 1}</span>
+                      <span className="font-mono text-caption text-navy-400">0{idx + 1}</span>
                       <Icon className="w-5 h-5 text-navy-400" />
                     </div>
                     <p className="text-body font-bold text-ink">{step.title}</p>

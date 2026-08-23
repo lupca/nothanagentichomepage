@@ -121,7 +121,7 @@ export default async function Page({
       <Header />
       <main className="min-h-screen bg-paper text-ink antialiased">
         {/* 1. Intro */}
-        <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line">
+        <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line">
           <div className="max-w-4xl mx-auto space-y-6">
             <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.eyebrow}</span>
             <h1 className="font-display text-h1 font-bold text-ink">{t.h1}</h1>
@@ -133,18 +133,18 @@ export default async function Page({
         <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             <div
-              className="bg-white border border-line p-8 space-y-5 flex flex-col"
+              className="bg-paper border border-line p-8 space-y-5 flex flex-col"
               style={{ clipPath: 'polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%)' }}
             >
-              <Handshake className="w-8 h-8 text-orange-600" aria-hidden="true" />
+              <Handshake className="w-8 h-8 text-navy-400" aria-hidden="true" />
               <div className="space-y-3 flex-1">
-                <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.partnerEyebrow}</span>
+                <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.partnerEyebrow}</span>
                 <h2 className="font-display text-h3 font-bold text-ink">{t.partnerTitle}</h2>
                 <p className="text-body text-navy-400 leading-relaxed">{t.partnerBody}</p>
               </div>
               <Link
                 href={`/${locale}/doi-tac#doi-tac-lien-he`}
-                className="inline-flex items-center gap-2 text-caption font-mono uppercase tracking-wider text-orange-600 hover:text-orange transition-colors"
+                className="inline-flex items-center gap-2 text-caption font-mono uppercase tracking-wider text-navy-400 hover:text-ink transition-colors"
               >
                 {t.partnerCta}
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -152,18 +152,18 @@ export default async function Page({
             </div>
 
             <div
-              className="bg-white border border-line p-8 space-y-5 flex flex-col"
+              className="bg-paper border border-line p-8 space-y-5 flex flex-col"
               style={{ clipPath: 'polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%)' }}
             >
-              <Building2 className="w-8 h-8 text-orange-600" aria-hidden="true" />
+              <Building2 className="w-8 h-8 text-navy-400" aria-hidden="true" />
               <div className="space-y-3 flex-1">
-                <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.businessEyebrow}</span>
+                <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.businessEyebrow}</span>
                 <h2 className="font-display text-h3 font-bold text-ink">{t.businessTitle}</h2>
                 <p className="text-body text-navy-400 leading-relaxed">{t.businessBody}</p>
               </div>
               <Link
                 href={`/${locale}#lead-capture`}
-                className="inline-flex items-center gap-2 text-caption font-mono uppercase tracking-wider text-orange-600 hover:text-orange transition-colors"
+                className="inline-flex items-center gap-2 text-caption font-mono uppercase tracking-wider text-navy-400 hover:text-ink transition-colors"
               >
                 {t.businessCta}
                 <ArrowRight className="w-4 h-4" aria-hidden="true" />
@@ -176,21 +176,21 @@ export default async function Page({
         <section className="bg-ink text-white py-20 px-6 md:px-12 lg:px-24">
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="space-y-3">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange">{t.detailsEyebrow}</span>
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.detailsEyebrow}</span>
               <h2 className="font-display text-h2 font-bold text-white">{t.detailsTitle}</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
               <div className="flex items-center gap-2.5">
-                <Mail className="w-5 h-5 text-orange shrink-0" aria-hidden="true" />
+                <Mail className="w-5 h-5 text-navy-400 shrink-0" aria-hidden="true" />
                 <span className="text-body text-paper/75">contact@nothanagentic.vn</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="w-5 h-5 text-orange shrink-0" aria-hidden="true" />
+                <Phone className="w-5 h-5 text-navy-400 shrink-0" aria-hidden="true" />
                 <span className="text-body text-paper/75">0983 650 552</span>
               </div>
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-5 h-5 text-orange shrink-0 mt-0.5" aria-hidden="true" />
+                <MapPin className="w-5 h-5 text-navy-400 shrink-0 mt-0.5" aria-hidden="true" />
                 <span className="text-body text-paper/75">Số 1, ngõ 141/3, phố Lê Văn Hiến, phường Đông Ngạc, Hà Nội</span>
               </div>
             </div>

@@ -445,10 +445,10 @@ export default async function SoaiPage({
           </div>
         </section>
 
-        <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.problemsTitle}>
+        <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.problemsTitle}>
           <div className="max-w-7xl mx-auto space-y-10">
             <div className="max-w-2xl space-y-4">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.problemsEyebrow}</span>
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.problemsEyebrow}</span>
               <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.problemsTitle}</h2>
             </div>
 
@@ -466,7 +466,7 @@ export default async function SoaiPage({
                     <div className="flex items-start justify-between gap-4 flex-wrap">
                       <div className="flex items-center gap-3">
                         <div className="p-3 bg-ink rounded-lg w-fit">
-                          <Icon className="w-6 h-6 text-orange" />
+                          <Icon className="w-6 h-6 text-navy-400" />
                         </div>
                         <h3 className="text-h3 font-bold text-ink">{p.title}</h3>
                       </div>
@@ -495,7 +495,7 @@ export default async function SoaiPage({
                     {idx === 0 && packingShot && skuCountingDetailShot && (
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                         <figure className="space-y-1.5">
-                          <div className="border border-line rounded-lg overflow-hidden shadow-sm bg-white">
+                          <div className="border border-line rounded-lg overflow-hidden shadow-sm bg-paper">
                             <Image
                               src={packingShot.src}
                               alt={packingShot.alt}
@@ -508,7 +508,7 @@ export default async function SoaiPage({
                           <figcaption className="text-caption font-mono text-navy-400">{packingShot.caption}</figcaption>
                         </figure>
                         <figure className="space-y-1.5">
-                          <div className="border border-line rounded-lg overflow-hidden shadow-sm bg-white">
+                          <div className="border border-line rounded-lg overflow-hidden shadow-sm bg-paper">
                             <Image
                               src={skuCountingDetailShot.src}
                               alt={skuCountingDetailShot.alt}
@@ -532,13 +532,13 @@ export default async function SoaiPage({
         <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line" id="bang-chung-soai" aria-label={t.modulesTitle}>
           <div className="max-w-7xl mx-auto space-y-8">
             <div className="max-w-2xl space-y-4">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.modulesEyebrow}</span>
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.modulesEyebrow}</span>
               <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.modulesTitle}</h2>
               <p className="text-body text-navy-400 leading-relaxed">{t.modulesNote}</p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-              <div className="lg:col-span-2 overflow-x-auto border border-line bg-white">
+              <div className="lg:col-span-2 overflow-x-auto border border-line bg-paper">
                 <table className="w-full min-w-[640px] text-body">
                   <thead>
                     <tr>
@@ -567,7 +567,7 @@ export default async function SoaiPage({
 
               {devicesShot && (
                 <figure className="space-y-1.5">
-                  <div className="border border-line rounded-lg overflow-hidden shadow-sm bg-white">
+                  <div className="border border-line rounded-lg overflow-hidden shadow-sm bg-paper">
                     <Image
                       src={devicesShot.src}
                       alt={devicesShot.alt}
@@ -584,10 +584,10 @@ export default async function SoaiPage({
           </div>
         </section>
 
-        <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.screenshotsTitle}>
+        <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.screenshotsTitle}>
           <div className="max-w-7xl mx-auto space-y-8">
             <div className="max-w-2xl space-y-4">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.screenshotsEyebrow}</span>
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.screenshotsEyebrow}</span>
               <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.screenshotsTitle}</h2>
             </div>
 
@@ -629,10 +629,10 @@ export default async function SoaiPage({
           </div>
         </section>
 
-        <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.roadmapTitle}>
+        <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.roadmapTitle}>
           <div className="max-w-7xl mx-auto space-y-10">
             <div className="max-w-2xl space-y-4">
-              <span className="text-caption font-mono uppercase tracking-wider text-orange-600">{t.roadmapEyebrow}</span>
+              <span className="text-caption font-mono uppercase tracking-wider text-navy-400">{t.roadmapEyebrow}</span>
               <h2 className="font-display text-2xl md:text-h2 font-bold text-ink">{t.roadmapTitle}</h2>
             </div>
 
@@ -654,7 +654,7 @@ export default async function SoaiPage({
           </div>
         </section>
 
-        <section className="bg-white py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.demoTitle}>
+        <section className="bg-paper py-20 px-6 md:px-12 lg:px-24 border-b border-line" aria-label={t.demoTitle}>
           <div className="max-w-4xl mx-auto space-y-4">
             <AIDecisionWidget />
           </div>

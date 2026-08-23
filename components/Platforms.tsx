@@ -56,13 +56,13 @@ export const Platforms: React.FC<PlatformsProps> = async () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Reveal>
-            <div className="bg-white border border-line p-8 space-y-4 h-full">
+            <div className="bg-paper border border-line p-8 space-y-4 h-full">
               <div className="p-3 bg-ink rounded-lg w-fit">
-                <ScanEye className="w-6 h-6 text-orange" />
+                <ScanEye className="w-6 h-6 text-navy-400" />
               </div>
               <h3 className="text-h3 font-bold text-ink">{t.soaiTitle}</h3>
               <p className="text-body text-navy-400 leading-relaxed">{t.soaiBody}</p>
-              <a href={`/${locale}/giai-phap/soai`} className="inline-flex items-center gap-1.5 text-body font-semibold text-orange-600 hover:underline">
+              <a href={`/${locale}/giai-phap/soai`} className="inline-flex items-center gap-1.5 text-body font-semibold text-navy-400 hover:underline">
                 {t.soaiCta}
                 <ArrowUpRight className="w-4 h-4" />
               </a>
@@ -70,13 +70,13 @@ export const Platforms: React.FC<PlatformsProps> = async () => {
           </Reveal>
 
           <Reveal delay={0.07}>
-            <div className="bg-white border border-line p-8 space-y-4 h-full">
+            <div className="bg-paper border border-line p-8 space-y-4 h-full">
               <div className="p-3 bg-ink rounded-lg w-fit">
-                <ShoppingBag className="w-6 h-6 text-orange" />
+                <ShoppingBag className="w-6 h-6 text-navy-400" />
               </div>
               <h3 className="text-h3 font-bold text-ink">{t.vomaTitle}</h3>
               <p className="text-body text-navy-400 leading-relaxed">{t.vomaBody}</p>
-              <a href={`/${locale}/giai-phap/voma`} className="inline-flex items-center gap-1.5 text-body font-semibold text-orange-600 hover:underline">
+              <a href={`/${locale}/giai-phap/voma`} className="inline-flex items-center gap-1.5 text-body font-semibold text-navy-400 hover:underline">
                 {t.vomaCta}
                 <ArrowUpRight className="w-4 h-4" />
               </a>
